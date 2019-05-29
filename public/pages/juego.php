@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="../images/icono.png">
   <link rel="stylesheet" href="../estilos/style.css" type="text/css">
   <link rel="stylesheet" href="../estilos/juegos.css" type="text/css">
-
+  <script type="text/javascript" src="../javascript/juego.js"></script>
   <?php
     include '../../config/conexionBD.php';
     $codigo = $_GET['codigo'];
@@ -23,8 +23,7 @@
     $precio = $u['jue_precio'];
     $imagen = $u['jue_imagen'];
     $categoria = $u['jue_categoria'];
-    
-    
+	$nota = $u['jue_nota'];
   ?>
 </head>
 
@@ -121,13 +120,14 @@
           <td class="c"><?php echo "$memoria" ?></td>
         </tr>
         <tr>
-          <td class="c" colspan=2>$<?php echo "$precio" ?></td>
+          <td class="c">$<?php echo "$precio" ?></td>
         </tr>
       </table>
       <div class="centrado">
-        <div class="like"><a href="#">👍</a></div>
+	 
+        <div class="like"><a href="../controladores/aumentar.php?codigo=<?php echo "$codigo" ?>">👍</a></div>
+		<div class="like" id="nota"><?php echo "$nota" ?></div>
         <div class="like"><a href="#">🛒</a></div>
-        <div class="like"><a href="#">👎</a></div>
       </div>
     </div>
   </section>
