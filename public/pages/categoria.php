@@ -22,7 +22,7 @@
         ?>
     </head>
     <body>
-        <header class="cabecera">
+    <header class="cabecera">
             <a href="index.html">
                 <div class="logo">
                     <img src="../images/logo.PNG">
@@ -35,28 +35,28 @@
                     <li>
                         <a href="index.html">Juegos</a>
                         <ul>
-                            <li><a href="#">Mejores</a></li>
-                            <li><a href="#">Novedades</a></li>
+                            <li><a href="mejores.php">Mejores</a></li>
+                            <li><a href="novedades.php">Novedades</a></li>
                             <li><a href="categorias.html">Categorías</a>
                                 <ul style="top: 113px">
-                                    <li><a href="categoria.php?codigo=1">Accion</a></li>
-                                    <li><a href="categoria.php?codigo=2">Terror</a></li>
-                                    <li><a href="categoria.php?codigo=3">Deporte</a></li>
-                                    <li><a href="categoria.php?codigo=4">Rol</a></li>
+                                    <li><a href="categoria.php?cat=1">Accion</a></li>
+                                    <li><a href="categoria.php?cat=2">Terror</a></li>
+                                    <li><a href="categoria.php?cat=3">Deporte</a></li>
+                                    <li><a href="categoria.php?cat=4">Rol</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="biblioteca.html">Ofertas</a>
+                        <a href="index.html">Ofertas</a>
                         <ul>
-                            <li><a href="#">Mejores</a></li>
-                            <li><a href="#">Mejor&nbsp;Puntuados</a></li>
-                            <li><a href="#">Free2Play</a></li>
+                            <li><a href="mejores.php">Mejores</a></li>
+                            <li><a href="puntaje.php">Mejor&nbsp;Puntuados</a></li>
+                            <li><a href="gratis.php">Free2Play</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="comunidad.html">About</a>
+                        <a href="about.html">About</a>
                         <ul>
                             <li><a href="#">Quienes&nbsp;Somos</a></li>
                             <li><a href="#">Contacto</a></li>
@@ -80,7 +80,7 @@
                 </ul>
             </div>
             <div class="cuenta">
-                <button class="boton"><a href="cuenta.html">Cuenta</a></button>
+                <button class="boton"><a href="../vista/login.html">Cuenta</a></button>
                 <button class="boton">Salir</button>
             </div>
         </header>

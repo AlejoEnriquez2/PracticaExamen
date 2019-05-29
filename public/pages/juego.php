@@ -7,7 +7,7 @@
   <link rel="shortcut icon" href="../images/icono.png">
   <link rel="stylesheet" href="../estilos/style.css" type="text/css">
   <link rel="stylesheet" href="../estilos/juegos.css" type="text/css">
-  
+
   <?php
     include '../../config/conexionBD.php';
     $codigo = $_GET['codigo'];
@@ -38,23 +38,32 @@
     </a>
     <div class="menu">
       <ul class="navegacion">
+
         <li>
-          <a href="tienda.html">Juegos</a>
+          <a href="index.html">Juegos</a>
           <ul>
-            <li><a href="#">Novedades</a></li>
-            <li><a href="#">Categorías</a></li>
+            <li><a href="mejores.php">Mejores</a></li>
+            <li><a href="novedades.php">Novedades</a></li>
+            <li><a href="categorias.html">Categorías</a>
+              <ul style="top: 113px">
+                <li><a href="categoria.php?cat=1">Accion</a></li>
+                <li><a href="categoria.php?cat=2">Terror</a></li>
+                <li><a href="categoria.php?cat=3">Deporte</a></li>
+                <li><a href="categoria.php?cat=4">Rol</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li>
-          <a href="biblioteca.html">Ofertas</a>
+          <a href="index.html">Ofertas</a>
           <ul>
-            <li><a href="#">Mejores&nbsp;Ofertas</a></li>
-            <li><a href="#">Mejor&nbsp;Puntuados</a></li>
-            <li><a href="#">Free2Play</a></li>
+            <li><a href="mejores.php">Mejores</a></li>
+            <li><a href="puntaje.php">Mejor&nbsp;Puntuados</a></li>
+            <li><a href="gratis.php">Free2Play</a></li>
           </ul>
         </li>
         <li>
-          <a href="comunidad.html">About</a>
+          <a href="about.html">About</a>
           <ul>
             <li><a href="#">Quienes&nbsp;Somos</a></li>
             <li><a href="#">Contacto</a></li>
@@ -62,14 +71,23 @@
         </li>
 
         <li><a href="carrito.html">Carrito</a></li>
+        <!--<li>
+                        <a href="perfil.html">Perfil</a>
+                        <ul>
+                            <li><a href="cuenta.html">Cuenta</a></li>
+                            <li><a href="#">Editar</a></li>
+                            <li><a href="#">Eliminar</a></li>
+                        </ul>
+                    </li>-->
         <li>
           <input class="busqueda" type="text" id="juego" value="">
           <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="">
+          <!--<img class="iB" src="../images/search.png">-->
         </li>
       </ul>
     </div>
     <div class="cuenta">
-      <button class="boton"><a href="cuenta.html">Cuenta</a></button>
+      <button class="boton"><a href="../vista/login.html">Cuenta</a></button>
       <button class="boton">Salir</button>
     </div>
   </header>
@@ -82,29 +100,29 @@
       <h1 class="p"><?php echo "$nombre" ?></h1>
       <p class="p"><?php echo "$descripcion" ?></p>
       <table>
-          <tr>
-            <th></th>
-            <th class="p">Minimo</th>
-          </tr>
-          <tr>
-            <td class="p">SO</td>
-            <td class="c"><?php echo "$sisOperativo" ?></td>
-          </tr>
-          <tr>
-            <td class="p">Procesador</td>
-            <td class="c"><?php echo "$procesador" ?></td>
-          </tr>
-          <tr>
-            <td class="p">Memoria</td>
-            <td class="c"><?php echo "$ram" ?></td>
-          </tr>
-          <tr>
-            <td class="p">Almacenamiento</td>
-            <td class="c"><?php echo "$memoria" ?></td>
-          </tr>
-          <tr>
-            <td class="c" colspan=2>$<?php echo "$precio" ?></td>
-          </tr>
+        <tr>
+          <th></th>
+          <th class="p">Minimo</th>
+        </tr>
+        <tr>
+          <td class="p">SO</td>
+          <td class="c"><?php echo "$sisOperativo" ?></td>
+        </tr>
+        <tr>
+          <td class="p">Procesador</td>
+          <td class="c"><?php echo "$procesador" ?></td>
+        </tr>
+        <tr>
+          <td class="p">Memoria</td>
+          <td class="c"><?php echo "$ram" ?></td>
+        </tr>
+        <tr>
+          <td class="p">Almacenamiento</td>
+          <td class="c"><?php echo "$memoria" ?></td>
+        </tr>
+        <tr>
+          <td class="c" colspan=2>$<?php echo "$precio" ?></td>
+        </tr>
       </table>
       <div class="centrado">
         <div class="like"><a href="#">👍</a></div>
