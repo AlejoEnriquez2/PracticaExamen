@@ -24,7 +24,7 @@
 
 			echo "$nombre";
 
-			$sql = "INSERT INTO `juegos`(`jue_codigo`, `jue_nombre`, `jue_descripcion`, `jue_imagen`, `jue_eliminado`, `jue_sistema_operativo`, `jue_memoria`, `jue_ram`, `jue_procesador`, `jue_precio`, `jue_fecha`, `jue_categoria`, `jue_descuento`) VALUES (0, '$nombre', '$descripcion', '$nombre_imagen', 0, '$sisOperativo', '$almacenamiento', '$ram', '$procesador', '$precio', CURRENT_TIMESTAMP, $categoria, $descuento)";
+			$sql = "INSERT INTO `juegos`(`jue_codigo`, `jue_nombre`, `jue_descripcion`, `jue_imagen`, `jue_eliminado`, `jue_sistema_operativo`, `jue_memoria`, `jue_ram`, `jue_procesador`, `jue_precio`, `jue_fecha`, `jue_categoria`, `jue_descuento`) VALUES (0, '$nombre', '$descripcion', '$nombre_imagen', 0, '$sisOperativo', '$almacenamiento', '$ram', '$procesador', '$precio', CURRENT_TIMESTAMP, $categoria, $descuento,0)";
 			if($conn->query($sql)===TRUE){
     			echo "<p>Se ha insertado correctamente</p>";
     		}else{
