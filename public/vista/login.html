@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ingresa</title>
+    <link rel="stylesheet" href="css/stylesLogin.css">
+    <link rel="stylesheet" href="css/stylesGeneral.css">
+</head>
+<body class="align">
+    <div class="grid">
+
+        <form action="../controladores/login.php" method="post" class="form login">
+    
+          <header class="login_cabezera">
+            <h3 class="login_titulo">Inicia Sesion</h3>
+          </header>
+    
+          <div class="login_centro">
+    
+            <div class="form__field">
+                <input type="email" placeholder="correo" name="user" value="@ups.edu.ec">
+            </div>
+    
+            <div class="form__field">
+                <input type="password" placeholder="password" name="password">
+            </div>
+    
+          </div>
+    
+          <footer class="login_ingresar">
+            <input type="submit" value="Iniciar">
+    
+            <p><span class="icon icon--info">?</span><a class="link" href="registro.html">Crear Usuario</a></p>
+          </footer>
+    
+        </form>
+    
+      </div>
+
+</body>
+</html>
+

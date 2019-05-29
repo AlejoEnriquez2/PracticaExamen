@@ -1,0 +1,50 @@
+.img {
+    float:left;
+    width: 27%;
+    margin: 30px;
+    background-color: rgba(128, 10, 10, 0.808);
+}
+
+.imagen {
+    width: 95%;
+    height: 80%
+    
+}
+
+.p {
+    color: rgb(209, 195, 202);
+}
+
+.c {
+    color: rgb(72, 255, 87);
+}
+
+td {
+    padding-right: 40px;
+}
+
+table, td, th {
+    border: 1px rgb(224, 162, 162) solid;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.like{
+    float: left;
+    margin: 30px;
+    font-size: 30px;
+}
+
+.centrado { 
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%
+}
+
+.info {
+    float:left; 
+    width: 60%
+}
