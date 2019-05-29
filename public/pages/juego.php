@@ -125,7 +125,7 @@
       </table>
       <div class="centrado">
 	 
-        <div class="like"><a href="aumentar.php?codigo=<?php echo "$codigo" ?>">👍</a></div>
+        <div class="like"><a href="../controladores/aumentar.php?codigo=<?php echo "$codigo" ?>">👍</a></div>
 		<div class="like" id="nota"><?php echo "$nota" ?></div>
         <div class="like"><a href="#">🛒</a></div>
       </div>

@@ -26,7 +26,7 @@
     			echo "<p>ERROR</p>";
     		}
     		$conn->close();
-    		header ("location: juego.php?codigo=$codigo");
+    		header ("location: ../pages/juego.php?codigo=$codigo");
 		?>
 	</body>
 </html>
