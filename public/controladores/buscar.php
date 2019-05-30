@@ -15,7 +15,7 @@
                 $imagen = $u['jue_imagen'];
 				
             ?>
-			<a href="../pages/juego.php?codigo=<?php echo '$codigo' ?>"><img width="50%" id="0" class="mySlides" src="../images/games/<?php echo "$imagen"?>"></a>
+			<a href="../pages/juego.php?codigo=<?php echo $codigo ?>"><img width="20%" id="0" class="mySlides" src="../images/games/<?php echo "$imagen"?>"></a>
 
     
     </body>
