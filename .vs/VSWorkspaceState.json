@@ -1,8 +1,13 @@
 {
   "ExpandedNodes": [
     "",
+    "\\config",
     "\\public",
-    "\\public\\pages"
+    "\\public\\controladores",
+    "\\public\\javascript",
+    "\\public\\pages",
+    "\\public\\vista"
   ],
+  "SelectedNode": "\\public\\pages\\mejores.php",
   "PreviewInSolutionExplorer": false
 }

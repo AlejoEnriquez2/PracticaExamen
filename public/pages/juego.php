@@ -92,7 +92,6 @@
     </div>
   </header>
   <section class="dos">
-  <center><div id="informacion">holaaaa</div></center>
     <div class="img">
       <img width="25%" class="imagen" src='../images/games/<?php echo "$imagen"?>'>
 

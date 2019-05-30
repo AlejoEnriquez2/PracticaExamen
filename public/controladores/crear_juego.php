@@ -20,15 +20,15 @@
 			$tamano_imagen = $_FILES['imagen']['size'];		//Tamaño
 			$ruta_imagen = $_FILES['imagen']['tmp_name'];		//Ruta
 			$carpeta_destino = "../images/games/".$nombre_imagen;
-			copy($ruta_imagen, $carpeta_destino);
+			
 
-			echo "$nombre";
 
-			$sql = "INSERT INTO `juegos`(`jue_codigo`, `jue_nombre`, `jue_descripcion`, `jue_imagen`, `jue_eliminado`, `jue_sistema_operativo`, `jue_memoria`, `jue_ram`, `jue_procesador`, `jue_precio`, `jue_fecha`, `jue_categoria`, `jue_descuento`) VALUES (0, '$nombre', '$descripcion', '$nombre_imagen', 0, '$sisOperativo', '$almacenamiento', '$ram', '$procesador', '$precio', CURRENT_TIMESTAMP, $categoria, $descuento,0)";
-			if($conn->query($sql)===TRUE){
+			$sql = "INSERT INTO `juegos`(`jue_codigo`, `jue_nombre`, `jue_descripcion`, `jue_imagen`, `jue_eliminado`, `jue_sistema_operativo`, `jue_memoria`, `jue_ram`, `jue_procesador`, `jue_precio`, `jue_fecha`, `jue_categoria`, `jue_descuento`, `jue_nota`) VALUES (0, '$nombre', '$descripcion', '$nombre_imagen', 0, '$sisOperativo', '$almacenamiento', '$ram', '$procesador', $precio, CURRENT_TIMESTAMP, $categoria, $descuento,0)";
+			if($conn->query($sql)==TRUE){
     			echo "<p>Se ha insertado correctamente</p>";
+				copy($ruta_imagen, $carpeta_destino);
     		}else{
-    			echo "<p>ERROR</p>";
+    			echo "<p>ERROR".$conn->error."</p>";
     		}
     		$conn->close();
     		echo "<a href='../pages/crear_juego.html'>Regresar</a>";
