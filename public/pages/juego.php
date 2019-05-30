@@ -7,6 +7,7 @@
   <link rel="shortcut icon" href="../images/icono.png">
   <link rel="stylesheet" href="../estilos/style.css" type="text/css">
   <link rel="stylesheet" href="../estilos/juegos.css" type="text/css">
+  <script type="text/javascript" src="../javascript/javascript.js"></script>
   <script type="text/javascript" src="../javascript/juego.js"></script>
   <?php
     include '../../config/conexionBD.php';
@@ -80,7 +81,7 @@
                     </li>-->
         <li>
           <input class="busqueda" type="text" id="juego" value="">
-          <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="">
+          <input class="boton" type="button" id="nombre" name="buscar" value="Buscar" onclick="buscar()">
           <!--<img class="iB" src="../images/search.png">-->
         </li>
       </ul>
@@ -91,6 +92,7 @@
     </div>
   </header>
   <section class="dos">
+  <center><div id="informacion">holaaaa</div></center>
     <div class="img">
       <img width="25%" class="imagen" src='../images/games/<?php echo "$imagen"?>'>
 
