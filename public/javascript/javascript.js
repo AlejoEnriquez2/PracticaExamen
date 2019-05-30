@@ -44,8 +44,7 @@ function mezclar(v) {
 }
 
     
-function buscar(){   
-	
+function buscar(){
     var nombre = document.getElementById("juego").value;
 	
     if (nombre == ""){
@@ -62,6 +61,7 @@ function buscar(){
                 document.getElementById("informacion").innerHTML=this.responseText;
             }
         };
+
         xmlhttp.open("GET", "../controladores/buscar.php?nombre="+nombre, true);
         xmlhttp.send();
     }
