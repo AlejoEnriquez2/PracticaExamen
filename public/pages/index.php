@@ -69,7 +69,7 @@
                     </li>-->
                 <li>
                     <input class="busqueda" type="text" id="juego" value="">
-                    <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="">
+                    <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
                     <!--<img class="iB" src="../images/search.png">-->
                 </li>
             </ul>

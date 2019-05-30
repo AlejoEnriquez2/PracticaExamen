@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Nuevo Usuario</title>
+		<title>Nuevo Juego</title>
 	</head>
 	<body>
 		<?php

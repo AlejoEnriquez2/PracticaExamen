@@ -61,7 +61,7 @@ function buscar(){
                 document.getElementById("informacion").innerHTML=this.responseText;
             }
         };
-
+		
         xmlhttp.open("GET", "../controladores/buscar.php?nombre="+nombre, true);
         xmlhttp.send();
     }
