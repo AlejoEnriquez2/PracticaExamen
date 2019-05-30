@@ -14,7 +14,7 @@
     <?php
     include '../../config/conexionBD.php';
     session_start();
-    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === TRUE){
         $codigo = $_GET["codigo"];
     }
     
@@ -78,7 +78,11 @@
         </div>
         <div class="cuenta">
             <?php
-                echo "<button class='boton'><a href=../../user/vista/perfil.php?codigo=".$codigo.">Cuenta</a></button>";
+                if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === TRUE){
+                    echo "<button class='boton'><a href=../../user/vista/perfil.php?codigo=".$codigo.">Cuenta</a></button>";
+                }else{
+                    echo "<button class='boton'><a href=../vista/login.html>Cuenta</a></button>";
+                }
                 //<button class="boton">Salir</button>
                 ?>
         </div>
