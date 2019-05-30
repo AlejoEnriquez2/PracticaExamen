@@ -4,6 +4,8 @@
 
     include '../../config/conexionBD.php';
 
+	
+
     $usuario = isset($_POST["user"]) ? trim($_POST["user"]) : null;
 
     $contrasena = isset($_POST["password"]) ? trim($_POST["password"]) : null;
