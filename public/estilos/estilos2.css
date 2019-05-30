@@ -1,0 +1,100 @@
+*{
+	background-color: rgb(0, 24, 102);
+	margin: 3px;
+	padding: 3px;
+}
+
+h1{
+    color:darkslateblue;
+    font-family:sans-serif;
+    font-size: 35px; 
+	text-align: left;
+}
+
+h1, body, div, table, tr, td, form {
+	background-color: gainsboro;
+}
+
+textarea{
+		background-color:aliceblue;
+}
+
+body{
+	
+	border-style: solid;
+	border-radius: 20px;
+	border-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+ul, ol {
+	list-style: none;
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+.nav li a {
+	text-decoration: none;
+	display: block;
+	text-align: left;
+	margin: 0px;
+	padding: 0px;
+}
+
+.nav li a:hover {
+	background-color: darkgrey;
+}
+.nav > li {
+	float: left;
+}
+
+.nav li ul {
+	display: none;
+	position: absolute;
+	min-width: 140px;
+}
+
+.nav li:hover > ul{
+	display: block;
+}
+
+input#button{
+    width: 80;
+    height: 80;
+    font-size: 20px;
+    margin: 2;
+    cursor: pointer;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    border-radius: 8px;
+    background-color: aliceblue;
+	
+	-webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#button:hover{
+    background-color: aqua;
+    color:aliceblue;
+	cursor: pointer;
+    transform: scale(1.1,1.1);
+}
+
+
+
+input#textview{
+    width: 600px;
+    height: 80px;
+    font-size: 15px;
+    border-style: solid;
+    border-width: thin;
+    border-color: black;
+    border-radius: 8px;
+    color:darkslategrey;
+}
