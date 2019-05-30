@@ -14,7 +14,7 @@
 	</head>
 	
 	<body>
-		<?php $codigo = $_GET['codigo']; ?>
+		<?php $codigo = $_GET['usu_codigo']; ?>
 		
 		<h1>CONTÁCTANOS</h1>
 		<form method="post" action="pagina2.php">
