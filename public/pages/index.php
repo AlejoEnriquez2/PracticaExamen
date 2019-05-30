@@ -54,7 +54,12 @@
                     <a>About</a>
                     <ul>
                         <li><a href="about.html">Quienes&nbsp;Somos</a></li>
-                        <li><a href="contacto.php">Contacto</a></li>
+						<?php
+                		if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === TRUE){
+                        	echo "<a href=contacto.php?codigo=".$codigo.">Contacto</a>";
+						}else{
+							echo "<a href=../vista/login.html=".$codigo.">Contacto</a>";
+                		}
                     </ul>
                 </li>
 
@@ -78,7 +83,6 @@
             <?php
                 if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === TRUE){
                     echo "<button class='boton'><a href=../../user/vista/perfil.php?codigo=".$codigo.">Cuenta</a></button>";
-					echo "<a href=contacto.php?codigo=".$codigo.">Contacto</a>";
                 }else{
                     echo "<button class='boton'><a href=../vista/login.html>Cuenta</a></button>";
                 }
