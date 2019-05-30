@@ -6,7 +6,7 @@
         <link rel="shortcut icon" href="../images/icono.png">
         <link rel="stylesheet" href="../estilos/style.css" type="text/css">
         <script type="text/javascript" src="../javascript/javascript.js"></script>
-        <?php
+         <?php
             include '../../config/conexionBD.php';
             $cat = $_GET['cat'];
             $datos = "SELECT * FROM juegos WHERE jue_categoria = '$cat'";

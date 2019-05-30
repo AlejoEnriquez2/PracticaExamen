@@ -11,6 +11,11 @@
 </head>
 
 <body>
+    <?php
+    include '../../config/conexionBD.php';
+    session_start();
+    $codigo = $_GET['codigo'];
+   ?>
     <header class="cabecera">
         <a href="index.p">
             <div class="logo">
@@ -69,7 +74,14 @@
             </ul>
         </div>
         <div class="cuenta">
-            <button class='boton'><a href=../vista/login.html>Cuenta </a> 
+            <?php
+                if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === TRUE){
+                    echo "<button class='boton'><a href=../../user/vista/perfil.php?codigo=".$codigo.">Cuenta</a></button>";
+                }else{
+                    echo "<button class='boton'><a href=../vista/login.html>Cuenta</a></button>";
+                }
+                //<button class="boton">Salir</button>
+                ?>
         </div>
     </header>
     <section class="dos">
