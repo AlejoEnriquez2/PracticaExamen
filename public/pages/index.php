@@ -56,7 +56,6 @@
                         <li><a href="about.html">Quienes&nbsp;Somos</a></li>
 						<?php
                 		if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === TRUE){
-                    		echo "<button class='boton'><a href=../../user/vista/perfil.php?codigo=".$codigo.">Cuenta</a></button>";
 							echo "<li><a href=contacto.php?codigo=".$codigo.">Contacto</a></li>";
                 		}else{
                     		echo "<li><a href=../vista/login.html>Contacto</a></li>";
