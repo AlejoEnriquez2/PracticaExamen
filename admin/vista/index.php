@@ -1,4 +1,9 @@
-
+<?php
+    session_start();
+    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+        header("Location: PracticaExamen/public/vista/login.html");
+    }
+?>
 <!DOCTYPE html>
 <html>
     <?php
