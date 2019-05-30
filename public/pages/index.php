@@ -51,10 +51,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a>About</a>
                     <ul>
-                        <li><a href="#">Quienes&nbsp;Somos</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="about.html">Quienes&nbsp;Somos</a></li>
+                        <li><a href="contacto.php">Contacto</a></li>
                     </ul>
                 </li>
 
