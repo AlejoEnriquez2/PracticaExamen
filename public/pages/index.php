@@ -1,59 +1,5 @@
 <!DOCTYPE html>
 <html>
-    <head>
-		<title>MadGames</title>
-        <meta charset="utf-8">
-        <link rel="shortcut icon" href="../images/icono.png">
-        <link rel="stylesheet" href="../estilos/style.css" type="text/css">
-        <script type="text/javascript" src="../javascript/javascript.js"></script>
-		<?php
-			
-		?>
-    </head>
-    <body>
-        <header class="cabecera">
-            <a href="index.html">
-                <div class="logo">
-                    <img src="../images/logo.PNG">
-                    <h2>MadGames</h2>
-                </div>
-            </a>
-            <div class="menu">
-                <ul class="navegacion">
-                    <li>
-                        <a href="index.html">Juegos</a>
-                        <ul>
-                            <li><a href="mejores.php">Mejores</a></li>
-                            <li><a href="novedades.php">Novedades</a></li>
-                            <li><a href="categorias.html">Categorías</a>
-                                <ul style="top: 113px">
-                                    <li><a href="categoria.php?cat=1">Accion</a></li>
-                                    <li><a href="categoria.php?cat=2">Terror</a></li>
-                                    <li><a href="categoria.php?cat=3">Deporte</a></li>
-                                    <li><a href="categoria.php?cat=4">Rol</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="index.html">Ofertas</a>
-                        <ul>
-                            <li><a href="mejores.php">Mejores</a></li>
-                            <li><a href="puntaje.php">Mejor&nbsp;Puntuados</a></li>
-                            <li><a href="gratis.php">Free2Play</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a>About</a>
-                        <ul>
-                            <li><a href="about.html">Quienes&nbsp;Somos</a></li>
-                            <li><a href="contacto.html">Contacto</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li><a href="carrito.html">Carrito</a></li>
-                    <!--<li>
-=======
 
 <head>
     <title>Sistema de Gestión de Personas</title>
@@ -65,6 +11,14 @@
 </head>
 
 <body>
+
+    <?php
+    include '../../config/conexionBD.php';
+    session_start();
+    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
+        header("Location: index.html");
+    }
+   ?>
     <header class="cabecera">
         <a href="index.p">
             <div class="logo">
@@ -108,7 +62,6 @@
 
                 <li><a href="carrito.html">Carrito</a></li>
                 <!--<li>
->>>>>>> dc693387536ba283a46f9214b50959578527d380
                         <a href="perfil.html">Perfil</a>
                         <ul>
                             <li><a href="cuenta.html">Cuenta</a></li>
@@ -118,13 +71,20 @@
                     </li>-->
                 <li>
                     <input class="busqueda" type="text" id="juego" value="">
-                    <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
+                    <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="">
                     <!--<img class="iB" src="../images/search.png">-->
                 </li>
             </ul>
         </div>
         <div class="cuenta">
-            <button class='boton'><a href=../vista/login.html>Cuenta </a> 
+            <?php
+                if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === TRUE){
+                    echo "<button class='boton'><a href=../../user/vista/perfil.php?codigo=".$codigo.">Cuenta</a></button>";
+                }else{
+                    echo "<button class='boton'><a href=../vista/login.html>Cuenta</a></button>";
+                }
+                //<button class="boton">Salir</button>
+                ?>
         </div>
     </header>
     <section class="dos">

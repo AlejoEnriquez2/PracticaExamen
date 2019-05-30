@@ -23,7 +23,7 @@
     </head>
     <body>
     <header class="cabecera">
-            <a href="index.html">
+            <a href="index.php">
                 <div class="logo">
                     <img src="../images/logo.PNG">
                     <h2>MadGames</h2>
@@ -107,8 +107,6 @@
                             echo "<div class='divs'><a href='juego.php?codigo=".$u['jue_codigo']."'><img width='25%' src='../images/games/".$u['jue_imagen']."'></a></div>";
                         }
                     }
-                    
-
                 ?>
                 
             </div>
