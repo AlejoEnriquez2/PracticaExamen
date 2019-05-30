@@ -26,7 +26,7 @@
 			
 			<tr>
 				<td>From:</td>
-				<td colspan="2"><textarea name="remite" id="remite" rows="1" cols="100" id="textview" type="text" value="<?php echo buscarCorreo($codigo) ?>" ></textarea></td>
+				<td colspan="2"><textarea name="remite" id="remite" rows="1" cols="100" id="textview" type="text" value="<?php echo buscarCorreo($codigo) ?>" disabled></textarea></td>
 			</tr>
 			
 			<tr>
