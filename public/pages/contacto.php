@@ -16,7 +16,7 @@
 	<body>
 		<?php
             include '../../config/conexionBD.php';
-            $codigo = $_GET['usu_codigo'];
+            $codigo = $_GET['codigo'];
         ?>
 		
 		<h1>CONTÁCTANOS</h1>
