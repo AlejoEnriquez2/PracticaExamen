@@ -19,6 +19,7 @@
         echo "No existen usuarios registrados en el sistema";
     }
     echo $codigo_destino;
+	echo $sql1;
 
     $sql1 = "INSERT INTO correo VALUES (0, '$codigo', '2', '$asunto', '$mensaje', null, 'N', null, null);";
     if ($conn->query($sql1)==FALSE){
