@@ -14,9 +14,7 @@
     <?php
     include '../../config/conexionBD.php';
     session_start();
-    if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
-        header("Location: index.html");
-    }
+    $codigo = $_GET['codigo'];
    ?>
     <header class="cabecera">
         <a href="index.p">
