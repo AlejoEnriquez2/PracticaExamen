@@ -14,7 +14,10 @@
 	</head>
 	
 	<body>
-		<?php $codigo = $_GET['usu_codigo']; ?>
+		<?php
+            include '../../config/conexionBD.php';
+            $codigo = $_GET['codigo'];
+        ?>
 		
 		<h1>CONTÁCTANOS</h1>
 		<form method="post" action="pagina2.php">
