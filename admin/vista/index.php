@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
     <?php
-        include '../../config/conexionBD.php';
+        include 'PracticaExamen/config/conexionBD.php';
         $codigo_admin = $_GET['codigo_admin'];
     ?>
     <head>
@@ -45,7 +45,7 @@
                         <th>Accion</th>
                     </tr>
                     <?php
-                        include '../../config/conexionBD.php';
+                        include 'PracticaExamen/config/conexionBD.php';
 
 
                         $sql = "SELECT * FROM correo ORDER BY cor_fecha_envio";
@@ -68,7 +68,7 @@
                         }
 
                         function buscarCorreo($codigoCorreo){
-                            include '../../config/conexionBD.php';
+                            include 'PracticaExamen/config/conexionBD.php';
                             $sql1 = "SELECT usu_correo FROM usuarios WHERE usu_codigo='$codigoCorreo'";
                             $result = $conn->query($sql1);
                             if($result->num_rows > 0){
