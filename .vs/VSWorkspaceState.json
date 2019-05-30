@@ -6,8 +6,8 @@
     "\\public\\controladores",
     "\\public\\javascript",
     "\\public\\pages",
-    "\\public\\vista"
+    "\\user"
   ],
-  "SelectedNode": "\\public\\pages\\mejores.php",
+  "SelectedNode": "\\public\\javascript\\javascript.js",
   "PreviewInSolutionExplorer": false
 }
