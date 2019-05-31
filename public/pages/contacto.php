@@ -15,7 +15,10 @@
 	</head>
 	
 	<body>
-		<?php $codigo = $_GET['codigo']; ?>
+		<?php
+            include '../../config/conexionBD.php';
+            $codigo = $_GET['codigo'];
+        ?>
 		
 		<h1>CONTÁCTANOS</h1>
 		<form method="post" action="pagina2.php">
@@ -24,16 +27,16 @@
 			
 			<tr>
 				<td>From:</td>
-				<td colspan="2"><textarea name="remite" id="remite" rows="1" cols="100" id="textview" type="text" value="<?php echo buscarCorreo($codigo) ?>" ></textarea></td>
+				<td colspan="2"><textarea name="remite" id="remite" rows="1" cols="100" id="textview" type="text" value="<?php echo buscarCorreo($codigo) ?>" required></textarea></td>
 			</tr>
 			
 			<tr>
 				<td>Asunto:</td>
-				<td colspan="2"><textarea name="asunto" id="asunto" rows="2" cols="100" id="textview" type="text"></textarea></td>
+				<td colspan="2"><textarea name="asunto" id="asunto" rows="2" cols="100" id="textview" type="text" required></textarea></td>
 			</tr>
 							
 			<tr>
-				<td colspan="2"><textarea name="mensaje" id="mensaje" rows="10" cols="114" id="textview" type="text"></textarea></td>
+				<td colspan="2"><textarea name="mensaje" id="mensaje" rows="10" cols="114" id="textview" type="text" required></textarea></td>
 			</tr>
 			
 			<tfoot>

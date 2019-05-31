@@ -4,6 +4,8 @@
 
     include '../../config/conexionBD.php';
 
+	
+
     $usuario = isset($_POST["user"]) ? trim($_POST["user"]) : null;
 
     $contrasena = isset($_POST["password"]) ? trim($_POST["password"]) : null;
@@ -31,14 +33,16 @@
         
         if($row_1["rol"] == 1){
             $_SESSION['isLogged'] = TRUE;
-            header("Location: ../../vista/admin/vista/index.php?codigo=".$row_1["id"]);    
-        }else{
+            header("Location: /PracticaExamen/admin/vista/index.php?codigo=".$row_1["id"]);    
+        }
+		
+		if($row_1["rol"] == 2){
             $_SESSION['isLogged'] = TRUE;
             header("Location: ../pages/index.php?codigo=".$row_1["id"]);
         }
         
     }else{
-        header("Location: ../vista/login.html");
+        header("Location: ../vista/blanco.php");
     }
 
     $conn->close();

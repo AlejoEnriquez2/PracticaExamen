@@ -51,10 +51,18 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="about.html">About</a>
+                    <a>About</a>
                     <ul>
-                        <li><a href="#">Quienes&nbsp;Somos</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li><a href="about.html">Quienes&nbsp;Somos</a></li>
+						<?php
+                		if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === TRUE){
+							echo "<li><a href=contacto.php?codigo=".$codigo.">Contacto</a></li>";
+                		}else{
+                    		echo "<li><a href=../vista/login.html>Contacto</a></li>";
+                		}
+                		?>
+						
+                        
                     </ul>
                 </li>
 
