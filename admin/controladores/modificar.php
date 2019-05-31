@@ -8,7 +8,7 @@
         <form class="box">
         <?php
             //Incluir conexion a la base de datos
-            include '/PracticaExamen/config/conexionBD.php';
+            include '../../config/conexionBD.php';
             $codigo_admin = $_GET["codigo_admin"];
 
             $codigo = $_POST["codigo"];
