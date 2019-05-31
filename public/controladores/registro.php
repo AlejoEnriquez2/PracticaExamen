@@ -42,7 +42,7 @@
     
         fclose($archivo_objetivo);
     
-        $sql = "INSERT INTO usuarios VALUES (0,'$cedula','$nombres','$apellidos','$correo',MD5('$contrasena'),'0.0','$fechaNacimiento','$contenido','$tipo_archivo','N','$fecha',null,2)";
+        $sql = "INSERT INTO usuarios VALUES (0,'$cedula','$nombres','$apellidos','$correo',MD5('$contrasena'),'0.0','$fechaNacimiento','$contenido','$tipo_archivo','N','$fecha',null,1)";
             
         if($conn->query($sql) === TRUE) {
             echo "<p>Se ha creado los datos personales correctamemte!!!</p>";
