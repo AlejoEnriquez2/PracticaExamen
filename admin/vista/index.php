@@ -6,6 +6,8 @@
     </head>
 <body>
 
+<h3>Usuarios Registrados</h3>
+
  <table style="width:100%">
     <tr>
         <th>Cedula</th>
@@ -62,15 +64,16 @@ contraseña</a> </td>";
        $result1 = $conn->query($sql);
                         
 
-       if ($result1->num_rows > 0){
-          while($row = $result1->fetch_assoc()){
-          if($row["cor_eliminado"]!='S'){
+if ($result1->num_rows > 0){
+		   
+while($row1 = $result1->fetch_assoc()){
+	
+          if($row1["cor_eliminado"]!='S'){
                                     echo "<tr>";
-                                    echo "<td>" .$row["cor_fecha_envio"]."</td>";
-                                    echo "<td>".buscarCorreo($row["cor_usu_remite"])."</td>";
-                                    echo "<td>".buscarCorreo($row["cor_usu_destino"])."</td>";
-                                    echo "<td>" .$row["cor_asunto"]."</td>";
-                                    echo "<td class='accion'><a href='eliminar_mensaje.php?codigo_mensaje=".$row['cor_codigo']."&codigo_admin=".$codigo_admin."'>Eliminar</a></td>";
+                                    echo "<td>" .$row1["cor_fecha_envio"]."</td>";
+                                    echo "<td>".buscarCorreo($row1["cor_usu_remite"])."</td>";
+                                    echo "<td>".buscarCorreo($row1["cor_usu_destino"])."</td>";
+                                    echo "<td>" .$row1["cor_asunto"]."</td>";
                                 }
                             }
                         }else{
@@ -80,9 +83,9 @@ contraseña</a> </td>";
                         function buscarCorreo($codigoCorreo){
                             include '../../config/conexionBD.php';
                             $sql1 = "SELECT usu_correo FROM usuarios WHERE usu_codigo='$codigoCorreo'";
-                            $result = $conn->query($sql1);
-                            if($result->num_rows > 0){
-                                while($row = $result->fetch_assoc()){
+                            $result1 = $conn->query($sql1);
+                            if($result1->num_rows > 0){
+                                while($row1 = $result1->fetch_assoc()){
                                     $direccionCorreo=$row["usu_correo"];
                                 }
                             }
