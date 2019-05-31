@@ -6,10 +6,16 @@
         <link rel="shortcut icon" href="../images/icono.png">
         <link rel="stylesheet" href="../estilos/style.css" type="text/css">
         <script type="text/javascript" src="../javascript/javascript.js"></script>
+		<?php
+			include '../../config/conexionBD.php';
+			$sql= "SELECT * FROM juegos WHERE jue_eliminado = '0'";
+			$result = $conn->query($sql);
+			
+		?>
     </head>
     <body>
         <header class="cabecera">
-            <a href="index.html">
+            <a href="index.php">
                 <div class="logo">
                     <img src="../images/logo.PNG">
                     <h2>MadGames</h2>
@@ -18,11 +24,11 @@
             <div class="menu">
                 <ul class="navegacion">
                     <li>
-                        <a href="index.html">Juegos</a>
+                        <a href="index.php">Juegos</a>
                         <ul>
-                            <li><a href="mejores.php">Mejores</a></li>
+                            <li><a href="puntaje.php">Mejores</a></li>
                             <li><a href="novedades.php">Novedades</a></li>
-                            <li><a href="categorias.html">CategorÃ­as</a>
+                            <li><a href="#">Categorías</a>
                                 <ul style="top: 113px">
                                     <li><a href="categoria.php?cat=1">Accion</a></li>
                                     <li><a href="categoria.php?cat=2">Terror</a></li>
@@ -75,20 +81,19 @@
         </center>
         <div class="col2">
             <h1>JUEGOS</h1>
-            <div id="div1" class="divs"><a href="juego.php?codigo=1"><img src="../images/games/1.jpg"></a></div>
-            <div id="div2" class="divs"><a href="juego.php?codigo=2"><img src="../images/games/2.jpg"></a></div>
-            <div id="div3" class="divs"><a href="juego.php?codigo=3"><img src="../images/games/3.jpg"></a></div>
-            <div id="div4" class="divs"><a href="juego.php?codigo=4"><img src="../images/games/4.jpg"></a></div>
-            <div id="div5" class="divs"><a href="juego.php?codigo=5"><img src="../images/games/5.jpg"></a></div>
-            <div id="div6" class="divs"><a href="juego.php?codigo=6"><img src="../images/games/6.jpg"></a></div>
-            <div id="div7" class="divs"><a href="juego.php?codigo=7"><img src="../images/games/7.jpg"></a></div>
-            <div id="div8" class="divs"><a href="juego.php?codigo=8"><img src="../images/games/8.jpg"></a></div>
+			<?php
+				if($result->num_rows > 0){
+					while (($u = $result->fetch_assoc())){
+					echo "<div class='divs'><a href='juego.php?codigo=".$u['jue_codigo']."'><img width='25%' src='../images/games/".$u['jue_imagen']."'></a><h3 style='color: white'></h3></div>";
+					}
+				}
+			?>
         </div>
 
     </section>
     <footer class="pie">
-        <h2>Universidad PolitÃ©cnica Salesiana</h2>
-        <h4>Desarrollado por: <em> &#8226; David Cornejo &#8226; Alejandro EnrÃ­quez &#8226; Paulo Gonzalez &#8226; Angel
+        <h2>Universidad Politécnica Salesiana</h2>
+        <h4>Desarrollado por: <em> &#8226; David Cornejo &#8226; Alejandro Enríquez &#8226; Paulo Gonzalez &#8226; Angel
                 Ruiz &#8226; Evelyn Pintado</em></h4>
         <h6> <sub>&#169;</sub> <em> Todos los derechos reservados</em></h6>
     </footer>

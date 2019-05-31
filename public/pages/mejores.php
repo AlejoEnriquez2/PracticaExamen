@@ -12,7 +12,7 @@
     </head>
     <body>
         <header class="cabecera">
-            <a href="index.html">
+            <a href="index.php">
                 <div class="logo">
                     <img src="../images/logo.PNG">
                     <h2>MadGames</h2>
@@ -21,11 +21,11 @@
             <div class="menu">
                 <ul class="navegacion">
                     <li>
-                        <a href="index.html">Juegos</a>
+                        <a href="index.php">Juegos</a>
                         <ul>
                             <li><a href="mejores.php">Mejores</a></li>
                             <li><a href="novedades.php">Novedades</a></li>
-                            <li><a href="categorias.html">Categorías</a>
+                            <li><a href="#">Categorías</a>
                                 <ul style="top: 113px">
                                     <li><a href="categoria.php?cat=1">Accion</a></li>
                                     <li><a href="categoria.php?cat=2">Terror</a></li>
@@ -87,7 +87,7 @@
                 <h1>Mejores Descuentos</h1>
 				<?php
 					include '../../config/conexionBD.php';
-					$sql = "SELECT * FROM juegos ORDER BY jue_descuento DESC LIMIT 4";
+					$sql = "SELECT * FROM juegos WHERE jue_eliminado = 0 ORDER BY jue_descuento DESC LIMIT 4";
 					$result = $conn->query($sql);
                     if($result->num_rows > 0){
                         while (($u = $result->fetch_assoc())){

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Sistema de Gestión de Personas</title>
+  <title>MadGames</title>
   <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
   <link rel="shortcut icon" href="../images/icono.png">
   <link rel="stylesheet" href="../estilos/style.css" type="text/css">
@@ -31,7 +31,7 @@
 
 <body>
   <header class="cabecera">
-    <a href="index.html">
+    <a href="index.php">
       <div class="logo">
         <img src="../images/logo.PNG">
         <h2>MadGames</h2>
@@ -41,11 +41,11 @@
       <ul class="navegacion">
 
         <li>
-          <a href="index.html">Juegos</a>
+          <a href="index.php">Juegos</a>
           <ul>
-            <li><a href="mejores.php">Mejores</a></li>
+            <li><a href="puntaje.php">Mejores</a></li>
             <li><a href="novedades.php">Novedades</a></li>
-            <li><a href="categorias.html">Categorías</a>
+            <li><a href="#">Categorías</a>
               <ul style="top: 113px">
                 <li><a href="categoria.php?cat=1">Accion</a></li>
                 <li><a href="categoria.php?cat=2">Terror</a></li>
@@ -124,6 +124,7 @@
 		<div class="like" id="nota"><?php echo "$nota" ?></div>
         <div class="like"><a href="#">🛒</a></div>
 		<a href="editar_juego.php?codigo=<?php echo $codigo?>">Editar</a>
+		<a href="../controladores/eliminar.php?codigo=<?php echo $codigo?>">Eliminar</a>
       </div>
     </div>
   </section>

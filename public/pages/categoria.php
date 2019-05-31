@@ -9,7 +9,7 @@
         <?php
             include '../../config/conexionBD.php';
             $cat = $_GET['cat'];
-            $datos = "SELECT * FROM juegos WHERE jue_categoria = '$cat'";
+            $datos = "SELECT * FROM juegos WHERE jue_categoria = '$cat' and jue_eliminado = 0";
             if ($cat == 1){
                 $categoria = 'Accion';
             }else if ($cat == 2){
@@ -33,11 +33,11 @@
                 <ul class="navegacion">
                     
                     <li>
-                        <a href="index.html">Juegos</a>
+                        <a href="index.php">Juegos</a>
                         <ul>
                             <li><a href="mejores.php">Mejores</a></li>
                             <li><a href="novedades.php">Novedades</a></li>
-                            <li><a href="categorias.html">Categorías</a>
+                            <li><a href="#">Categorías</a>
                                 <ul style="top: 113px">
                                     <li><a href="categoria.php?cat=1">Accion</a></li>
                                     <li><a href="categoria.php?cat=2">Terror</a></li>

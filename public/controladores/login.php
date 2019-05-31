@@ -38,11 +38,11 @@
 		
 		if($row_1["rol"] == 2){
             $_SESSION['isLogged'] = TRUE;
-            header("Location: ../pages/index.php?codigo=".$row_1["id"]);
+            header("Location: ../vista/cuenta.php?codigo=".$row_1["id"]);
         }
         
     }else{
-        header("Location: ../vista/blanco.php");
+        header("Location: ../pages/index.php");
     }
 
     $conn->close();

@@ -22,8 +22,9 @@
 			$carpeta_destino = "../images/games/".$nombre_imagen;
 			
 
-
-			$sql = "INSERT INTO `juegos`(`jue_codigo`, `jue_nombre`, `jue_descripcion`, `jue_imagen`, `jue_eliminado`, `jue_sistema_operativo`, `jue_memoria`, `jue_ram`, `jue_procesador`, `jue_precio`, `jue_fecha`, `jue_categoria`, `jue_descuento`, `jue_nota`) VALUES (0, '$nombre', '$descripcion', '$nombre_imagen', 0, '$sisOperativo', '$almacenamiento', '$ram', '$procesador', $precio, CURRENT_TIMESTAMP, $categoria, $descuento,0)";
+			date_default_timezone_set("America/Guayaquil");
+            $fecha = date('Y-m-d H:i:s', time());
+			$sql = "INSERT INTO `juegos`(`jue_codigo`, `jue_nombre`, `jue_descripcion`, `jue_imagen`, `jue_eliminado`, `jue_sistema_operativo`, `jue_memoria`, `jue_ram`, `jue_procesador`, `jue_precio`, `jue_fecha`, `jue_categoria`, `jue_descuento`, `jue_nota`) VALUES (0, '$nombre', '$descripcion', '$nombre_imagen', 0, '$sisOperativo', '$almacenamiento', '$ram', '$procesador', $precio, $fecha, $categoria, $descuento,0)";
 			if($conn->query($sql)==TRUE){
     			echo "<p>Se ha insertado correctamente</p>";
 				copy($ruta_imagen, $carpeta_destino);
