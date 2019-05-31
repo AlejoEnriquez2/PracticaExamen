@@ -55,6 +55,8 @@ contraseña</a> </td>";
        <th>Remite</th>
        <th>Destinatario</th>
        <th>Asunto</th>
+	   <th>Mensaje</th>
+	   
    </tr>
 	
    <?php
@@ -74,6 +76,7 @@ echo "<td>" .$row["cor_fecha_envio"]."</td>";
 echo "<td>".buscarCorreo($row["cor_usu_remite"])."</td>";
 echo "<td>".buscarCorreo($row["cor_usu_destino"])."</td>";
 echo "<td>" .$row["cor_asunto"]."</td>";
+echo "<td>" .$row["cor_mensaje"]."</td>";
 }
 }
 }else{
@@ -88,7 +91,7 @@ function buscarCorreo($codigoCorreo){
 	$result = $conn->query($sql);
 	if($result->num_rows > 0){
 		while($row = $result->fetch_assoc()){
-			$direccionCorreo=$row["usu_correo"];
+			$direccionCorreo = $row["usu_correo"];
 		}
 	}
 	return $direccionCorreo;
