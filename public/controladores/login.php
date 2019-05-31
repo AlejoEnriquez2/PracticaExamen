@@ -19,8 +19,6 @@
 
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
-    
-
         
         $sql_1 ="SELECT usu_rol_id as rol,
                         usu_codigo as id
@@ -40,6 +38,8 @@
             $_SESSION['isLogged'] = TRUE;
             header("Location: ../pages/index.php?codigo=".$row_1["id"]);
         }
+        
+echo $row["login"];
 
     $conn->close();
     
