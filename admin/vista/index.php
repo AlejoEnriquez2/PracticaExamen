@@ -49,7 +49,7 @@ contraseña</a> </td>";
 	
 <h3>Mensajes Electronicos</h3>
 	
-<table id="buzon">
+<table id="buzon" style="width:100%">
    <tr>
        <th>Fecha</th>
        <th>Remite</th>
