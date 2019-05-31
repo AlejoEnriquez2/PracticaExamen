@@ -45,28 +45,26 @@ contraseña</a> </td>";
  ?>
  </table>
 	
-        <section class="mensajes">
-            <h3>Mensajes Electronicos</h3>
-            <form class="form_mensajes">
-                <table id="buzon">
-                    <tr>
-                        <th>Fecha</th>
-                        <th>Remite</th>
-                        <th>Destinatario</th>
-                        <th>Asunto</th>
-                        <th>Accion</th>
-                    </tr>
-                    <?php
-                        include '../../config/conexionBD.php';
-
-
-                        $sql = "SELECT * FROM correo ORDER BY cor_fecha_envio";
-                        $result = $conn->query($sql);
+<h3>Mensajes Electronicos</h3>
+	
+<table id="buzon">
+   <tr>
+       <th>Fecha</th>
+       <th>Remite</th>
+       <th>Destinatario</th>
+       <th>Asunto</th>
+       <th>Accion</th>
+   </tr>
+	
+   <?php
+       include '../../config/conexionBD.php';
+       $sql1 = "SELECT * FROM correo";
+       $result1 = $conn->query($sql);
                         
 
-                        if ($result->num_rows > 0){
-                            while($row = $result->fetch_assoc()){
-                                if($row["cor_eliminado"]!='S'){
+       if ($result1->num_rows > 0){
+          while($row = $result1->fetch_assoc()){
+          if($row["cor_eliminado"]!='S'){
                                     echo "<tr>";
                                     echo "<td>" .$row["cor_fecha_envio"]."</td>";
                                     echo "<td>".buscarCorreo($row["cor_usu_remite"])."</td>";
@@ -96,7 +94,5 @@ contraseña</a> </td>";
                         $conn->close();
                     ?>
                 </table>
-            </form>
-        </section>
 </body>
 </html>
