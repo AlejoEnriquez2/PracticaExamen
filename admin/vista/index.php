@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <link rel="shortcut icon" href="../../public/images/icono.png">
         <link rel="stylesheet" href="../../public/estilos/style.css" type="text/css">
+		<link rel="stylesheet" href="/PracticaExamen/public/estilos/juegos.css" type="text/css">
         <script type="text/javascript" src="../javascript/javascript.js"></script>
 		<?php
 			include '../../config/conexionBD.php';
@@ -66,6 +67,7 @@
         </div>
     </header>
 	<section class="dos" style="color: white">
+		
 	 <table style="width:100%">
 		<tr>
 			<th>Cedula</th>
@@ -78,7 +80,7 @@
      
 	 <?php
 	 include '../../config/conexionBD.php';
-	 $sql = "SELECT * FROM usuarios";
+	 $sql = "SELECT * FROM usuarios WHERE usu_eliminado='N'";
 	 $result = $conn->query($sql);
 
 	 if ($result->num_rows > 0) {
@@ -90,9 +92,21 @@
 	 echo " <td>" . $row['usu_apellidos'] . "</td>";
 	 echo " <td>" . $row['usu_correo'] . "</td>";
 	 echo " <td>" . $row['usu_fecha_nac'] . "</td>";
+<<<<<<< HEAD
+<<<<<<< HEAD
 	 echo " <td> <a href='/PracticaExamen/public/controladores/eliminar.php?codigo=" . $row['usu_codigo'] . "'>Eliminar</a> </td>";
-	 echo " <td> <a href='/PracticaExamen/public/pages/editar_juego.php?codigo=" . $row['usu_codigo'] . "'>Modificar</a> </td>";
+	 echo " <td> <a href='/PracticaExamen/public/controladores/modificar.php?codigo=" . $row['usu_codigo'] . "'>Modificar</a> </td>";
 	 echo " <td> <a href='cambiar_contrasena.php?codigo=" . $row['usu_codigo'] . "'>Cambiar
+=======
+	 echo " <td> <a style='color:white' href='/PracticaExamen/public/controladores/eliminar.php?codigo=" . $row['usu_codigo'] . "'>Eliminar</a> </td>";
+	 echo " <td> <a style='color:white' href='/PracticaExamen/public/pages/editar_juego.php?codigo=" . $row['usu_codigo'] . "'>Modificar</a> </td>";
+	 echo " <td> <a style='color:white' href='cambiar_contrasena.php?codigo=" . $row['usu_codigo'] . "'>Cambiar
+>>>>>>> 4db8083909511ec7a3db1bc13e2c6c5cd5589a5e
+=======
+	 echo " <td> <a style='color:white' href='/PracticaExamen/public/controladores/eliminar.php?codigo=" . $row['usu_codigo'] . "'>Eliminar</a> </td>";
+	 echo " <td> <a style='color:white' href='/PracticaExamen/public/pages/editar_juego.php?codigo=" . $row['usu_codigo'] . "'>Modificar</a> </td>";
+	 echo " <td> <a style='color:white' href='cambiar_contrasena.php?codigo=" . $row['usu_codigo'] . "'>Cambiar
+>>>>>>> 4db8083909511ec7a3db1bc13e2c6c5cd5589a5e
 	contraseña</a> </td>";
 	 echo "</tr>";
 	}
@@ -118,7 +132,7 @@
      
 	 <?php
 	 include '../../config/conexionBD.php';
-	 $sql = "SELECT * FROM juegos";
+	 $sql = "SELECT * FROM juegos WHERE jue_eliminado = 0";
 	 $result = $conn->query($sql);
 
 	 if ($result->num_rows > 0) {
@@ -129,8 +143,8 @@
 	 echo " <td>" . $row['jue_imagen'] . "</td>";
 	 echo " <td>" . $row['jue_precio'] . "</td>";
 	 echo " <td>" . $row['jue_fecha'] . "</td>";
-	 echo " <td> <a href='/PracticaExamen/public/controladores/eliminar.php?codigo=" . $row['jue_codigo'] . "'>Eliminar</a> </td>";
-	 echo " <td> <a href='/PracticaExamen/public/pages/editar_juego.php?codigo=" . $row['jue_codigo'] . "'>Modificar</a> </td>";
+	 echo " <td> <a style='color:white' href='/PracticaExamen/public/controladores/eliminar.php?codigo=" . $row['jue_codigo'] . "'>Eliminar</a> </td>";
+	 echo " <td> <a style='color:white' href='/PracticaExamen/public/pages/editar_juego.php?codigo=" . $row['jue_codigo'] . "'>Modificar</a> </td>";
 	 echo "</tr>";
 	}
 		} else {

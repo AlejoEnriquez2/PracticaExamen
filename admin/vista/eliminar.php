@@ -16,7 +16,7 @@
             $codigo = $_GET["codigo"];
             $sql = "SELECT * FROM usuarios WHERE usu_codigo=$codigo";
 
-            include '../../config/conexionBD.php';
+            include '/PracticaExamen/config/conexionBD.php';
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0){
@@ -33,12 +33,6 @@
                         <br>
                         <label class="elimina" for="apellidos">Apellidos (*)</label>
                         <input type="text" id="apellidos" name="apellidos" value="<?php echo $row["usu_apellidos"];?>" disabled>
-                        <br>
-                        <label class="elimina" for="direccion">Direccion (*)</label>
-                        <input type="text" id="direccion" name="direccion" value="<?php echo $row["usu_direccion"];?>" disabled>
-                        <br>
-                        <label class="elimina" for="telefono">Telefono (*)</label>
-                        <input type="text" id="telefono" name="telefono" value="<?php echo $row["usu_telefono"];?>" disabled>
                         <br>
                         <label class="elimina" for="fechaNacimiento">Fecha Nacimiento (*)</label>
                         <input type="date" id="fechaNacimiento" name="fechaNacimiento" value="<?php echo $row["usu_fecha_nacimiento"];?>" disabled>
