@@ -138,4 +138,5 @@ function buscarCorreo($codigoCorreo){
 	}
 	return $direccionCorreo;
 }
+$conn->close();
 ?>
