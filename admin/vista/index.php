@@ -108,8 +108,8 @@ while($row = $result->fetch_assoc()) {
 while($row = $result->fetch_assoc()) {
  echo "<tr>";
  echo " <td>" . $row["cor_fecha_envio"] . "</td>";
- echo " <td>" . $row['cor_usu_remite'] ."</td>";
- echo " <td>" . $row['cor_usu_destino'] . "</td>";
+ echo "<td>".buscarCorreo($row["cor_usu_remite"])."</td>";
+ echo "<td>".buscarCorreo($row["cor_usu_destino"])."</td>";
  echo " <td>" . $row['cor_asunto'] . "</td>";
  echo " <td>" . $row['cor_mensaje'] . "</td>";
  echo "</tr>";
@@ -122,7 +122,20 @@ while($row = $result->fetch_assoc()) {
  $conn->close();
  ?>
  </table>
-	
-	
 </body>
 </html>
+
+<?php
+
+function buscarCorreo($codigoCorreo){
+	include '../../config/conexionBD.php';
+	$sql1 = "SELECT usu_correo FROM usuarios WHERE usu_codigo='$codigoCorreo'";
+	$result = $conn->query($sql1);
+	if($result->num_rows > 0){
+		while($row = $result->fetch_assoc()){
+			$direccionCorreo=$row["usu_correo"];
+		}
+	}
+	return $direccionCorreo;
+}
+<?>
