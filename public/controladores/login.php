@@ -19,6 +19,8 @@
 
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
+    
+    if ($row["login"] == 1) {
         
         $sql_1 ="SELECT usu_rol_id as rol,
                         usu_codigo as id
@@ -39,7 +41,9 @@
             header("Location: ../pages/index.php?codigo=".$row_1["id"]);
         }
         
-echo $row["login"];
+    }else{
+        header("Location: ../vista/blanco.php");
+    }
 
     $conn->close();
     
