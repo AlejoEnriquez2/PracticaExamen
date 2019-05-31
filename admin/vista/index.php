@@ -73,8 +73,8 @@ while($row = $result->fetch_assoc()) {
  echo " <td>" . $row['jue_imagen'] . "</td>";
  echo " <td>" . $row['jue_precio'] . "</td>";
  echo " <td>" . $row['jue_fecha'] . "</td>";
- echo " <td> <a href='eliminar.php?codigo=" . $row['usu_codigo'] . "'>Eliminar</a> </td>";
- echo " <td> <a href='modificar.php?codigo=" . $row['usu_codigo'] . "'>Modificar</a> </td>";
+ echo " <td> <a href='eliminar.php?codigo=" . $row['jue_codigo'] . "'>Eliminar</a> </td>";
+ echo " <td> <a href='modificar.php?codigo=" . $row['jue_codigo'] . "'>Modificar</a> </td>";
  echo "</tr>";
 }
     } else {
