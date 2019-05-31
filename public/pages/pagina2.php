@@ -21,7 +21,7 @@
     echo $codigo_destino;
 	
 
-    $sql1 = "INSERT INTO correo VALUES (0, '$codigo', '2', '$asunto', '$mensaje', null, 'N', null, null);";
+    $sql1 = "INSERT INTO correo VALUES (0, '$codigo', '2', '$asunto', '$mensaje', '$fecha', 'N', null, null);";
 	echo $sql1;
     if ($conn->query($sql1)==FALSE){
         echo"<p class='error'>Error: " .mysqli_error($conn)."</p>";
