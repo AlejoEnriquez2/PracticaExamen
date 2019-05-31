@@ -15,7 +15,7 @@
 	
 	<body>
 		<?php
-            include 'PracticaExamen/config/conexionBD.php';
+            include '../../config/conexionBD.php';
             $codigo = $_GET['codigo'];
         ?>
 		
@@ -52,7 +52,7 @@
 
 <?php
     function buscarCorreo($codigoCorreo){
-        include 'PracticaExamen/config/conexionBD.php';
+        include '../../config/conexionBD.php';
         $sql1 = "SELECT usu_correo FROM usuarios WHERE usu_codigo='$codigoCorreo'";
         $result = $conn->query($sql1);
         if($result->num_rows > 0){
