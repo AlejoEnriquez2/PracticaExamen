@@ -92,23 +92,6 @@
 	 echo " <td>" . $row['usu_apellidos'] . "</td>";
 	 echo " <td>" . $row['usu_correo'] . "</td>";
 	 echo " <td>" . $row['usu_fecha_nac'] . "</td>";
-<<<<<<< HEAD
-<<<<<<< HEAD
-	 echo " <td> <a href='/PracticaExamen/public/controladores/eliminar.php?codigo=" . $row['usu_codigo'] . "'>Eliminar</a> </td>";
-	 echo " <td> <a href='/PracticaExamen/public/controladores/modificar.php?codigo=" . $row['usu_codigo'] . "'>Modificar</a> </td>";
-	 echo " <td> <a href='cambiar_contrasena.php?codigo=" . $row['usu_codigo'] . "'>Cambiar
-=======
-	 echo " <td> <a style='color:white' href='/PracticaExamen/public/controladores/eliminar.php?codigo=" . $row['usu_codigo'] . "'>Eliminar</a> </td>";
-	 echo " <td> <a style='color:white' href='/PracticaExamen/public/pages/editar_juego.php?codigo=" . $row['usu_codigo'] . "'>Modificar</a> </td>";
-	 echo " <td> <a style='color:white' href='cambiar_contrasena.php?codigo=" . $row['usu_codigo'] . "'>Cambiar
->>>>>>> 4db8083909511ec7a3db1bc13e2c6c5cd5589a5e
-=======
-	 echo " <td> <a style='color:white' href='/PracticaExamen/public/controladores/eliminar.php?codigo=" . $row['usu_codigo'] . "'>Eliminar</a> </td>";
-	 echo " <td> <a style='color:white' href='/PracticaExamen/public/pages/editar_juego.php?codigo=" . $row['usu_codigo'] . "'>Modificar</a> </td>";
-	 echo " <td> <a style='color:white' href='cambiar_contrasena.php?codigo=" . $row['usu_codigo'] . "'>Cambiar
->>>>>>> 4db8083909511ec7a3db1bc13e2c6c5cd5589a5e
-	contraseña</a> </td>";
-	 echo "</tr>";
 	}
 		} else {
 		echo "<tr>";
