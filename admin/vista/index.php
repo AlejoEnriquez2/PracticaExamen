@@ -55,7 +55,6 @@ contraseña</a> </td>";
        <th>Remite</th>
        <th>Destinatario</th>
        <th>Asunto</th>
-       <th>Accion</th>
    </tr>
 	
    <?php
