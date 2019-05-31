@@ -40,7 +40,7 @@
         }
         
     }else{
-        header("Location: ../vista/login.html");
+        header("Location: ../vista/blanco.html");
     }
 
     $conn->close();
