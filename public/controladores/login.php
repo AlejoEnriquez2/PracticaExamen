@@ -40,7 +40,7 @@
         }
         
     }else{
-        header("Location: ../vista/blanco.html");
+        header("Location: ../vista/blanco.php".$row_1["rol"]);
     }
 
     $conn->close();
