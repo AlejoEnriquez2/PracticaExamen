@@ -20,7 +20,7 @@
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     
-    if ($row["login"] == 1) {
+    if ($row["login"] > 1) {
         
         $sql_1 ="SELECT usu_rol_id as rol,
                         usu_codigo as id
