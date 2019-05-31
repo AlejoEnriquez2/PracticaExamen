@@ -11,6 +11,7 @@
 		<title>Contactanos</title>
 		<!-- ESTILOS -->
         <link href="../estilos/estilos2.css" rel="stylesheet" />
+		<meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
 	</head>
 	
 	<body>

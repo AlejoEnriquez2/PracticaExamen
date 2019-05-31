@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
 		<title>Free2Play</title>
-        <meta charset="utf-8">
+        <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
         <link rel="shortcut icon" href="../images/icono.png">
         <link rel="stylesheet" href="../estilos/style.css" type="text/css">
         <script type="text/javascript" src="../javascript/javascript.js"></script>
@@ -25,7 +25,7 @@
                         <ul>
                             <li><a href="mejores.php">Mejores&nbsp;Puntuaciones</a></li>
                             <li><a href="novedades.php">Novedades</a></li>
-                            <li><a href="categorias.html">Categor�as</a>
+                            <li><a href="categorias.html">Categorías</a>
                                 <ul style="top: 113px">
                                     <li><a href="categoria.php?cat=1">Accion</a></li>
                                     <li><a href="categoria.php?cat=2">Terror</a></li>
@@ -100,8 +100,8 @@
             
         </section>
         <footer class="pie">
-            <h2>Universidad Polit�cnica Salesiana</h2>
-            <h4>Desarrollado por: <em> &#8226; David Cornejo &#8226; Alejandro Enr�quez &#8226; Paulo Gonzalez &#8226; Angel Ruiz &#8226; Evelyn Pintado</em></h4>
+            <h2>Universidad Politécnica Salesiana</h2>
+            <h4>Desarrollado por: <em> &#8226; David Cornejo &#8226; Alejandro Enríquez &#8226; Paulo Gonzalez &#8226; Angel Ruiz &#8226; Evelyn Pintado</em></h4>
             <h6> <sub>&#169;</sub> <em> Todos los derechos reservados</em></h6>
         </footer>
     </body>

@@ -2,7 +2,7 @@
 <html>
     <head>
 		<title>Sistema de Gestión de Personas</title>
-        <meta charset="utf-8">
+        <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
         <link rel="shortcut icon" href="../images/icono.png">
         <link rel="stylesheet" href="../estilos/style.css" type="text/css">
         <script type="text/javascript" src="../javascript/javascript.js"></script>
@@ -51,15 +51,14 @@
                         <a href="index.html">Ofertas</a>
                         <ul>
                             <li><a href="mejores.php">Mejores</a></li>
-                            <li><a href="puntaje.php">Mejor&nbsp;Puntuados</a></li>
                             <li><a href="gratis.php">Free2Play</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="about.html">About</a>
                         <ul>
-                            <li><a href="#">Quienes&nbsp;Somos</a></li>
-                            <li><a href="#">Contacto</a></li>
+                            <li><a href="about.html">Quienes&nbsp;Somos</a></li>
+                            <li><a href="contacto.php">Contacto</a></li>
                         </ul>
                     </li>
                     
@@ -74,7 +73,7 @@
                     </li>-->
                     <li>
                         <input class="busqueda" type="text" id="juego" value="">
-                        <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="">
+                        <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
                         <!--<img class="iB" src="../images/search.png">-->
                     </li>
                 </ul>
@@ -85,7 +84,7 @@
             </div>
         </header>
         <section class="dos">
-            <center><div>
+            <center><div id="informacion">
                 <a href="index.html"><img width="25%" class="mySlides" src="../images/icono.png"></a>
                 <a href="index.html"><img width="50%" id="0" class="mySlides" src=""></a>
                 <a href="index.html"><img width="50%" id="1" class="mySlides" src=""></a>

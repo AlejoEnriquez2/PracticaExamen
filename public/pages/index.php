@@ -3,7 +3,7 @@
 
 <head>
     <title>Sistema de Gestión de Personas</title>
-    <meta charset="utf-8">
+    <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
     <link rel="shortcut icon" href="../images/icono.png">
     <link rel="stylesheet" href="../estilos/style.css" type="text/css">
     <script type="text/javascript" src="../javascript/javascript.js"></script>
@@ -59,14 +59,6 @@
                 </li>
 
                 <li><a href="carrito.html">Carrito</a></li>
-                <!--<li>
-                        <a href="perfil.html">Perfil</a>
-                        <ul>
-                            <li><a href="cuenta.html">Cuenta</a></li>
-                            <li><a href="#">Editar</a></li>
-                            <li><a href="#">Eliminar</a></li>
-                        </ul>
-                    </li>-->
                 <li>
                     <input class="busqueda" type="text" id="juego" value="">
                     <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">

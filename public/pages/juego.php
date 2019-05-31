@@ -3,7 +3,7 @@
 
 <head>
   <title>Sistema de Gestión de Personas</title>
-  <meta charset="utf-8">
+  <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
   <link rel="shortcut icon" href="../images/icono.png">
   <link rel="stylesheet" href="../estilos/style.css" type="text/css">
   <link rel="stylesheet" href="../estilos/juegos.css" type="text/css">
@@ -25,6 +25,7 @@
     $imagen = $u['jue_imagen'];
     $categoria = $u['jue_categoria'];
 	$nota = $u['jue_nota'];
+	$descuento = $u['jue_descuento'];
   ?>
 </head>
 
@@ -57,28 +58,19 @@
         <li>
           <a href="index.html">Ofertas</a>
           <ul>
-            <li><a href="mejores.php">Mejores</a></li>
-            <li><a href="puntaje.php">Mejor&nbsp;Puntuados</a></li>
-            <li><a href="gratis.php">Free2Play</a></li>
+			<li><a href="mejores.php">Mejores</a></li>
+			<li><a href="gratis.php">Free2Play</a></li>
           </ul>
         </li>
         <li>
           <a href="about.html">About</a>
           <ul>
-            <li><a href="#">Quienes&nbsp;Somos</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="about.html">Quienes&nbsp;Somos</a></li>
+			<li><a href="contacto.php">Contacto</a></li>
           </ul>
         </li>
 
         <li><a href="carrito.html">Carrito</a></li>
-        <!--<li>
-                        <a href="perfil.html">Perfil</a>
-                        <ul>
-                            <li><a href="cuenta.html">Cuenta</a></li>
-                            <li><a href="#">Editar</a></li>
-                            <li><a href="#">Eliminar</a></li>
-                        </ul>
-                    </li>-->
         <li>
           <input class="busqueda" type="text" id="juego" value="">
           <input class="boton" type="button" id="nombre" name="buscar" value="Buscar" onclick="buscar()">
@@ -92,7 +84,7 @@
     </div>
   </header>
   <section class="dos">
-  <center><div id="informacion"></div><center>
+  <center><div id="informacion"></div></center>
     <div class="img">
       <img width="25%" class="imagen" src='../images/games/<?php echo "$imagen"?>'>
 
@@ -123,6 +115,7 @@
         </tr>
         <tr>
           <td class="c">$<?php echo "$precio" ?></td>
+		  <td class="c"><?php echo "$descuento"?>%</td>
         </tr>
       </table>
       <div class="centrado">
@@ -130,6 +123,7 @@
         <div class="like"><a href="../controladores/aumentar.php?codigo=<?php echo "$codigo" ?>">👍</a></div>
 		<div class="like" id="nota"><?php echo "$nota" ?></div>
         <div class="like"><a href="#">🛒</a></div>
+		<a href="editar_juego.php?codigo=<?php echo $codigo?>">Editar</a>
       </div>
     </div>
   </section>

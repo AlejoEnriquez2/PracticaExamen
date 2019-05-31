@@ -2,12 +2,28 @@
 <html>
 
 <head>
-  <title>Crear Juego</title>
+  <title>Editar Juego</title>
   <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
   <link rel="shortcut icon" href="../images/icono.png">
   <link rel="stylesheet" href="../estilos/style.css" type="text/css">
   <link rel="stylesheet" href="../estilos/juegos.css" type="text/css">
-
+  <?php
+			include '../../config/conexionBD.php';
+					$codigo = $_GET['codigo'];
+					$sql = "SELECT * FROM juegos WHERE jue_codigo= '$codigo'";
+					$result = $conn->query($sql);
+                    $u = $result->fetch_assoc();
+					$nombre = $u['jue_nombre'];
+					$descripcion =$u['jue_descripcion'];
+					$sisOperativo = $u['jue_sistema_operativo'];
+					$procesador = $u['jue_procesador'];
+					$ram = $u['jue_ram'];
+					$almacenamiento = $u['jue_memoria'];
+					$precio = $u['jue_precio'];
+					$categoria = $u['jue_categoria'];
+					$descuento = $u['jue_descuento'];		
+					
+		?>
  
 </head>
 
@@ -41,7 +57,6 @@
           <a href="index.html">Ofertas</a>
           <ul>
             <li><a href="mejores.php">Mejores</a></li>
-            <li><a href="puntaje.php">Mejor&nbsp;Puntuados</a></li>
             <li><a href="gratis.php">Free2Play</a></li>
           </ul>
         </li>
@@ -77,35 +92,36 @@
   </header>
   <section class="dos">
     <div>
-      <form method="POST" action="../controladores/crear_juego.php" enctype="multipart/form-data">
+      <form method="POST" action="../controladores/editar_juego.php?codigo=<?php echo $codigo?>" enctype="multipart/form-data">
 		<table>
+		
 			<tr>
 				<td class="p"><label for="nombre">Nombre del Juego</label></td>
-				<td><input type="text" name="nombre"></input></td>
+				<td><input type="text" name="nombre" value="<?php echo $nombre?>"></input></td>
 			</tr>
 			<tr>
 				<td class="p"><label for="descripcion">Descripcion</label></td>
-				<td><textarea type="text" name="descripcion"></textarea></td>
+				<td><textarea type="text" name="descripcion"><?php echo $descripcion?></textarea></td>
 			</tr>
 			<tr>
 				<td class="p"><label for="sisOperativo">Sistema Operativo</label></td>
-				<td><input type="text" name="sisOperativo"></input></td>
+				<td><input type="text" name="sisOperativo" value="<?php echo $sisOperativo?>"></input></td>
 			</tr>
 			<tr>
 				<td class="p"><label for="procesador">Procesador</label></td>
-				<td><input type="text" name="procesador"></input></td>
+				<td><input type="text" name="procesador" value="<?php echo $procesador?>"></input></td>
 			</tr>
 			<tr>
 				<td class="p"><label for="ram">Memoria Ram</label></td>
-				<td><input type="text" name="ram"></input></td>
+				<td><input type="text" name="ram" value="<?php echo $ram?>"></input></td>
 			</tr>
 			<tr>
 				<td class="p"><label for="almacenamiento">Almacenamiento</label></td>
-				<td><input type="text" name="almacenamiento"></input></td>
+				<td><input type="text" name="almacenamiento" value="<?php echo $almacenamiento?>"></input></td>
 			</tr>
 			<tr>
 				<td class="p"><label for="precio">Precio</label></td>
-				<td><input type="text" name="precio"></input></td>
+				<td><input type="text" name="precio" value="<?php echo $precio?>"></input></td>
 			</tr>
 			<tr>
 				<td class="p"><label for="categoria">Categoria</label></td>
@@ -120,7 +136,7 @@
 			</tr>
 			<tr>
 				<td class="p"><label for="descuento">Descuento</label></td>
-				<td><input type="text" name="descuento"></input></td>
+				<td><input type="text" name="descuento"  value="<?php echo $descuento?>"></input></td>
 			</tr>
 			<tr>
 				<td><label class="p" for="imagen">Agregar Imagen</label></td>

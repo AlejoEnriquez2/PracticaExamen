@@ -1,14 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     <head>
 		<title>Nuevos</title>
-        <meta charset="utf-8">
+        <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
         <link rel="shortcut icon" href="../images/icono.png">
         <link rel="stylesheet" href="../estilos/style.css" type="text/css">
         <script type="text/javascript" src="../javascript/javascript.js"></script>
-		<?php
-			
-		?>
     </head>
     <body>
         <header class="cabecera">
@@ -25,7 +22,7 @@
                         <ul>
                             <li><a href="mejores.php">Mejores</a></li>
                             <li><a href="novedades.php">Novedades</a></li>
-                            <li><a href="categorias.html">Categor�as</a>
+                            <li><a href="categorias.html">Categorías</a>
                                 <ul style="top: 113px">
                                     <li><a href="categoria.php?cat=1">Accion</a></li>
                                     <li><a href="categoria.php?cat=2">Terror</a></li>
@@ -39,7 +36,6 @@
                         <a href="index.html">Ofertas</a>
                         <ul>
                             <li><a href="mejores.php">Mejores</a></li>
-                            <li><a href="puntaje.php">Mejor&nbsp;Puntuados</a></li>
                             <li><a href="gratis.php">Free2Play</a></li>
                         </ul>
                     </li>
@@ -52,14 +48,6 @@
                     </li>
                     
                     <li><a href="carrito.html">Carrito</a></li>
-                    <!--<li>
-                        <a href="perfil.html">Perfil</a>
-                        <ul>
-                            <li><a href="cuenta.html">Cuenta</a></li>
-                            <li><a href="#">Editar</a></li>
-                            <li><a href="#">Eliminar</a></li>
-                        </ul>
-                    </li>-->
                     <li>
                         <input class="busqueda" type="text" id="juego" value="">
                         <input class="boton" type="button" id="nombre" name="buscar" value="Buscar" onclick="buscar()">
@@ -85,14 +73,14 @@
 			    <button id="der" onclick="plusDivs(+1)">Siguiente</button>
             </div></center>
             <div class="col2">
-                <h1>Mejores Puntuados</h1>
+                <h1>Recien Agregados</h1>
 				<?php
 					include '../../config/conexionBD.php';
-					$sql = "SELECT * FROM juegos ORDER BY jue_fecha ASC LIMIT 8";
+					$sql = "SELECT * FROM juegos ORDER BY jue_fecha DESC LIMIT 4";
 					$result = $conn->query($sql);
                     if($result->num_rows > 0){
                         while (($u = $result->fetch_assoc())){
-                            echo "<div class='divs'><a href='juego.php?codigo=".$u['jue_codigo']."'><img width='25%' src='../images/games/".$u['jue_imagen']."'></a><h3 style='color: white'>".$u['jue_nota']."</h3></div>";
+                            echo "<div class='divs'><a href='juego.php?codigo=".$u['jue_codigo']."'><img width='25%' src='../images/games/".$u['jue_imagen']."'></a><h3 style='color: white'>".$u['jue_fecha']."</h3></div>";
                         }
                     }
 
@@ -101,8 +89,8 @@
             
         </section>
         <footer class="pie">
-            <h2>Universidad Polit�cnica Salesiana</h2>
-            <h4>Desarrollado por: <em> &#8226; David Cornejo &#8226; Alejandro Enr�quez &#8226; Paulo Gonzalez &#8226; Angel Ruiz &#8226; Evelyn Pintado</em></h4>
+            <h2>Universidad Politécnica Salesiana</h2>
+            <h4>Desarrollado por: <em> &#8226; David Cornejo &#8226; Alejandro Enríquez &#8226; Paulo Gonzalez &#8226; Angel Ruiz &#8226; Evelyn Pintado</em></h4>
             <h6> <sub>&#169;</sub> <em> Todos los derechos reservados</em></h6>
         </footer>
     </body>
