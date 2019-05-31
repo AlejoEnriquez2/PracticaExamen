@@ -20,7 +20,7 @@
     $result = $conn->query($sql);
     $row = $result->fetch_assoc();
     
-    if ($row["login"] == 2) {
+
         
         $sql_1 ="SELECT usu_rol_id as rol,
                         usu_codigo as id
@@ -40,10 +40,6 @@
             $_SESSION['isLogged'] = TRUE;
             header("Location: ../pages/index.php?codigo=".$row_1["id"]);
         }
-        
-    }else{
-        header("Location: ../vista/blanco.php".$row_1["rol"]);
-    }
 
     $conn->close();
     
