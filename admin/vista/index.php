@@ -108,8 +108,8 @@ while($row = $result->fetch_assoc()) {
 while($row = $result->fetch_assoc()) {
  echo "<tr>";
  echo " <td>" . $row["cor_fecha_envio"] . "</td>";
- echo "<td>". $row["cor_usu_remite"]."</td>";
- echo "<td>". $row["cor_usu_destino"]."</td>";
+ echo " <td>" . $row['cor_usu_remite'] ."</td>";
+ echo " <td>" . $row['cor_usu_destino'] . "</td>";
  echo " <td>" . $row['cor_asunto'] . "</td>";
  echo " <td>" . $row['cor_mensaje'] . "</td>";
  echo "</tr>";
@@ -124,3 +124,4 @@ while($row = $result->fetch_assoc()) {
  </table>
 </body>
 </html>
+
