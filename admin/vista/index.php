@@ -47,62 +47,6 @@ contraseña</a> </td>";
  ?>
  </table>
 	
-<h3>Mensajes Electronicos</h3>
-	
-<table id="buzon" style="width:100%">
-   <tr>
-       <th>Fecha</th>
-       <th>Remite</th>
-       <th>Destinatario</th>
-       <th>Asunto</th>
-	   <th>Mensaje</th>
-	   
-   </tr>
-	
-   <?php
-       include '../../config/conexionBD.php';
-       $sql = "SELECT * FROM correo";
-       $result = $conn->query($sql);
-                        
-
-if ($result->num_rows > 0){
-		   
-while($row = $result->fetch_assoc()){
-	
-if($row["cor_eliminado"]!='S'){
-	
-echo "<tr>";
-echo "<td>" .$row["cor_fecha_envio"]."</td>";
-echo "<td>".buscarCorreo($row["cor_usu_remite"])."</td>";
-echo "<td>".buscarCorreo($row["cor_usu_destino"])."</td>";
-echo "<td>" .$row["cor_asunto"]."</td>";
-echo "<td>" .$row["cor_mensaje"]."</td>";
-}
-}
-}else{
-echo "<td colspan=4>No hay mensajes electronicos</td>";
-}
-	
-
-function buscarCorreo($codigoCorreo){
-	
-	include '../../config/conexionBD.php';
-	$sql = "SELECT usu_correo FROM usuarios WHERE usu_codigo='$codigoCorreo'";
-	$result = $conn->query($sql);
-	if($result->num_rows > 0){
-		while($row = $result->fetch_assoc()){
-			$direccionCorreo = $row["usu_correo"];
-		}
-	}
-	return $direccionCorreo;
-}
-
-                        
-
-$conn->close();
-?>
-</table>
-	
 <h3>Juegos Registrados</h3>
 	
 <table style="width:100%">
