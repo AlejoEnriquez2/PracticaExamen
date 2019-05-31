@@ -31,7 +31,7 @@
         $result_1 = $conn->query($sql_1);
         $row_1 = $result_1 ->fetch_assoc();
         
-        if($row_1["rol"] == '1'){
+        if($row_1["rol"] == 2){
             $_SESSION['isLogged'] = TRUE;
             header("Location: /PracticaExamen/admin/vista/index.php?codigo=".$row_1["id"]);    
         }else{
