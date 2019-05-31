@@ -59,21 +59,21 @@ contraseña</a> </td>";
 	
    <?php
        include '../../config/conexionBD.php';
-       $sql1 = "SELECT * FROM correo";
-       $result1 = $conn->query($sql1);
+       $sql = "SELECT * FROM correo";
+       $result = $conn->query($sql);
                         
 
-if ($result1->num_rows > 0){
+if ($result->num_rows > 0){
 		   
-while($row1 = $result1->fetch_assoc()){
+while($row = $result->fetch_assoc()){
 	
-if($row1["cor_eliminado"]!='S'){
+if($row["cor_eliminado"]!='S'){
 	
 echo "<tr>";
-echo "<td>" .$row1["cor_fecha_envio"]."</td>";
-echo "<td>".buscarCorreo($row1["cor_usu_remite"])."</td>";
-echo "<td>".buscarCorreo($row1["cor_usu_destino"])."</td>";
-echo "<td>" .$row1["cor_asunto"]."</td>";
+echo "<td>" .$row["cor_fecha_envio"]."</td>";
+echo "<td>".buscarCorreo($row["cor_usu_remite"])."</td>";
+echo "<td>".buscarCorreo($row["cor_usu_destino"])."</td>";
+echo "<td>" .$row["cor_asunto"]."</td>";
 }
 }
 }else{
@@ -84,11 +84,11 @@ echo "<td colspan=4>No hay mensajes electronicos</td>";
 function buscarCorreo($codigoCorreo){
 	
 	include '../../config/conexionBD.php';
-	$sql1 = "SELECT usu_correo FROM usuarios WHERE usu_codigo='$codigoCorreo'";
-	$result1 = $conn->query($sql1);
-	if($result1->num_rows > 0){
-		while($row1 = $result1->fetch_assoc()){
-			$direccionCorreo=$row1["usu_correo"];
+	$sql = "SELECT usu_correo FROM usuarios WHERE usu_codigo='$codigoCorreo'";
+	$result = $conn->query($sql);
+	if($result->num_rows > 0){
+		while($row = $result->fetch_assoc()){
+			$direccionCorreo=$row["usu_correo"];
 		}
 	}
 	return $direccionCorreo;
