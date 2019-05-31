@@ -33,7 +33,7 @@
         
         if($row_1["rol"] == 1){
             $_SESSION['isLogged'] = TRUE;
-            header("Location: PracticaExamen/admin/vista/index.php?codigo=".$row_1["id"]);    
+            header("Location: ../admin/vista/index.php?codigo=".$row_1["id"]);    
         }else{
             $_SESSION['isLogged'] = TRUE;
             header("Location: ../pages/index.php?codigo=".$row_1["id"]);
