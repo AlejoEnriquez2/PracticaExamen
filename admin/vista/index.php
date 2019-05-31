@@ -11,8 +11,6 @@
         <th>Cedula</th>
         <th>Nombres</th>
         <th>Apellidos</th>
-        <th>Dirección</th>
-        <th>Telefono</th>
         <th>Correo</th>
         <th>Fecha Nacimiento</th>
     </tr>
@@ -30,10 +28,8 @@ while($row = $result->fetch_assoc()) {
  echo " <td>" . $row["usu_cedula"] . "</td>";
  echo " <td>" . $row['usu_nombres'] ."</td>";
  echo " <td>" . $row['usu_apellidos'] . "</td>";
- echo " <td>" . $row['usu_direccion'] . "</td>";
- echo " <td>" . $row['usu_telefono'] . "</td>";
  echo " <td>" . $row['usu_correo'] . "</td>";
- echo " <td>" . $row['usu_fecha_nacimiento'] . "</td>";
+ echo " <td>" . $row['usu_fecha_nac'] . "</td>";
  echo " <td> <a href='eliminar.php?codigo=" . $row['usu_codigo'] . "'>Eliminar</a> </td>";
  echo " <td> <a href='modificar.php?codigo=" . $row['usu_codigo'] . "'>Modificar</a> </td>";
  echo " <td> <a href='cambiar_contrasena.php?codigo=" . $row['usu_codigo'] . "'>Cambiar
