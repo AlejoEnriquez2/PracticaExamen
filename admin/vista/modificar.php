@@ -16,7 +16,7 @@
             $codigo = $_GET["codigo"];
             $sql = "SELECT * FROM usuarios where usu_codigo=$codigo";
 
-            include '/PracticaExamen/config/conexionBD.php';
+            include 'PracticaExamen/config/conexionBD.php';
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0){
