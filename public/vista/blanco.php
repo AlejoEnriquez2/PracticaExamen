@@ -1,4 +1,4 @@
     <?php
         include '../../config/conexionBD.php';
-        $codigo_admin = $_GET['codigo_admin'];
+        $codigo_admin = $_GET['rol'];
     ?>
