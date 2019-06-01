@@ -58,7 +58,7 @@
                         <a>About</a>
                         <ul>
                             <li><a href="about.html">Quienes&nbsp;Somos</a></li>
-                            <li><a href="contacto.php">Contacto</a></li>
+                            <li><a href="contacto.php?codigo=<?php echo $codigo ?>">Contacto</a></li>
                         </ul>
                     </li>
                     
