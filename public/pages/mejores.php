@@ -2,17 +2,18 @@
 <html>
     <head>
 		<title>Mejores Descuentos</title>
-        <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
-        <link rel="shortcut icon" href="../images/icono.png">
-        <link rel="stylesheet" href="../estilos/style.css" type="text/css">
-        <script type="text/javascript" src="../javascript/javascript.js"></script>
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="/PracticaExamen/public/images/icono.png">
+        <link rel="stylesheet" href="/PracticaExamen/public/estilos/style.css" type="text/css">
+        <link rel="stylesheet" href="/PracticaExamen/public/estilos/juego.css" type="text/css">
+        <script type="text/javascript" src="/PracticaExamen/public/javascript/javascript.js"></script>
 		<?php
 			
 		?>
     </head>
     <body>
-        <header class="cabecera">
-            <a href="index.php">
+    <header class="cabecera">
+            <a href="/PracticaExamen/public/pages/index.php">
                 <div class="logo">
                     <img src="../images/logo.PNG">
                     <h2>MadGames</h2>
@@ -21,51 +22,43 @@
             <div class="menu">
                 <ul class="navegacion">
                     <li>
-                        <a href="index.php">Juegos</a>
+                        <a href="/PracticaExamen/public/pages/index.php">Juegos</a>
                         <ul>
-                            <li><a href="mejores.php">Mejores</a></li>
-                            <li><a href="novedades.php">Novedades</a></li>
+                            <li><a href="/PracticaExamen/public/pages/puntaje.php">Mejores&nbsp;Puntuaciones</a></li>
+                            <li><a href="/PracticaExamen/public/pages/novedades.php">Novedades</a></li>
                             <li><a href="#">Categorías</a>
                                 <ul style="top: 113px">
-                                    <li><a href="categoria.php?cat=1">Accion</a></li>
-                                    <li><a href="categoria.php?cat=2">Terror</a></li>
-                                    <li><a href="categoria.php?cat=3">Deporte</a></li>
-                                    <li><a href="categoria.php?cat=4">Rol</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=1">Accion</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=2">Terror</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=3">Deporte</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=4">Rol</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="index.html">Ofertas</a>
+                        <a href="/PracticaExamen/public/pages/index.php">Ofertas</a>
                         <ul>
-                            <li><a href="mejores.php">Mejores</a></li>
-                            <li><a href="gratis.php">Free2Play</a></li>
+                            <li><a href="/PracticaExamen/public/pages/mejores.php">Mejores</a></li>
+                            <li><a href="/PracticaExamen/public/pages/gratis.php">Free2Play</a></li>
                         </ul>
                     </li>
                     <li>
                         <a>About</a>
                         <ul>
                             <li><a href="about.html">Quienes&nbsp;Somos</a></li>
-                            <li><a href="contacto.html">Contacto</a></li>
+                            <li><a href="contacto.php">Contacto</a></li>
                         </ul>
                     </li>
                     
                     <li><a href="carrito.html">Carrito</a></li>
-                    <!--<li>
-                        <a href="perfil.html">Perfil</a>
-                        <ul>
-                            <li><a href="cuenta.html">Cuenta</a></li>
-                            <li><a href="#">Editar</a></li>
-                            <li><a href="#">Eliminar</a></li>
-                        </ul>
-                    </li>-->
-                    <li>
-                        <input class="busqueda" type="text" id="juego" value="">
-                        <input class="boton" type="button" id="nombre" name="buscar" value="Buscar" onclick="buscar()">
-                        <!--<img class="iB" src="../images/search.png">-->
-                    </li>
-                </ul>
-            </div>
+                <li>
+                    <input class="busqueda" type="text" id="juego" value="">
+                    <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
+                    <!--<img class="iB" src="../images/search.png">-->
+                </li>
+            </ul>
+        </div>
             <div class="cuenta">
                 <button class="boton"><a href="../vista/login.html">Cuenta</a></button>
                 <button class="boton">Salir</button>
@@ -73,15 +66,15 @@
         </header>
         <section class="dos">
             <center><div id="informacion">
-                <a href="index.html"><img width="25%" class="mySlides" src="../images/icono.png"></a>
-                <a href="index.html"><img width="50%" id="0" class="mySlides" src=""></a>
-                <a href="index.html"><img width="50%" id="1" class="mySlides" src=""></a>
-                <a href="index.html"><img width="50%" id="2" class="mySlides" src=""></a>
-                <a href="index.html"><img width="50%" id="3" class="mySlides" src=""></a>
-                <a href="index.html"><img width="50%" id="4" class="mySlides" src=""></a>
+                <a href="/PracticaExamen/public/pages/index.php"><img width="25%" class="mySlides" src="/PracticaExamen/public/images/icono.png"></a>
+                <a href="/PracticaExamen/public/pages/index.php"><img width="50%" id="0" class="mySlides" src=""></a>
+                <a href="/PracticaExamen/public/pages/index.php"><img width="50%" id="1" class="mySlides" src=""></a>
+                <a href="/PracticaExamen/public/pages/index.php"><img width="50%" id="2" class="mySlides" src=""></a>
+                <a href="/PracticaExamen/public/pages/index.php"><img width="50%" id="3" class="mySlides" src=""></a>
+                <a href="/PracticaExamen/public/pages/index.php"><img width="50%" id="4" class="mySlides" src=""></a>
                 <button id="izq" onclick="plusDivs(-1)">Anterior</button>
-			    <button id="center" onclick="reiniciar()">Reiniciar</button>
-			    <button id="der" onclick="plusDivs(+1)">Siguiente</button>
+                <button id="center" onclick="reiniciar()">Reiniciar</button>
+                <button id="der" onclick="plusDivs(+1)">Siguiente</button>
             </div></center>
             <div class="col2">
                 <h1>Mejores Descuentos</h1>

@@ -1,12 +1,22 @@
+<?php 
+    session_start();
+    if(!isset($_SESSION['isLogged'])|| $_SESSION['isLogged'] === FALSE){
+       header("Location: /PracticaExamen/public/vista/login.html");
+    }
+    if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+        header("Location: /PracticaExamen/public/vista/login.html");
+    }
+?>
 <!DOCTYPE html>
 <html>
     <head>
 		<title>MadGames</title>
         <meta charset="utf-8">
-        <link rel="shortcut icon" href="../../public/images/icono.png">
-        <link rel="stylesheet" href="../../public/estilos/style.css" type="text/css">
+        <link rel="shortcut icon" href="/PracticaExamen/public/images/icono.png">
+        <link rel="stylesheet" href="/PracticaExamen/public/estilos/style.css" type="text/css">
 		<link rel="stylesheet" href="/PracticaExamen/public/estilos/juegos.css" type="text/css">
-        <script type="text/javascript" src="../javascript/javascript.js"></script>
+		<script type="text/javascript" src="/PracticaExamen/public/javascript/javascript.js"></script>
+		<script type="text/javascript" src="/PracticaExamen/public/javascript/tablas.js"></script>
 		<?php
 			include '../../config/conexionBD.php';
 			$sql= "SELECT * FROM juegos WHERE jue_eliminado = '0'";
@@ -15,35 +25,35 @@
 		?>
     </head>
     <body>
-        <header class="cabecera">
-            <a href="index.php">
+	<header class="cabecera">
+            <a href="/PracticaExamen/public/pages/index.php">
                 <div class="logo">
-                    <img src="../../public/images/logo.PNG">
+                    <img src="/PracticaExamen/public/images/logo.png">
                     <h2>MadGames</h2>
                 </div>
             </a>
             <div class="menu">
                 <ul class="navegacion">
                     <li>
-                        <a href="index.php">Juegos</a>
+                        <a href="/PracticaExamen/public/pages/index.php">Juegos</a>
                         <ul>
-                            <li><a href="puntaje.php">Mejores</a></li>
-                            <li><a href="novedades.php">Novedades</a></li>
+                            <li><a href="/PracticaExamen/public/pages/puntaje.php">Mejores&nbsp;Puntuaciones</a></li>
+                            <li><a href="/PracticaExamen/public/pages/novedades.php">Novedades</a></li>
                             <li><a href="#">Categorías</a>
                                 <ul style="top: 113px">
-                                    <li><a href="categoria.php?cat=1">Accion</a></li>
-                                    <li><a href="categoria.php?cat=2">Terror</a></li>
-                                    <li><a href="categoria.php?cat=3">Deporte</a></li>
-                                    <li><a href="categoria.php?cat=4">Rol</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=1">Accion</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=2">Terror</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=3">Deporte</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=4">Rol</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="index.html">Ofertas</a>
+                        <a href="/PracticaExamen/public/pages/index.php">Ofertas</a>
                         <ul>
-                            <li><a href="mejores.php">Mejores</a></li>
-                            <li><a href="gratis.php">Free2Play</a></li>
+                            <li><a href="/PracticaExamen/public/pages/mejores.php">Mejores</a></li>
+                            <li><a href="/PracticaExamen/public/pages/gratis.php">Free2Play</a></li>
                         </ul>
                     </li>
                     <li>
@@ -63,124 +73,25 @@
             </ul>
         </div>
 			<div class="cuenta">
-            <button class='boton'><a style="color: white" href=../../public/controladores/salir.php>Salir</a> 
+            <button class='boton'><a style="color: white" href=/PracticaExamen/public/controladores/salir.php>Salir</a> 
         </div>
     </header>
 	<section class="dos" style="color: white">
-		
-	 <table style="width:100%">
-		<tr>
-			<th>Cedula</th>
-			<th>Nombres</th>
-			<th>Apellidos</th>
-			<th>Correo</th>
-			<th>Fecha Nacimiento</th>
-		</tr>
-     
-     
-	 <?php
-	 include '../../config/conexionBD.php';
-	 $sql = "SELECT * FROM usuarios WHERE usu_eliminado='N'";
-	 $result = $conn->query($sql);
-
-	 if ($result->num_rows > 0) {
-
-	while($row = $result->fetch_assoc()) {
-	 echo "<tr>";
-	 echo " <td>" . $row["usu_cedula"] . "</td>";
-	 echo " <td>" . $row['usu_nombres'] ."</td>";
-	 echo " <td>" . $row['usu_apellidos'] . "</td>";
-	 echo " <td>" . $row['usu_correo'] . "</td>";
-	 echo " <td>" . $row['usu_fecha_nac'] . "</td>";
-	 echo " <td> <a style='color:white' href='/PracticaExamen/public/controladores/eliminar.php?codigo=" . $row['usu_codigo'] . "'>Eliminar</a> </td>";
-	 echo " <td> <a style='color:white' href='/PracticaExamen/admin/vista/modificar.php?codigo=" . $row['usu_codigo'] . "'>Modificar</a> </td>";
-	 echo " <td> <a style='color:white' href='cambiar_contrasena.php?codigo=" . $row['usu_codigo'] . "'>Cambiar
-	contraseña</a> </td>";
-	 echo "</tr>";
-
-	}
-		} else {
-		echo "<tr>";
-		echo " <td colspan='7'> No existen usuarios registradas en el sistema </td>";
-		echo "</tr>";
-		}
-	 $conn->close();
-	 ?>
-	 </table>
-	
-	<h3>Juegos Registrados</h3>
-	
-	<table style="width:100%">
-		<tr>
-			<th>Titulo</th>
-			<th>Imagen</th>
-			<th>Precio</th>
-			<th>Fecha</th>
-		</tr>
-     
-     
-	 <?php
-	 include '../../config/conexionBD.php';
-	 $sql = "SELECT * FROM juegos WHERE jue_eliminado = 0";
-	 $result = $conn->query($sql);
-
-	 if ($result->num_rows > 0) {
-
-	while($row = $result->fetch_assoc()) {
-	 echo "<tr>";
-	 echo " <td>" . $row["jue_nombre"] . "</td>";
-	 echo " <td>" . $row['jue_imagen'] . "</td>";
-	 echo " <td>" . $row['jue_precio'] . "</td>";
-	 echo " <td>" . $row['jue_fecha'] . "</td>";
-	 echo " <td> <a style='color:white' href='/PracticaExamen/public/controladores/eliminar.php?codigo=" . $row['jue_codigo'] . "'>Eliminar</a> </td>";
-	 echo " <td> <a style='color:white' href='/PracticaExamen/public/pages/editar_juego.php?codigo=" . $row['jue_codigo'] . "'>Modificar</a> </td>";
-	 echo "</tr>";
-	}
-		} else {
-		echo "<tr>";
-		echo " <td colspan='7'> No existen juegos registradas en el sistema </td>";
-		echo "</tr>";
-		}
-	 $conn->close();
-	 ?>
-	 </table>
-	
-	<h3>Mensajes</h3>
-	
-	<table style="width:100%">
-	<tr>
-	<th>Fecha</th>
-	<th>Remite</th>
-	<th>Destinatario</th>
-	<th>Asunto</th>
-	<th>Mensaje</th>
-	</tr>
-     
-     
-	 <?php
-	 include '../../config/conexionBD.php';
-	 $sql = "SELECT * FROM correo";
-	 $result = $conn->query($sql);
-
-	 if ($result->num_rows > 0) {
-
-	while($row = $result->fetch_assoc()) {
-	 echo "<tr>";
-	 echo " <td>" . $row["cor_fecha_envio"] . "</td>";
-	 echo " <td>" . $row['cor_usu_remite'] ."</td>";
-	 echo " <td>" . $row['cor_usu_destino'] . "</td>";
-	 echo " <td>" . $row['cor_asunto'] . "</td>";
-	 echo " <td>" . $row['cor_mensaje'] . "</td>";
-	 echo "</tr>";
-	}
-		} else {
-		echo "<tr>";
-		echo " <td colspan='7'> No existen mensajes recibidos </td>";
-		echo "</tr>";
-		}
-	 $conn->close();
-	 ?>
-	 </table>
+		<input  type="text" id="usuario" value="usuarios" hidden>
+		<input class="boton" type="button" id="buscar" name="buscar" value="Usuarios" onclick="buscarUsuarios()">
+		<br>
+		<br>
+		<input type="text" id="juego" value="juegos" hidden>
+		<input class="boton" type="button" id="buscar" name="buscar" value="Juegos" onclick="buscarJuego()">
+		<br>
+		<br>
+		<input type="text" id="correo" value="correo" hidden>
+		<input class="boton" type="button" id="buscar" name="buscar" value="Mensajes" onclick="buscarMensaje()">
+		<br>
+		<br>
+		<div id="tablas"></div>
+		<br>
+		<br>
 	</section>
 	<footer class="pie">
         <h2>Universidad Politécnica Salesiana</h2>

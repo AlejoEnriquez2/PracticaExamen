@@ -4,44 +4,37 @@
 
     include '../../config/conexionBD.php';
 
-	
-
     $usuario = isset($_POST["user"]) ? trim($_POST["user"]) : null;
 
     $contrasena = isset($_POST["password"]) ? trim($_POST["password"]) : null;
 
-    $sql = "SELECT count(*) as login  
-            FROM usuarios
+    $sql = "SELECT * FROM usuarios
             WHERE usu_correo = '$usuario' and 
                   usu_password = MD5('$contrasena') and
                   usu_eliminado = 'N'";
 
 
     $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
+    $u = $result->fetch_assoc();
     
-    if ($row["login"] == 1) {
+    if ($result->num_rows > 0) {
+        $_SESSION['isLogged']=TRUE;
+        $_SESSION['codigo']= $u['usu_codigo'];
+        $_SESSION['rol']=$u['usu_rol_id'];
         
-        $sql_1 ="SELECT usu_rol_id as rol,
-                        usu_codigo as id
-               FROM usuarios
-               WHERE usu_correo = '$usuario' and
-                     usu_password = MD5('$contrasena')";
+        $admin = $u['usu_rol_id'];
+        $codigo = $u['usu_codigo'];
         
-        $result_1 = $conn->query($sql_1);
-        $row_1 = $result_1 ->fetch_assoc();
-        
-        if($row_1["rol"] == 1){
-            $_SESSION['isLogged'] = TRUE;
-            header("Location: /PracticaExamen/admin/vista/index.php?codigo=".$row_1["id"]);    
+        if($admin == 1){
+            header("Location: /PracticaExamen/admin/vista/index.php?codigo=".$codigo);    
         }
 		
-		if($row_1["rol"] == 2){
-            $_SESSION['isLogged'] = TRUE;
-            header("Location: ../vista/cuenta.php?codigo=".$row_1["id"]);
+		if($admin == 2){
+            header("Location: ../vista/cuenta.php?codigo=".$codigo);
         }
         
     }else{
+        echo "Error!";
         header("Location: ../pages/index.php");
     }
 
