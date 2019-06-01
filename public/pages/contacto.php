@@ -19,7 +19,7 @@
 	</head>
 	
 	<body>
-		
+		<?php $codigo = $_GET['codigo']; ?>
 		<h1>CONTÁCTANOS</h1>
 		<form method="post" action="pagina2.php?codigo=<?php echo $codigo ?>">
 		<input type="hidden" id="codigo" name="codigo" value="<?php echo $codigo ?>">
@@ -27,7 +27,7 @@
 			
 			<tr>
 				<td>From:</td>
-				<td colspan="2"><textarea name="remite" id="remite" rows="1" cols="100" id="textview" type="text" value="<?php echo buscarCorreo($codigo) ?>" required></textarea></td>
+				<td colspan="2"><input type="text" id="remite" name="remite" value="<?php echo buscarCorreo($codigo) ?>" disabled></td>
 			</tr>
 			
 			<tr>
@@ -42,7 +42,7 @@
 			<tfoot>
 				<tr>
 					<td align="center"><input id="button" type="submit" value="ENVIAR"></td>
-					<td align="center"><input id="button" type="button" value="CANCELAR" onClick="Location='index.php'"></td>
+					<td align="center"><input id="button" type="reset" value="CANCELAR"></td>
 					
 				</tr> 
 			</tfoot>	
