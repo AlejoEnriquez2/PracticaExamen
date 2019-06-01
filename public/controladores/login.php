@@ -25,11 +25,11 @@
         $codigo = $u['usu_codigo'];
         
         if($admin == 1){
-            header("Location: /PracticaExamen/admin/vista/index.php?codigo=".$codigo);    
+            header("Location: /PracticaExamen/admin/vista/index.php?codigo=".$u['usu_codigo']);    
         }
 		
 		if($admin == 2){
-            header("Location: /PracticaExamen/public/pages/index.php?codigo=".$codigo);
+            header("Location: /PracticaExamen/public/pages/index.php?codigo=".$u['usu_codigo']);
         }
         
     }else{
