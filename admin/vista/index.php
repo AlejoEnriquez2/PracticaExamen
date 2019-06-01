@@ -80,6 +80,7 @@
             <button class='boton'><a style="color: white" href=/PracticaExamen/public/controladores/salir.php>Salir</a> 
         </div>
     </header>
+    <div id="informacion"></div>
 	<section class="dos" style="color: white">
 		<input  type="text" id="usuario" value="usuarios" hidden>
 		<input class="boton" type="button" id="buscar" name="buscar" value="Usuarios" onclick="buscarUsuarios()">

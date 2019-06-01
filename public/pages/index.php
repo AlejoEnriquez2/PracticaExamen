@@ -75,7 +75,7 @@
 			if(isset($_SESSION['isLogged']) === FALSE){
                 echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
             }else {
-                echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php?ADMIN>Cuenta</a>";
+                echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
             }		
 		?>
         </div>
@@ -95,7 +95,7 @@
             </div>
         </center>
         <div class="col2">
-            <h1>JUEGOS</h1>
+            <h1 stlye="color:white">JUEGOS</h1>
 			<?php
 				if($result->num_rows > 0){
 					while (($u = $result->fetch_assoc())){

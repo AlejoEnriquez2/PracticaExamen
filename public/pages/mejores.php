@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+    session_start();
+    //if(!isset($_SESSION['isLogged'])|| $_SESSION['isLogged'] === FALSE){
+      // header("Location: /PracticaExamen/public/vista/login.html");
+    //}
+    //if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+        //header("Location: /PracticaExamen/public/vista/login.html");
+    //}
+?>
+<!DOCTYPE html>
 <html>
     <head>
 		<title>Mejores Descuentos</title>
