@@ -15,7 +15,7 @@ h1, body, div, table, tr, td, form {
 	background-color: gainsboro;
 }
 
-textarea{
+textarea, input{
 		background-color:aliceblue;
 }
 
