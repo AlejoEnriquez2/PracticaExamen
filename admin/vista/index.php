@@ -9,6 +9,11 @@
 ?>
 <!DOCTYPE html>
 <html>
+	
+		<?php
+			include '../../config/conexionBD.php';
+            $codigo = $_GET['codigo'];
+        ?>
     <head>
 		<title>MadGames</title>
         <meta charset="utf-8">
@@ -25,10 +30,6 @@
 		?>
     </head>
     <body>
-		<?php
-			include '../../config/conexionBD.php';
-            $codigo = $_GET['codigo'];
-        ?>
 	<header class="cabecera">
             <a href="/PracticaExamen/public/pages/index.php">
                 <div class="logo">
