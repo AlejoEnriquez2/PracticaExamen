@@ -27,4 +27,6 @@
         echo"<p class='error'>Error: " .mysqli_error($conn)."</p>";
     }
     $conn->close();
+
+header("Location: /PracticaExamen/public/pages/gracias.html");
 ?>
