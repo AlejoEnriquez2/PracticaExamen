@@ -6,6 +6,10 @@
 ?>
 <!DOCTYPE html>
 <html>
+<?php
+	include '../../config/conexionBD.php';
+    $codigo = $_GET['codigo'];
+?>
 	<head>
 		<meta charset="UTF-8"> 
 		<title>Contactanos</title>
@@ -15,10 +19,6 @@
 	</head>
 	
 	<body>
-		<?php
-			include '../../config/conexionBD.php';
-            $codigo = $_GET['codigo'];
-        ?>
 		
 		<h1>CONTÁCTANOS</h1>
 		<form method="post" action="pagina2.php?codigo=<?php echo $codigo ?>">
