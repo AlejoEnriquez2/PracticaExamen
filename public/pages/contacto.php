@@ -42,7 +42,7 @@
 			<tfoot>
 				<tr>
 					<td align="center"><input id="button" type="submit" value="ENVIAR"></td>
-					<td align="center"><input id="button" type="button" value="CANCELAR"></td>
+					<td align="center"><input id="button" type="button" value="CANCELAR" href="/PracticaExamen/public/pages/index.php"></td>
 					
 				</tr> 
 			</tfoot>	
