@@ -1,4 +1,13 @@
-﻿<!DOCTYPE html>
+﻿<?php 
+    session_start();
+    //if(!isset($_SESSION['isLogged'])|| $_SESSION['isLogged'] === FALSE){
+      // header("Location: /PracticaExamen/public/vista/login.html");
+    //}
+    //if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+        //header("Location: /PracticaExamen/public/vista/login.html");
+    //}
+?>
+<!DOCTYPE html>
 <html>
     <head>
 		<title>Nuevos</title>
@@ -57,8 +66,13 @@
             </ul>
         </div>
             <div class="cuenta">
-                <button class="boton"><a href="../vista/login.html">Cuenta</a></button>
-                <button class="boton">Salir</button>
+                <?php
+                if(isset($_SESSION['isLogged']) === FALSE){
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
+                }else {
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
+                }		
+		?>
             </div>
         </header>
         <section class="dos">

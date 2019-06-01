@@ -61,8 +61,8 @@ function buscar(){
                 document.getElementById("informacion").innerHTML=this.responseText;
             }
         };
-		
-        xmlhttp.open("GET", "../controladores/buscar.php?nombre="+nombre, true);
+		alert("Buscando...");
+        xmlhttp.open("GET", "/PracticaExamen/public/controladores/buscar.php?nombre="+nombre, true);
         xmlhttp.send();
     }
 }

@@ -1,3 +1,12 @@
+<?php 
+    session_start();
+    //if(!isset($_SESSION['isLogged'])|| $_SESSION['isLogged'] === FALSE){
+      // header("Location: /PracticaExamen/public/vista/login.html");
+    //}
+    //if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+        //header("Location: /PracticaExamen/public/vista/login.html");
+    //}
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,39 +32,38 @@
     </head>
     <body>
     <header class="cabecera">
-            <a href="index.php">
+            <a href="/PracticaExamen/public/pages/index.php">
                 <div class="logo">
-                    <img src="../images/logo.PNG">
+                    <img src="/PracticaExamen/public/images/logo.PNG">
                     <h2>MadGames</h2>
                 </div>
             </a>
             <div class="menu">
                 <ul class="navegacion">
-                    
                     <li>
-                        <a href="index.php">Juegos</a>
+                        <a href="/PracticaExamen/public/pages/index.php">Juegos</a>
                         <ul>
-                            <li><a href="mejores.php">Mejores</a></li>
-                            <li><a href="novedades.php">Novedades</a></li>
+                            <li><a href="/PracticaExamen/public/pages/puntaje.php">Mejores&nbsp;Puntuaciones</a></li>
+                            <li><a href="/PracticaExamen/public/pages/novedades.php">Novedades</a></li>
                             <li><a href="#">Categorías</a>
                                 <ul style="top: 113px">
-                                    <li><a href="categoria.php?cat=1">Accion</a></li>
-                                    <li><a href="categoria.php?cat=2">Terror</a></li>
-                                    <li><a href="categoria.php?cat=3">Deporte</a></li>
-                                    <li><a href="categoria.php?cat=4">Rol</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=1">Accion</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=2">Terror</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=3">Deporte</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=4">Rol</a></li>
                                 </ul>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="index.html">Ofertas</a>
+                        <a href="/PracticaExamen/public/pages/index.php">Ofertas</a>
                         <ul>
-                            <li><a href="mejores.php">Mejores</a></li>
-                            <li><a href="gratis.php">Free2Play</a></li>
+                            <li><a href="/PracticaExamen/public/pages/mejores.php">Mejores</a></li>
+                            <li><a href="/PracticaExamen/public/pages/gratis.php">Free2Play</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a>About</a>
                         <ul>
                             <li><a href="about.html">Quienes&nbsp;Somos</a></li>
                             <li><a href="contacto.php">Contacto</a></li>
@@ -63,26 +71,23 @@
                     </li>
                     
                     <li><a href="carrito.html">Carrito</a></li>
-                    <!--<li>
-                        <a href="perfil.html">Perfil</a>
-                        <ul>
-                            <li><a href="cuenta.html">Cuenta</a></li>
-                            <li><a href="#">Editar</a></li>
-                            <li><a href="#">Eliminar</a></li>
-                        </ul>
-                    </li>-->
-                    <li>
-                        <input class="busqueda" type="text" id="juego" value="">
-                        <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
-                        <!--<img class="iB" src="../images/search.png">-->
-                    </li>
-                </ul>
-            </div>
-            <div class="cuenta">
-                <button class="boton"><a href="../vista/login.html">Cuenta</a></button>
-                <button class="boton">Salir</button>
-            </div>
-        </header>
+                <li>
+                    <input class="busqueda" type="text" id="juego" value="">
+                    <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
+                    <!--<img class="iB" src="../images/search.png">-->
+                </li>
+            </ul>
+        </div>
+        <div class="cuenta">
+        <?php
+			if(isset($_SESSION['isLogged']) === FALSE){
+                echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
+            }else {
+                echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
+            }		
+		?>
+        </div>
+    </header>
         <section class="dos">
             <center><div id="informacion">
                 <a href="index.html"><img width="25%" class="mySlides" src="../images/icono.png"></a>
