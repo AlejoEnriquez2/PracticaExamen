@@ -26,7 +26,6 @@
     </head>
     <body>
 		<?php
-            include '../../config/conexionBD.php';
             $codigo = $_GET['codigo'];
         ?>
 	<header class="cabecera">
