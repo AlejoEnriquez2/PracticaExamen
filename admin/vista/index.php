@@ -26,6 +26,7 @@
     </head>
     <body>
 		<?php
+			include '../../config/conexionBD.php';
             $codigo = $_GET['codigo'];
         ?>
 	<header class="cabecera">
@@ -63,7 +64,7 @@
                         <a>About</a>
                         <ul>
                             <li><a href="about.html">Quienes&nbsp;Somos</a></li>
-                            <li><a href="contacto.php?codigo=".$codigo>Contacto</a></li>
+                            <li><a href="contacto.php?codigo=<?php echo $codigo ?>">Contacto</a></li>
                         </ul>
                     </li>
                     
