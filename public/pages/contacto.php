@@ -54,8 +54,8 @@
 <?php
     function buscarCorreo($codigoCorreo){
         include '../../config/conexionBD.php';
-        $sql1 = "SELECT usu_correo FROM usuarios WHERE usu_codigo='$codigoCorreo'";
-        $result = $conn->query($sql1);
+        $sql = "SELECT usu_correo FROM usuarios WHERE usu_codigo='$codigoCorreo'";
+        $result = $conn->query($sql);
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
                 $direccionCorreo=$row["usu_correo"];
