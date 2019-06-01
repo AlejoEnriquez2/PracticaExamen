@@ -27,7 +27,7 @@
 			
 			<tr>
 				<td>From:</td>
-				<td colspan="2"><input id="text" type="text" id="remite" name="remite" value="<?php echo buscarCorreo($codigo) ?>" disabled></td>
+				<td colspan="2"><input style="background-color:aliceblue;" id="text" type="text" id="remite" name="remite" value="<?php echo buscarCorreo($codigo) ?>" disabled></td>
 			</tr>
 			
 			<tr>
