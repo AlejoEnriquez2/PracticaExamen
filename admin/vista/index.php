@@ -25,6 +25,10 @@
 		?>
     </head>
     <body>
+		<?php
+            include '../../config/conexionBD.php';
+            $codigo = $_GET['codigo'];
+        ?>
 	<header class="cabecera">
             <a href="/PracticaExamen/public/pages/index.php">
                 <div class="logo">
@@ -60,7 +64,7 @@
                         <a>About</a>
                         <ul>
                             <li><a href="about.html">Quienes&nbsp;Somos</a></li>
-                            <li><a href="contacto.php">Contacto</a></li>
+                            <li><a href="contacto.php?codigo">Contacto</a></li>
                         </ul>
                     </li>
                     
