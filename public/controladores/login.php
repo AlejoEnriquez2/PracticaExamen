@@ -1,5 +1,4 @@
 <?php
-
     session_start();
 
     include '../../config/conexionBD.php';
@@ -30,7 +29,7 @@
         }
 		
 		if($admin == 2){
-            header("Location: ../vista/cuenta.php?codigo=".$codigo);
+            header("Location: /PracticaExamen/user/vista/perfil.php?codigo=".$codigo);
         }
         
     }else{

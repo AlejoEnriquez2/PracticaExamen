@@ -41,7 +41,7 @@
 </head>
 <body>
     <?php
-        include '../../../config/conexion.php';
+        include '../../config/conexion.php';
         
         date_default_timezone_set("America/Guayaquil");
     
@@ -61,7 +61,7 @@
     
         //ruta carpeta destino en servidor
     
-        $carpeta_destino = $_SERVER['DOCUMENT_ROOT'] .'/Proyecto/public/vista/images';
+        $carpeta_destino = $_SERVER['DOCUMENT_ROOT'] .'/PracticaExamen/public/vista/images';
     
         
         //mover la imagen del directorio temporal al directorio escogido

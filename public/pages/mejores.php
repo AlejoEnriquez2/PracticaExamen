@@ -60,8 +60,14 @@
             </ul>
         </div>
             <div class="cuenta">
-                <button class="boton"><a href="../vista/login.html">Cuenta</a></button>
-                <button class="boton">Salir</button>
+            <?php
+                session_start();
+                if(!isset($_SESSION['isLogged']) === TRUE){
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
+                }else {
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
+                }		
+            ?>
             </div>
         </header>
         <section class="dos">

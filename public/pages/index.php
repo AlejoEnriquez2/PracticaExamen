@@ -1,11 +1,11 @@
-<?php
+<?php 
     session_start();
-        //if(!isset($_SESSION['isLogged'])|| $_SESSION['isLogged'] === FALSE){
-           //header("Location: /SistemaDeGestion/public/vista/login.html");
-        //}
-        //if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 0){
-        //    header("Location: /SistemaDeGestion/public/vista/login.html");
-        //}
+    //if(!isset($_SESSION['isLogged'])|| $_SESSION['isLogged'] === FALSE){
+      // header("Location: /PracticaExamen/public/vista/login.html");
+    //}
+    //if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+        //header("Location: /PracticaExamen/public/vista/login.html");
+    //}
 ?>
 <!DOCTYPE html>
 <html>
@@ -26,7 +26,7 @@
         <header class="cabecera">
             <a href="/PracticaExamen/public/pages/index.php">
                 <div class="logo">
-                    <img src="../images/logo.PNG">
+                    <img src="/PracticaExamen/public/images/logo.PNG">
                     <h2>MadGames</h2>
                 </div>
             </a>
@@ -72,10 +72,10 @@
         </div>
         <div class="cuenta">
         <?php
-			if(!isset($_SESSION['isLogged']) === TRUE){
+			if(isset($_SESSION['isLogged']) === FALSE){
                 echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
             }else {
-                echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
+                echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php?ADMIN>Cuenta</a>";
             }		
 		?>
         </div>

@@ -8,7 +8,7 @@
     date_default_timezone_set("America/Guayaquil");
     $fecha = date('Y-m-d H:i:s',time());
 
-    $sql = "SELECT usu_codigo FROM usuarios WHERE usu_rol_id='1'";
+    $sql = "SELECT usu_codigo FROM usuarios WHERE usu_rol_id=1";
     $result = $conn->query($sql);
 -
     if ($result->num_rows > 0){
