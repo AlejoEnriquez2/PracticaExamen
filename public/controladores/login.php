@@ -29,7 +29,7 @@
         }
 		
 		if($admin == 2){
-            header("Location: /PracticaExamen/user/vista/perfil.php?codigo=".$codigo);
+            header("Location: /PracticaExamen/public/pages/index.php?codigo=".$codigo);
         }
         
     }else{
