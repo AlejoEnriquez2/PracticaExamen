@@ -16,12 +16,11 @@
 	
 	<body>
 		<?php
-            include '../../config/conexionBD.php';
             $codigo = $_GET['codigo'];
         ?>
 		
 		<h1>CONTÁCTANOS</h1>
-		<form method="post" action="pagina2.php">
+		<form method="post" action="pagina2.php?codigo=".$codigo>
 		<input type="hidden" id="codigo" name="codigo" value="<?php echo $codigo ?>">
 		<table id="contacto" border align="center">
 			

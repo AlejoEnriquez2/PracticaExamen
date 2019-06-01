@@ -10,7 +10,7 @@
 
     $sql = "SELECT usu_codigo FROM usuarios WHERE usu_rol_id=1";
     $result = $conn->query($sql);
--
+
     if ($result->num_rows > 0){
         while($row = $result->fetch_assoc()){
             $codigo_destino=$row["usu_codigo"];
