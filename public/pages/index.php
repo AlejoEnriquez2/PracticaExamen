@@ -68,7 +68,7 @@
                         </ul>
                     </li>
                     
-                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>
                 <li>
                     <input class="busqueda" type="text" id="juego" value="">
                     <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
@@ -81,9 +81,8 @@
 			if(isset($_SESSION['isLogged']) === FALSE){
                 echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
             }else {
-                $codigo = $_GET['codigo'];
                 if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
-                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/user/vista/perfil.php?codigo=".$codigo.">Cuenta</a>";
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/user/vista/perfil.php>Cuenta</a>";
                 }else{
                     echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
                 }

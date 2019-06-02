@@ -2,5 +2,5 @@
     session_start();    
     $_SESSION['isLogged'] = FALSE;
     session_destroy();
-    header("Location: ../../public/pages/index.html");  
+    header("Location: /PracticaExamen/public/pages/index.php");  
 ?>

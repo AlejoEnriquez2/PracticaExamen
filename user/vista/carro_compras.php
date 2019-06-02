@@ -11,6 +11,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/stylesGeneral.css">
     <link rel="stylesheet" href="css/stylesLogin.css">
+    <link rel="stylesheet" href="/PracticaExamen/public/estilos/style.css" type="text/css">
     <title>Carrito</title>
     <style type="text/css">
     .boton_personalizado {
@@ -64,10 +65,72 @@
 </head>
 
 <body>
+    <header class="cabecera">
+        <a href="/PracticaExamen/public/pages/index.php">
+            <div class="logo">
+                <img src="/PracticaExamen/public/images/logo.PNG">
+                <h2>MadGames</h2>
+            </div>
+        </a>
+        <div class="menu">
+            <ul class="navegacion">
+                <li>
+                    <a href="/PracticaExamen/public/pages/index.php">Juegos</a>
+                    <ul>
+                        <li><a href="/PracticaExamen/public/pages/puntaje.php">Mejores&nbsp;Puntuaciones</a></li>
+                        <li><a href="/PracticaExamen/public/pages/novedades.php">Novedades</a></li>
+                        <li><a href="#">Categorías</a>
+                            <ul style="top: 113px">
+                                <li><a href="/PracticaExamen/public/pages/categoria.php?cat=1">Accion</a></li>
+                                <li><a href="/PracticaExamen/public/pages/categoria.php?cat=2">Terror</a></li>
+                                <li><a href="/PracticaExamen/public/pages/categoria.php?cat=3">Deporte</a></li>
+                                <li><a href="/PracticaExamen/public/pages/categoria.php?cat=4">Rol</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/PracticaExamen/public/pages/index.php">Ofertas</a>
+                    <ul>
+                        <li><a href="/PracticaExamen/public/pages/mejores.php">Mejores</a></li>
+                        <li><a href="/PracticaExamen/public/pages/gratis.php">Free2Play</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>About</a>
+                    <ul>
+                        <li><a href="about.html">Quienes&nbsp;Somos</a></li>
+                        <li><a href="contacto.php?codigo=<?php echo $codigo ?>">Contacto</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>
+                <li>
+                    <input class="busqueda" type="text" id="juego" value="">
+                    <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
+                    <!--<img class="iB" src="../images/search.png">-->
+                </li>
+            </ul>
+        </div>
+        <div class="cuenta">
+            <?php
+			if(isset($_SESSION['isLogged']) === FALSE){
+                echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
+            }else {
+                if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/user/vista/perfil.php>Cuenta</a>";
+                }else{
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
+                }
+                
+            }		
+		?>
+        </div>
+    </header>
 
     <?php
-        include '../../../config/conexionBD.php';
-        $codigo=$_GET["id"];
+        include '../../config/conexionBD.php';
+        $codigo=$_SESSION['codigo'];
         $total=0;
         $total2=0;
     ?>
@@ -81,11 +144,8 @@
 
     ?>
 
-    <main class="align">
+    <main>
         <div>
-            <header class="login_cabezera">
-                <h3 class="login_titulo">Carrito de compras</h3>
-            </header>
             <table id="estilo">
                 <thead>
                     <tr>
@@ -129,7 +189,7 @@
                         <?php
                     echo "<h3 class='login_titulo'>Total a pagar: ".$total2."$   </h3><br>";
                 
-                    echo "<a class='boton_personalizado' href=../controladores/comprar.php?id=".$codigo."&total=".$total2."> Comprar"."</a><a class='boton_personalizado3' codigo=link href=perfil.php?codigo=".$codigo.">Volver</a>";
+                    echo "<a class='boton_personalizado' href=../controladores/comprar.php?id=".$codigo."&total=".$total2."> Comprar"."</a><a class='boton_personalizado3' codigo=link href=perfil.php>Volver</a>";
                     ?>
                     </div>
                 </div>

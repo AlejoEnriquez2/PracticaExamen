@@ -135,7 +135,7 @@
 	 
       <div class="like"><a href="../controladores/aumentar.php?codigo=<?php echo "$codigo" ?>">👍</a></div>
 		  <div class="like" id="nota"><?php echo "$nota" ?></div>
-      <div class="like"><a href="#">🛒</a></div>
+      <div class="like"><a href="/PracticaExamen/user/controladores/carrito.php?codigo=<?php echo "$codigo" ?>">🛒</a></div>
       <?php
 			if(!isset($_SESSION['isLogged']) === FALSE){
         if($_SESSION['rol'] == 1){

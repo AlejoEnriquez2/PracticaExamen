@@ -1,0 +1,222 @@
+html {
+    background-image: url(../images/i6.png);
+    /*background: linear-gradient(rgb(116, 116, 116), rgba(0, 38, 63, 0.651));*/
+    /*background-color: rgb(153, 145, 145);*/
+}
+
+body {
+    background: linear-gradient(rgb(0, 24, 102), rgba(0, 38, 63, 0.651));
+    margin: 30px;
+}
+
+.cabecera {
+    width: 100%;
+}
+
+.logo {
+    float: left;
+    width: 15%;
+    margin: 10px;
+}
+
+.logo img {
+    width: 80px;
+    float: left;
+    
+}
+
+.logo h2 {
+    float:left;
+    display: block;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgba(153, 0, 0, 0.89);    
+}
+
+.menu {
+    float: left;
+    width: 60%;
+}
+
+.cuenta {
+    margin-left: 30px;
+    width: 15%;
+    float: left;
+    display: flex;
+    padding: 25px;
+}
+
+
+
+.cuenta button {
+    line-height: 30px;
+    width: 125px;
+    margin-left: 15px;
+}
+
+.navegacion {
+    width: 700px;
+    margin: 30px auto;
+    margin-left: 40px;
+    border: 1px solid #222;
+    background-color: #111;
+    background-image: linear-gradient(#444, #111);
+    border-radius: 6px;
+    box-shadow: 0 1px 1px #777;
+}
+
+.navegacion li {
+    float: left;
+    border-right: 1px solid #222;
+    box-shadow: 2px 0 0 #444;
+    position: relative;
+}
+
+.navegacion a {
+    float: left;
+    padding: 12px 30px;
+    color: rgb(160, 153, 223);
+    text-transform: uppercase;
+    font: bold 12px Arial, Helvetica;
+    text-decoration: none;
+    text-shadow: 0 1px 0 black;
+}
+
+.navegacion li:hover > a {
+    font: bold 12.5px Arial, Helvetica;
+    color: white;
+}
+
+.navegacion ul {
+    margin: 50px;
+    visibility: hidden;
+    position: absolute;
+    top: 39px;
+    left: 0;
+    z-index: 1;
+    
+    background: linear-gradient(rgba(41, 52, 114, 0.815), rgb(0, 0, 0));
+    box-shadow: 0 -1 px 0 rgba(255, 255, 255, .3);
+    border-radius: 3px;
+    transition: all .2s ease-in-out;
+}
+
+.navegacion li:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    margin: 0;
+}
+
+.navegacion ul li {
+    float: none;
+    display: block;
+    border: 0;
+    box-shadow: 0 1px 0 #111, 0 2px 0 #666;
+}
+
+.navegacion:before,
+.navegacion:after {
+    content: "";
+    display: table;
+}
+
+.navegacion:after{
+    clear: both;
+}
+
+.navegacion {
+    zoom:1;
+}
+
+.busqueda {
+    margin-top: 9px;
+    margin-left: 13px;
+    background-color: #777;
+    border-color: #777;
+}
+
+.slide {
+    width: 99%
+}
+
+.boton {
+    color: #bebebe;
+    background-color: #485155;
+    border-radius: 6px;
+    border: 2px solid #6e6e70;
+}
+
+.i1 {
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+
+.tres {
+    float: left;
+}
+
+.dos {
+    clear: both;
+    width: 98%;
+}
+
+
+.tres .col1 {
+    margin: 15px;
+    width: 20%;
+    float: left;
+}
+
+.tres .col2 {
+    margin: 15px;
+    width: 50%;
+    float: left;
+}
+
+.tres .col3 {
+    margin: 15px;
+    width: 20%;
+    float: left;
+}
+
+.dos .col1 {
+    margin: 15px;
+    width: 20%;
+    float: left;
+}
+
+.dos .col1 a {
+    font: bold 15px Arial, Helvetica;
+    color: rgba(19, 19, 54, 0.699);
+}
+
+.dos .col2 {
+    margin: 15px;
+    width: 100%;
+    float: left;
+}
+
+.divs {
+    float:left;
+    width: 21%;
+    margin: 20px;
+    background-color: rgba(128, 10, 10, 0.808);
+}
+
+.divs img {
+    width: 93%;
+    height: 80%;
+    
+}
+
+.pie{
+    clear: both;
+    text-align: center;
+    background-color: rgba(28, 53, 99, 0.884);
+}
+
+.pie h2,h4,h6 {
+    color: rgb(134, 203, 212);
+}
+
+

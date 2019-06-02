@@ -29,7 +29,7 @@
         }
 		
 		if($admin == 2){
-            header("Location: /PracticaExamen/public/pages/index.php?codigo=".$u['usu_codigo']);
+            header("Location: /PracticaExamen/public/pages/index.php");
         }
         
     }else{
