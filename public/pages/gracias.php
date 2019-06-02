@@ -8,8 +8,8 @@
 		<title>Enviado!!</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximun-scale=1, minimun-scale=1">
-		<link rel="stylesheet" href="css/stylesLogin.css">
-		<link rel="stylesheet" href="css/stylesGeneral.css">
+		<!-- ESTILOS -->
+        <link href="../estilos/estilos2.css" rel="stylesheet" />
 	</head>
 	
 	<body>
