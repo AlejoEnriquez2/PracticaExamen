@@ -5,6 +5,9 @@ html{
 article, h1{
 	background-color: gainsboro;
 	text-align: center;
+}
+
+article{
 	font-family: serif;
-	font-size: 15px;
+	font-size: 35px;
 }
