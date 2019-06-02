@@ -28,5 +28,5 @@
     }
     $conn->close();
 
-header("Location: /PracticaExamen/public/pages/gracias.html");
+header("Location: /PracticaExamen/public/pages/gracias.html?codigo=".$codigo);
 ?>

@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
+	<?php
+		include '../../config/conexionBD.php';
+        $codigo = $_GET['codigo'];
+    ?>
 	<head>
 		<title></title>
 		<meta charset="UTF-8">
@@ -9,6 +13,6 @@
 	<body>
 		<h1>GRACIAS POR CONTACTARSE CON NOSOTROS</h1>
 		<article>Acabas de enviar tu mensaje a uno de nuestros administradores. Tomaremos en cuenta tu opinión</article>
-		<input id="button" name="button" value="Regresar" onclick = "location='index.php'" />
+		<input type="button" id="button" name="button" value="Regresar" onclick = "location='index.php?codigo=<? php echo $codigo ?>'" />
 	</body>
 </html>
