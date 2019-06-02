@@ -12,7 +12,7 @@
 	
 	<?php
 		include '../../config/conexionBD.php';
-        $codigo = $_GET['codigo'];
+        //$codigo = $_GET['codigo'];
     ?>
 	
     <head>
@@ -81,7 +81,13 @@
 			if(isset($_SESSION['isLogged']) === FALSE){
                 echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
             }else {
-                echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
+                $codigo = $_GET['codigo'];
+                if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/user/vista/perfil.php?codigo=".$codigo.">Cuenta</a>";
+                }else{
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
+                }
+                
             }		
 		?>
         </div>

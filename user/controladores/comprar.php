@@ -54,7 +54,7 @@
 
     <?php
     
-        include '../../../config/conexionBD.php';
+        include '../../config/conexionBD.php';
         date_default_timezone_set("America/Guayaquil");
 
         

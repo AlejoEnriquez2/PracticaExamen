@@ -68,7 +68,7 @@
 
     <?php
     
-        include '../../../config/conexionBD.php';
+        include '../../config/conexionBD.php';
         
         $codigo=$_GET["id"];
         $codigoU=$_GET["id_juego"];
