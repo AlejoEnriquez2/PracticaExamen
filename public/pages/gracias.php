@@ -5,9 +5,11 @@
         $codigo = $_GET['codigo'];
     ?>
 	<head>
-		<title></title>
+		<title>Enviado!!</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximun-scale=1, minimun-scale=1">
+		<link rel="stylesheet" href="css/stylesLogin.css">
+		<link rel="stylesheet" href="css/stylesGeneral.css">
 	</head>
 	
 	<body>
