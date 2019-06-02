@@ -16,6 +16,6 @@
 	<body>
 		<h1>GRACIAS POR CONTACTARSE CON NOSOTROS</h1>
 		<article>Acabas de enviar tu mensaje a uno de nuestros administradores. Tomaremos en cuenta tu opinión</article>
-		<input type="button" id="button" name="button" value="Regresar" onclick = "location='index.php?codigo=<? php echo $codigo ?>'" />
+		<input style="align=center" type="button" id="button" name="button" value="Regresar" onclick = "location='index.php?codigo=<? php echo $codigo ?>'" />
 	</body>
 </html>

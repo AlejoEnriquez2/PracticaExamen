@@ -5,8 +5,6 @@ html{
 article, h1{
 	background-color: gainsboro;
 	text-align: center;
-}
-
-button#button {
-	align-content: center;
+	font-family: serif;
+	font-size: 15px;
 }
