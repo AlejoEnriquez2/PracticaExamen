@@ -2,7 +2,11 @@ html{
 	background-image:url(/PracticaExamen/public/vista/images/fondo.jpg)
 }
 
-article{
+article, h1{
 	background-color: gainsboro;
 	text-align: center;
+}
+
+button#button {
+	align-content: center;
 }
