@@ -1,100 +1,13 @@
-*{
-    margin: 0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
+html{
+	background-image:url(/PracticaExamen/public/vista/images/fondo.jpg)
 }
 
-body{
-    background-color: dimgrey;
-    font-family: monospace;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+article, h1{
+	background-color: gainsboro;
+	text-align: center;
 }
 
-img{
-    width: 100%;
-    heigh: 100%;
-    border-style: solid;
-    border-width: thin;
-    border-color: black;
-    border-radius: 10px;
-}
-
-.img{
-	width: auto;
-	height: auto;
-}
-
-.contenedor{
-    width: 100%;
-    position: relative;
-    height: 780px;
-}
-
-.tabla{
-	width: 100%;
-	position: relative;
-	height: 780px;
-}
-
-.botones{
-    font-size: 30px;
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    border-radius: 50%;
-    background-color: rgba(0,0,0,.7);
-    text-align: center;
-    font-weight: bold;
-    position: absolute;
-    color: #fff;
-    box-shadow: 0 0 10px rgba(255,255,255,.6);
-    -webkit-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    transition: all .3s ease;
-}
-
-.botones:hover{
-    cursor: pointer;
-    transform: scale(1.2,1.2);
-}
-
-.boton{
-    font-size: 16px;
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    border-radius: 50%;
-    background-color: rgba(0,0,0,.7);
-    text-align: center;
-    font-weight: bold;
-    position: absolute;
-    color: #fff;
-    box-shadow: 0 0 10px rgba(255,255,255,.6);
-    -webkit-transition: all .3s ease;
-    -o-transition: all .3s ease;
-    transition: all .3s ease;
-}
-
-.boton:hover{
-    cursor: pointer;
-    transform: scale(1.2,1.2);
-}
-
-.atras{
-    left: 2%;
-    top: calc(50% - 70px);
-}
-
-.adelante{
-    right: 2%;
-    top: calc(50% - 70px);
-}
-
-.inicio{
-    left: 45%;
-    top: calc(90% - 70px);
+article{
+	font-family:monospace;
+	font-size: 25px;
 }
