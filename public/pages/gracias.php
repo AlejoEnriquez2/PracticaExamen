@@ -10,6 +10,7 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximun-scale=1, minimun-scale=1">
 		<!-- ESTILOS -->
         <link href="../estilos/estilos2.css" rel="stylesheet" />
+		<link href="../estilos/estilosgracias.css" rel="stylesheet" />
 	</head>
 	
 	<body>
