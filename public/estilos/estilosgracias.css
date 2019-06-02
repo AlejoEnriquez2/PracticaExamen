@@ -1,3 +1,7 @@
 html{
 	background-image:url(/PracticaExamen/public/vista/images/fondo.jpg)
 }
+
+article{
+	background-color: aliceblue;
+}
