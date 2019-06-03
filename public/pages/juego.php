@@ -73,12 +73,12 @@
           <li>
               <a>About</a>
               <ul>
-                  <li><a href="about.html">Quienes&nbsp;Somos</a></li>
-                  <li><a href="contacto.php">Contacto</a></li>
+                  <li><a href="/PracticaExamen/public/pages/about.html">Quienes&nbsp;Somos</a></li>
+                  <li><a href="/PracticaExamen/public/pages/contacto.php">Contacto</a></li>
               </ul>
           </li>
           
-          <li><a href="carrito.html">Carrito</a></li>
+          <li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>
       <li>
           <input class="busqueda" type="text" id="juego" value="">
           <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
@@ -134,20 +134,22 @@
       <div class="centrado">
 	 
       <div class="like"><a href="../controladores/aumentar.php?codigo=<?php echo "$codigo" ?>">👍</a></div>
-		  <div class="like" id="nota"><?php echo "$nota" ?></div>
-      <div class="like"><a href="/PracticaExamen/user/controladores/carrito.php?codigo=<?php echo "$codigo" ?>">🛒</a></div>
-      <?php
-			if(!isset($_SESSION['isLogged']) === FALSE){
-        if($_SESSION['rol'] == 1){
-          echo "<a style='color: white' href='/PracticaExamen/public/pages/editar_juego.php?codigo=$codigo'>Editar</a>";
-          echo "<br><a style='color: white' href='../controladores/eliminar.php?codigo=<?php echo $codigo?>'>Eliminar</a>";
-        }
-      }	
-		?>
-		    
-		    
-      
+      <div class="like" id="nota"><?php echo "$nota" ?></div>
+      <div>
+        <?php
+          if(!isset($_SESSION['isLogged']) === FALSE){
+            if($_SESSION['rol'] == 2){
+              echo '<div class="like"><a href="/PracticaExamen/user/controladores/carrito.php?codigo=<?php echo "$codigo" ?>🛒</a></div>';
+            }
+            if($_SESSION['rol'] == 1){
+              echo "<a style='color: white' href='/PracticaExamen/public/pages/editar_juego.php?codigo=$codigo'>Editar</a>";
+              echo "<br><a style='color: white' href='../controladores/eliminar.php?codigo=<?php echo $codigo?>'>Eliminar</a>";
+            }
+          }
+        ?>
       </div>
+      </div>
+      
     </div>
   </section>
   <footer class="pie">

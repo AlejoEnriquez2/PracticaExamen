@@ -25,7 +25,7 @@
         $codigo = $u['usu_codigo'];
         
         if($admin == 1){
-            header("Location: /PracticaExamen/admin/vista/index.php?codigo=".$u['usu_codigo']);    
+            header("Location: /PracticaExamen/admin/vista/index.php");    
         }
 		
 		if($admin == 2){

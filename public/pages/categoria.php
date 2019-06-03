@@ -65,12 +65,12 @@
                     <li>
                         <a>About</a>
                         <ul>
-                            <li><a href="about.html">Quienes&nbsp;Somos</a></li>
-                            <li><a href="contacto.php">Contacto</a></li>
+                            <li><a href="/PracticaExamen/public/pages/about.html">Quienes&nbsp;Somos</a></li>
+                            <li><a href="/PracticaExamen/public/pages/contacto.php">Contacto</a></li>
                         </ul>
                     </li>
                     
-                    <li><a href="carrito.html">Carrito</a></li>
+                    <li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>
                 <li>
                     <input class="busqueda" type="text" id="juego" value="">
                     <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">

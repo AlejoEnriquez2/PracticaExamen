@@ -14,7 +14,7 @@
 </head>
 <body>
     <?php
-        include '../../../config/conexion.php';
+        include '../../config/conexionBD.php';
     
         $codigoc = $_GET['id_des'];
         $sqlc = "SELECT * 

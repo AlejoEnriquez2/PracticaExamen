@@ -11,6 +11,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Perfil</title>
+    <link rel="shortcut icon" href="/PracticaExamen/public/images/icono.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/stylesGeneral.css">
     <link rel="stylesheet" href="css/stylesLogin.css">
@@ -72,11 +73,11 @@
 			if(isset($_SESSION['isLogged']) === FALSE){
                 echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
             }else {
-                if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
-                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/user/vista/perfil.php>Cuenta</a>";
-                }else{
-                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
-                }
+               // if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/controladores/salir.php>Salir</a>";
+                //}else{
+                //    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
+                //}
                 
             }		
 		?>
@@ -249,6 +250,12 @@
             </header>
         </div>
     </main>
+    <footer class="pie">
+        <h2>Universidad Politécnica Salesiana</h2>
+        <h4>Desarrollado por: <em> &#8226; David Cornejo &#8226; Alejandro Enríquez &#8226; Paulo Gonzalez &#8226; Angel
+                Ruiz &#8226; Evelyn Pintado</em></h4>
+        <h6> <sub>&#169;</sub> <em> Todos los derechos reservados</em></h6>
+    </footer>
 </body>
 
 </html>

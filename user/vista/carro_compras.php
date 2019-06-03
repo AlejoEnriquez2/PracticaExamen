@@ -1,7 +1,10 @@
 <?php
     session_start();
     if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === FALSE){
-        header("Location: ../../../public/vista/login.html");
+        header("Location: /PracticaExamen/public/vista/login.html");
+    }
+    if($_SESSION['rol'] == 1){
+        header("Location: /PracticaExamen/public/pages/index.php");
     }
 ?>
 <!DOCTYPE html>
@@ -9,102 +12,103 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/stylesGeneral.css">
-    <link rel="stylesheet" href="css/stylesLogin.css">
+    <link rel="shortcut icon" href="/PracticaExamen/public/images/icono.png">
+    <link rel="stylesheet" href="/PracticaExamen/user/vista/css/stylesGeneral.css">
+    <link rel="stylesheet" href="/PracticaExamen/user/vista/css/stylesLogin.css">
     <link rel="stylesheet" href="/PracticaExamen/public/estilos/style.css" type="text/css">
     <title>Carrito</title>
     <style type="text/css">
-    .boton_personalizado {
-        text-decoration: none;
-        padding: 10px;
-        font-weight: 600;
-        font-size: 20px;
-        color: #ffffff;
-        background-color: #18ba18;
-        border-radius: 6px;
-        border: 2px solid #01571a;
-    }
+        .boton_personalizado {
+            text-decoration: none;
+            padding: 10px;
+            font-weight: 600;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #18ba18;
+            border-radius: 6px;
+            border: 2px solid #01571a;
+        }
 
-    .boton_personalizado:hover {
-        color: #18ba25;
-        background-color: #ffffff;
-    }
+        .boton_personalizado:hover {
+            color: #18ba25;
+            background-color: #ffffff;
+        }
 
-    .boton_personalizado2 {
-        text-decoration: none;
-        padding: 10px;
-        font-weight: 600;
-        font-size: 20px;
-        color: #ffffff;
-        background-color: #c50b0b;
-        border-radius: 6px;
-        border: 2px solid #570101;
-    }
+        .boton_personalizado2 {
+            text-decoration: none;
+            padding: 10px;
+            font-weight: 600;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #c50b0b;
+            border-radius: 6px;
+            border: 2px solid #570101;
+        }
 
-    .boton_personalizado2:hover {
-        color: #ba1818;
-        background-color: #ffffff;
-    }
+        .boton_personalizado2:hover {
+            color: #ba1818;
+            background-color: #ffffff;
+        }
 
-    .boton_personalizado3 {
-        text-decoration: none;
-        padding: 10px;
-        font-weight: 600;
-        font-size: 20px;
-        color: #ffffff;
-        background-color: #1dabb8;
-        border-radius: 6px;
-        border: 2px solid #01571a;
-    }
+        .boton_personalizado3 {
+            text-decoration: none;
+            padding: 10px;
+            font-weight: 600;
+            font-size: 20px;
+            color: #ffffff;
+            background-color: #1dabb8;
+            border-radius: 6px;
+            border: 2px solid #01571a;
+        }
 
-    .boton_personalizado3:hover {
-        color: #1dabb8;
-        background-color: #ffffff;
-    }
+        .boton_personalizado3:hover {
+            color: #1dabb8;
+            background-color: #ffffff;
+        }
     </style>
 </head>
 
 <body>
-    <header class="cabecera">
-        <a href="/PracticaExamen/public/pages/index.php">
-            <div class="logo">
-                <img src="/PracticaExamen/public/images/logo.PNG">
-                <h2>MadGames</h2>
-            </div>
-        </a>
-        <div class="menu">
-            <ul class="navegacion">
-                <li>
-                    <a href="/PracticaExamen/public/pages/index.php">Juegos</a>
-                    <ul>
-                        <li><a href="/PracticaExamen/public/pages/puntaje.php">Mejores&nbsp;Puntuaciones</a></li>
-                        <li><a href="/PracticaExamen/public/pages/novedades.php">Novedades</a></li>
-                        <li><a href="#">Categorías</a>
-                            <ul style="top: 113px">
-                                <li><a href="/PracticaExamen/public/pages/categoria.php?cat=1">Accion</a></li>
-                                <li><a href="/PracticaExamen/public/pages/categoria.php?cat=2">Terror</a></li>
-                                <li><a href="/PracticaExamen/public/pages/categoria.php?cat=3">Deporte</a></li>
-                                <li><a href="/PracticaExamen/public/pages/categoria.php?cat=4">Rol</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="/PracticaExamen/public/pages/index.php">Ofertas</a>
-                    <ul>
-                        <li><a href="/PracticaExamen/public/pages/mejores.php">Mejores</a></li>
-                        <li><a href="/PracticaExamen/public/pages/gratis.php">Free2Play</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a>About</a>
-                    <ul>
-                        <li><a href="about.html">Quienes&nbsp;Somos</a></li>
-                        <li><a href="contacto.php?codigo=<?php echo $codigo ?>">Contacto</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>
+<header class="cabecera">
+            <a href="/PracticaExamen/public/pages/index.php">
+                <div class="logo">
+                    <img src="/PracticaExamen/public/images/logo.PNG">
+                    <h2>MadGames</h2>
+                </div>
+            </a>
+            <div class="menu">
+                <ul class="navegacion">
+                    <li>
+                        <a href="/PracticaExamen/public/pages/index.php">Juegos</a>
+                        <ul>
+                            <li><a href="/PracticaExamen/public/pages/puntaje.php">Mejores&nbsp;Puntuaciones</a></li>
+                            <li><a href="/PracticaExamen/public/pages/novedades.php">Novedades</a></li>
+                            <li><a href="#">Categorías</a>
+                                <ul style="top: 113px">
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=1">Accion</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=2">Terror</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=3">Deporte</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=4">Rol</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/PracticaExamen/public/pages/index.php">Ofertas</a>
+                        <ul>
+                            <li><a href="/PracticaExamen/public/pages/mejores.php">Mejores</a></li>
+                            <li><a href="/PracticaExamen/public/pages/gratis.php">Free2Play</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>About</a>
+                        <ul>
+                            <li><a href="/PracticaExamen/public/pages/about.html">Quienes&nbsp;Somos</a></li>
+                            <li><a href="/PracticaExamen/public/pages/contacto.php?codigo=<?php echo $codigo ?>">Contacto</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>
                 <li>
                     <input class="busqueda" type="text" id="juego" value="">
                     <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
@@ -113,7 +117,7 @@
             </ul>
         </div>
         <div class="cuenta">
-            <?php
+        <?php
 			if(isset($_SESSION['isLogged']) === FALSE){
                 echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
             }else {
@@ -196,6 +200,13 @@
             </header>
         </div>
     </main>
+    <footer class="pie">
+        <h2>Universidad Politécnica Salesiana</h2>
+        <h4>Desarrollado por: <em> &#8226; David Cornejo &#8226; Alejandro Enríquez &#8226; Paulo Gonzalez &#8226; Angel
+                Ruiz &#8226; Evelyn Pintado</em></h4>
+        <h6> <sub>&#169;</sub> <em> Todos los derechos reservados</em></h6>
+    </footer>
 </body>
+    
 
 </html>

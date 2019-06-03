@@ -12,7 +12,7 @@
 	
 	<?php
 		include '../../config/conexionBD.php';
-        //$codigo = $_GET['codigo'];
+        
     ?>
 	
     <head>
@@ -63,12 +63,23 @@
                     <li>
                         <a>About</a>
                         <ul>
-                            <li><a href="about.html">Quienes&nbsp;Somos</a></li>
-                            <li><a href="contacto.php?codigo=<?php echo $codigo ?>">Contacto</a></li>
+                            <li><a href="/PracticaExamen/public/pages/about.html">Quienes&nbsp;Somos</a></li>
+                            <li><a href="/PracticaExamen/public/pages/contacto.php?codigo=<?php echo $codigo ?>">Contacto</a></li>
                         </ul>
                     </li>
-                    
-                    <li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>
+                    <?php
+                        if(isset($_SESSION['isLogged']) === TRUE){
+                            if($_SESSION['rol'] == 2){
+                                echo '<li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>';
+                            }
+                            if($_SESSION['rol'] == 1){
+                                echo '<li><a href="/PracticaExamen/public/pages/index.php">Carrito</a></li>';
+                            }
+                        }else{
+                            echo '<li><a href="/PracticaExamen/public/vista/login.html">Carrito</a></li>';
+                        }
+                            
+                    ?>
                 <li>
                     <input class="busqueda" type="text" id="juego" value="">
                     <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
@@ -81,6 +92,7 @@
 			if(isset($_SESSION['isLogged']) === FALSE){
                 echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
             }else {
+                $codigo = $_SESSION['codigo'];
                 if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
                     echo "<button class='boton'><a style='color: white' href=/PracticaExamen/user/vista/perfil.php>Cuenta</a>";
                 }else{

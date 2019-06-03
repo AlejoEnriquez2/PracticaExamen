@@ -1,4 +1,4 @@
-﻿<?php 
+<?php 
     session_start();
     if(!isset($_SESSION['isLogged'])|| $_SESSION['isLogged'] === FALSE){
        header("Location: /PracticaExamen/public/vista/login.html");
@@ -7,17 +7,26 @@
         header("Location: /PracticaExamen/public/vista/login.html");
     }
 ?>
+<?php 
+	include_once('../controladores/google.php');
+	$google = new Google;
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
-  <title>Crear Juego</title>
-  <meta http-equiv=”Content-Type” content=”text/html; charset=UTF-8″ />
-  <link rel="shortcut icon" href="../images/icono.png">
-  <link rel="stylesheet" href="../estilos/style.css" type="text/css">
-  <link rel="stylesheet" href="../estilos/juegos.css" type="text/css">
-
- 
+    <title>MadGames</title>
+    <meta charset=UTF-8″ />
+    <link rel="shortcut icon" href="/PracticaExamen/public/images/icono.png">
+    <link rel="stylesheet" href="/PracticaExamen/public/estilos/style.css" type="text/css">
+    <link rel="stylesheet" href="/PracticaExamen/public/estilos/juegos.css" type="text/css">
+    <script type="text/javascript" src="/PracticaExamen/public/javascript/javascript.js"></script>
+    <script type="text/javascript" src="/PracticaExamen/public/javascript/juego.js"></script>
+    <script type="text/javascript" src="/PracticaExamen/admin/controladores/functions.js"></script>
+    <link rel="stylesheet" type="text/css" href="/PracticaExamen/admin/estilos/style.css">
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyA9PzcEI7CfqittLmMseZcvwpgeawwdbxE&sensor=false&language=es"></script>
+	<script type="text/javascript" src="/PracticaExamen/admin/controladores/jquery.js"></script>
+	<script type="text/javascript" src="/PracticaExamen/admin/controladores/functions.js"></script>
 </head>
 
 <body>
@@ -80,60 +89,31 @@
 </header>
   <section class="dos">
     <div>
-      <form method="POST" action="../controladores/crear_juego.php" enctype="multipart/form-data">
+      <form method="POST" action="/PracticaExamen/admin/controladores/crear_sucursal.php" enctype="multipart/form-data">
 		<table>
 			<tr>
-				<td class="p"><label for="nombre">Nombre del Juego</label></td>
-				<td><input type="text" name="nombre"></input></td>
+				<td class="p"><label for="nombre">Nombre de la Sucursal</label></td>
+				<td><input type="text" name="nombre"></td>
 			</tr>
 			<tr>
-				<td class="p"><label for="descripcion">Descripcion</label></td>
-				<td><textarea type="text" name="descripcion"></textarea></td>
+				<td class="p"><label for="latitud">Latitud</label></td>
+				<td><input type="text" placeholder="Latitud" name="latitud" id="my_lat" class="txt"></td>
 			</tr>
 			<tr>
-				<td class="p"><label for="sisOperativo">Sistema Operativo</label></td>
-				<td><input type="text" name="sisOperativo"></input></td>
-			</tr>
-			<tr>
-				<td class="p"><label for="procesador">Procesador</label></td>
-				<td><input type="text" name="procesador"></input></td>
-			</tr>
-			<tr>
-				<td class="p"><label for="ram">Memoria Ram</label></td>
-				<td><input type="text" name="ram"></input></td>
-			</tr>
-			<tr>
-				<td class="p"><label for="almacenamiento">Almacenamiento</label></td>
-				<td><input type="text" name="almacenamiento"></input></td>
-			</tr>
-			<tr>
-				<td class="p"><label for="precio">Precio</label></td>
-				<td><input type="text" name="precio"></input></td>
-			</tr>
-			<tr>
-				<td class="p"><label for="categoria">Categoria</label></td>
-				<td>
-					<select name="categoria">
-						<option value="1">Accion</option>
-						<option value="2">Terror</option>
-						<option value="3">Deporte</option>
-						<option value="4">Rol</option>
-					</select>
-				</td>
-			</tr>
-			<tr>
-				<td class="p"><label for="descuento">Descuento</label></td>
-				<td><input type="text" name="descuento"></input></td>
-			</tr>
-			<tr>
-				<td><label class="p" for="imagen">Agregar Imagen</label></td>
-				<td><input type="file" name="imagen" multiple></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td><input type="submit"  name="crear" value="Aceptar"></td>
-			</tr>
-		</table>
+				<td class="p"><label for="longitud">Longitud</label></td>
+				<td><input type="text" placeholder="Longitud" name="longitud" id="my_lng" class="txt"></td>
+            </tr>	
+            <tr>
+                <td class=""><input type="button" value="Obtener mi ubicacion - A" onclick="get_my_location();"></td>
+                <td><input type="submit"  name="crear" value="Aceptar"></td>
+            </tr>		
+            
+        </table>
+        <br><br>
+        <center><div class="map" style="width:50%" id="map"></div><center>
+        <script type="text/javascript">
+		    start_map();
+	    </script>
 	  </form>
     </div>
   </section>

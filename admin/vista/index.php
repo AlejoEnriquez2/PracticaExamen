@@ -12,7 +12,7 @@
 	
 		<?php
 			include '../../config/conexionBD.php';
-            $codigo = $_GET['codigo'];
+            $codigo = $_SESSION['codigo'];
         ?>
     <head>
 		<title>MadGames</title>
@@ -64,8 +64,8 @@
                     <li>
                         <a>About</a>
                         <ul>
-                            <li><a href="about.html">Quienes&nbsp;Somos</a></li>
-                            <li><a href="contacto.php?codigo=<?php echo $codigo ?>">Contacto</a></li>
+                            <li><a href="/PracticaExamen/public/pages/about.html">Quienes&nbsp;Somos</a></li>
+                            <li><a href="/PracticaExamen/admin/vista/index.php">Contacto</a></li>
                         </ul>
                     </li>
                     
@@ -93,6 +93,9 @@
 		<br>
 		<input type="text" id="correo" value="correo" hidden>
 		<input class="boton" type="button" id="buscar" name="buscar" value="Mensajes" onclick="buscarMensaje()">
+		<br>
+        <br>
+		<a class="boton" href="/PracticaExamen/admin/vista/crear_sucursal.php">Crear Sucursal</a>
 		<br>
 		<br>
 		<div id="tablas"></div>
