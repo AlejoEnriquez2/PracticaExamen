@@ -91,6 +91,7 @@ table.table-elements tr td{
 }
 
 div.map{
+	margin: 0px;
 	width: 100%;
 	height: 450px;
 	padding: 6px;
