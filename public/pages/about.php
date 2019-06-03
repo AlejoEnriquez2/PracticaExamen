@@ -4,7 +4,6 @@
 		<meta charset=UTF-8 />
 		<title>Acerca de nosotros</title>
 		<!-- ESTILOS -->
-		<link href="/PracticaExamen/public/estilos/estilos.css" rel="stylesheet">	
 		<link rel="shortcut icon" href="/PracticaExamen/public/images/icono.png">
 	</head>
 	
