@@ -1,7 +1,7 @@
 1.	Objetivo
 Generar una pagina web para la venta de video juegos, la cual contenga roles de usuarios, un local principal y sus sucursales, a más de un carrito donde agregar las compras y un sistema de facturación, mediante el uso del leguaje HTML, CSS y JavaScript.
 2.	Requerimientos 
-      •	Sección privada 
+    Sección privada 
           	 LOGIN (seguridad) o CRUD de usuarios 
           	 CRUD de productos (rating) 
           	CRUD de empresas/locales (rating) 
