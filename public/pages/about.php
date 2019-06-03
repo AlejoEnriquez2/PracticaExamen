@@ -4,7 +4,7 @@
 		<meta charset="utf8_general_ci">
 		<title>Acerca de nosotros</title>
 		<!-- ESTILOS -->
-		<link href="/PracticaExamen/public/pages/map_rutas/css/base.css" rel="stylesheet">	
+		<link href="/PracticaExamen/map_rutas/css/base.css" rel="stylesheet">	
 		<link rel="shortcut icon" href="/PracticaExamen/public/images/icono.png">
 	</head>
 	
@@ -51,40 +51,11 @@
 			<tr>
 				<td colspan="2">
 					<h1>Google Maps - Ubicaciones</h1>
-					<?php 
-						include_once('map_rutas/class/google.php');
-						$google = new Google;
-					?>
-					<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyA9PzcEI7CfqittLmMseZcvwpgeawwdbxE&sensor=false&language=es"></script>
-					<script type="text/javascript" src="/PracticaExamen/public/pages/map_rutas/js/jquery.js"></script>
-					<script type="text/javascript" src="/PracticaExamen/public/pages/map_rutas/js/functions.js"></script>
-
-					<div class="container">
-					<table class="table-elements">
-						<tr>
-							<td>
-								<input type="button" value="Obtener mi ubicacion - A" onclick="get_my_location();" class="btn">
-							</td>
-							<td>
-								<input type="text" placeholder="Latitud" id="my_lat" class="txt" readonly>
-							</td>
-							<td>
-								<input type="text" placeholder="Longitud" id="my_lng" class="txt" readonly>
-							</td>
-							<td>
-								<select class="txt" onchange="draw_rute(this.value)">
-									<option value="0">Dibujar ruta con &#8595;</option>
-									<?=$google->get_stores();?>
-								</select>
-							</td>
-						</tr>
-					</table>
-					<div class="map" id="map" ></div>
-						<script type="text/javascript">
-							start_map();
-						</script>	
-				</div>
-			</td>
+					<iframe src="/PracticaExamen/map_rutas/"  
+						marginwidth="0" marginheight="0" name="ventana_iframe" scrolling="no" border="0"  
+						frameborder="0" width="1000" height="600"> 
+					</iframe> 
+				</td>
 			</tr>
 		
 		</table>
