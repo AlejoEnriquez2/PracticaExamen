@@ -112,7 +112,7 @@
                     $codigo = $_SESSION['codigo'];
                     $total = $_GET['total'];
                 ?>
-                <a class='boton_personalizado' href="/PracticaExamen/user/controladores/comprar.php?id=<?php echo $codigo?>&total=<?php echo $total?>&sucursal=".sucursal()>Comprar</a>
+                <a class='boton_personalizado' href="/PracticaExamen/user/controladores/comprar.php?id=<?php echo $codigo?>&total=<?php echo $total?>">Comprar</a>
             </div></center>
         </section>
     <footer class="pie">

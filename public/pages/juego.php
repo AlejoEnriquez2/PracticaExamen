@@ -73,7 +73,7 @@
           <li>
               <a>About</a>
               <ul>
-                  <li><a href="/PracticaExamen/public/pages/about.html">Quienes&nbsp;Somos</a></li>
+                  <li><a href="/PracticaExamen/public/pages/about.php">Quienes&nbsp;Somos</a></li>
                   <li><a href="/PracticaExamen/public/pages/contacto.php">Contacto</a></li>
               </ul>
           </li>
@@ -143,7 +143,7 @@
             }
             if($_SESSION['rol'] == 1){
               echo "<a style='color: white' href='/PracticaExamen/public/pages/editar_juego.php?codigo=$codigo'>Editar</a>";
-              echo "<br><a style='color: white' href='../controladores/eliminar.php?codigo=<?php echo $codigo?>'>Eliminar</a>";
+              echo "<br><a style='color: white' href='../controladores/eliminar.php?codigo=$codigo'>Eliminar</a>";
             }
           }
         ?>
