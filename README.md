@@ -39,6 +39,10 @@ Generar una pagina web para la venta de video juegos, la cual contenga roles de 
 ![1](https://github.com/AlejoEnriquez2/PracticaExamen/blob/master/capturas/14.PNG)
 ![1](https://github.com/AlejoEnriquez2/PracticaExamen/blob/master/capturas/15.PNG)
 
+19.	Conclusiones
+-	En la página que realizamos pudimos aprender a usar diversas herramientas para el desarrollo web, como el control de sesiones y variables globales que nos permiten obtener información en todo el programa dependiendo de la sesión. El funcionamiento de sucursales es en nuestro caso algo irrelevante, debido a que en su mayoría se podría vender juegos de forma digital, sin embargo, se realizó la geolocalización en la que indica las rutas posibles para el usuario, usando un api de Google que se conecta con Google Maps.
+-	La página que hemos realizado nos ayudó a entender por completo el funcionamiento de javascript utilizando funciones, estilos para una creación fácil y eficaz de páginas web. En el trabajo realizado se han implementado mayormente redirecciones de páginas donde se desarrolló el código pertinente para cada una dándole el funcionamiento completo a la página
+-	En el desarrollo de esta aplicación pudimos aplicar todo lo aprendido en clases, a mas de nuevas herramientas que nos permitieron un desarrollo más eficiente y eficaz de nuestra aplicación, como por ejemplo las Apis de Google para la geo-referencia, ya que comprender fue lo mas complicado desde donde obtiene datos y como es el funcionamiento de los métodos para graficar.
 
 
 
