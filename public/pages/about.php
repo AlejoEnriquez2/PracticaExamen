@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset=UTF-8 />
+		<meta charset="utf8_general_ci">
 		<title>Acerca de nosotros</title>
 		<!-- ESTILOS -->
+		<link href="/PracticaExamen/public/estilos/estilos.css" rel="stylesheet">	
 		<link rel="shortcut icon" href="/PracticaExamen/public/images/icono.png">
 	</head>
 	
