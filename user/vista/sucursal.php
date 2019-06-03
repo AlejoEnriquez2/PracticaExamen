@@ -92,38 +92,16 @@
         </header>
         <section>
             <center><div style="width:60%">
-                <table class="table-elements">
-                    <tr>
-                        <td>
-                            <input type="button" value="Obtener mi ubicacion - A" onclick="get_my_location();" class="btn">
-                        </td>
-                        <td>
-                            <input type="text" placeholder="Latitud" id="my_lat" class="txt" readonly>
-                        </td>
-                        <td>
-                            <input type="text" placeholder="Longitud" id="my_lng" class="txt" readonly>
-                        </td>
-                        <td>
-                            <select class="txt" name="sucursal" onchange="draw_rute(this.value)">
-                                <option value="0" >Dibujar ruta con &#8595;</option>
-                                <?=$google->get_stores();?>
-                            </select>
-                        </td>
-                        <td>
-                            <td><input type="submit"  name="crear" onclick="sucursal()" value="Aceptar"></td>
-                        </td>
-                    </tr>
-                </table>
+                <iframe src="/PracticaExamen/map_rutas/"  
+                    marginwidth="0" marginheight="0" name="ventana_iframe" scrolling="no" border="0"  
+                    frameborder="0" width="1000" height="600"> 
+                </iframe> 
                 <?php
                     $codigo = $_SESSION['codigo'];
                     $total = $_GET['total'];
                 ?>
-                <div class="map" id="map"></div>
                 <a class='boton_personalizado' href="/PracticaExamen/user/controladores/comprar.php?id=<?php echo $codigo?>&total=<?php echo $total?>&sucursal=".sucursal()>Comprar</a>
             </div></center>
-            <script type="text/javascript">
-                start_map();
-            </script>
         </section>
     <footer class="pie">
         <h2>Universidad Politécnica Salesiana</h2>

@@ -1,11 +1,12 @@
 var map;
-var directionsService = new google.maps.DirectionsService();
+var america_lat = -17.6680839;
+var america_lng = -71.34680909999;
 var directionsDisplay = new google.maps.DirectionsRenderer({polylineOptions:{strokeColor:'#2E9AFE'}});
-
+var directionsService = new google.maps.DirectionsService();
 
 function start_map(){
 	map = new google.maps.Map(document.getElementById('map'), {
-  	center: {lat: -2.9005500, lng: -79.0045300},
+  	center: {lat: america_lat, lng: america_lng},
   	zoom: 3
 	});
 }
