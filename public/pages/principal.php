@@ -53,7 +53,7 @@
                 <li>
                     <a>About</a>
                     <ul>
-                        <li><a href="about.html">Quienes&nbsp;Somos</a></li>
+                        <li><a href="about.php">Quienes&nbsp;Somos</a></li>
 						<?php
                 		if(!isset($_SESSION['isLogged']) || $_SESSION['isLogged'] === TRUE){
 							echo "<li><a href=contacto.php?codigo=".$codigo.">Contacto</a></li>";

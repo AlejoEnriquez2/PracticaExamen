@@ -17,14 +17,14 @@
 			$descuento = isset($_POST['descuento'])? trim($_POST['descuento'], 'utf-8') :null;
 			$nombre_imagen = $_FILES['imagen']['name'];		//Nombre de la imagen
 			$tipo_imagen = $_FILES['imagen']['type'];		//Tipo de imagen
-			$tamano_imagen = $_FILES['imagen']['size'];		//Tamaño
+			$tamano_imagen = $_FILES['imagen']['size'];		//Tamaï¿½o
 			$ruta_imagen = $_FILES['imagen']['tmp_name'];		//Ruta
 			$carpeta_destino = "../images/games/".$nombre_imagen;
 			
 
 			date_default_timezone_set("America/Guayaquil");
             $fecha = date('Y-m-d H:i:s', time());
-			$sql = "INSERT INTO `juegos`(`jue_codigo`, `jue_nombre`, `jue_descripcion`, `jue_imagen`, `jue_eliminado`, `jue_sistema_operativo`, `jue_memoria`, `jue_ram`, `jue_procesador`, `jue_precio`, `jue_fecha`, `jue_categoria`, `jue_descuento`, `jue_nota`) VALUES (0, '$nombre', '$descripcion', '$nombre_imagen', 0, '$sisOperativo', '$almacenamiento', '$ram', '$procesador', $precio, $fecha, $categoria, $descuento,0)";
+			$sql = "INSERT INTO `juegos`(`jue_codigo`, `jue_nombre`, `jue_descripcion`, `jue_imagen`, `jue_eliminado`, `jue_sistema_operativo`, `jue_memoria`, `jue_ram`, `jue_procesador`, `jue_precio`, `jue_fecha`, `jue_categoria`, `jue_descuento`, `jue_nota`) VALUES (0, '$nombre', '$descripcion', '$nombre_imagen', 0, '$sisOperativo', '$almacenamiento', '$ram', '$procesador', $precio, '$fecha', $categoria, $descuento,0)";
 			if($conn->query($sql)==TRUE){
     			echo "<p>Se ha insertado correctamente</p>";
 				copy($ruta_imagen, $carpeta_destino);
@@ -32,7 +32,7 @@
     			echo "<p>ERROR".$conn->error."</p>";
     		}
     		$conn->close();
-    		echo "<a href='../pages/crear_juego.html'>Regresar</a>";
+    		echo "<a href='../pages/crear_juego.php'>Regresar</a>";
 		?>
 	</body>
 </html>
