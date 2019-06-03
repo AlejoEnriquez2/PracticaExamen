@@ -79,11 +79,10 @@
 							</td>
 						</tr>
 					</table>
-					<div class="map" id="map" >
+					<div class="map" id="map" ></div>
 						<script type="text/javascript">
 							start_map();
 						</script>	
-					</div>
 				</div>
 			</td>
 			</tr>
