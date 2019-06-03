@@ -49,6 +49,7 @@
 			</tr>
 			
 			<tr>
+				<td colspan="2">
 				<?php 
 					include_once('map_rutas/class/google.php');
 					$google = new Google;
@@ -82,6 +83,7 @@
 			<script type="text/javascript">
 				start_map();
 			</script>
+			</td>
 			</tr>
 		
 		</table>
