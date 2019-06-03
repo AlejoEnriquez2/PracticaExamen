@@ -1,4 +1,7 @@
 <?php 
+    include_once('google.php');
+    $google = new Google;
+    
     session_start();
     if(!isset($_SESSION['isLogged'])|| $_SESSION['isLogged'] === FALSE){
        header("Location: /PracticaExamen/public/vista/login.html");
@@ -6,8 +9,7 @@
     if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 1){
         header("Location: /PracticaExamen/public/vista/login.html");
     }
-	include_once('../../admin/controladores/google.php');
-	$google = new Google;
+    
 ?>
 <!DOCTYPE html >
 <html>
@@ -20,6 +22,7 @@
     <script type="text/javascript" src="/PracticaExamen/public/javascript/javascript.js"></script>
     <script type="text/javascript" src="/PracticaExamen/public/javascript/juego.js"></script>
     <script type="text/javascript" src="/PracticaExamen/admin/controladores/functions.js"></script>
+    <script type="text/javascript" src="/PracticaExamen/user/vista/getSucursal.js"></script>
     <link rel="stylesheet" type="text/css" href="/PracticaExamen/admin/estilos/style.css">
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyA9PzcEI7CfqittLmMseZcvwpgeawwdbxE&sensor=false&language=es"></script>
     <script type="text/javascript" src="/PracticaExamen/admin/controladores/jquery.js"></script>
@@ -101,17 +104,22 @@
                             <input type="text" placeholder="Longitud" id="my_lng" class="txt" readonly>
                         </td>
                         <td>
-                            <select class="txt" onchange="draw_rute(this.value)">
-                                <option value="0">Dibujar ruta con &#8595;</option>
+                            <select class="txt" name="sucursal" onchange="draw_rute(this.value)">
+                                <option value="0" >Dibujar ruta con &#8595;</option>
                                 <?=$google->get_stores();?>
                             </select>
                         </td>
                         <td>
-                            <input type="button" value="Aceptar" onclick="" class="btn">
+                            <td><input type="submit"  name="crear" onclick="sucursal()" value="Aceptar"></td>
                         </td>
                     </tr>
                 </table>
+                <?php
+                    $codigo = $_SESSION['codigo'];
+                    $total = $_GET['total'];
+                ?>
                 <div class="map" id="map"></div>
+                <a class='boton_personalizado' href="/PracticaExamen/user/controladores/comprar.php?id=<?php echo $codigo?>&total=<?php echo $total?>&sucursal=".sucursal()>Comprar</a>
             </div></center>
             <script type="text/javascript">
                 start_map();

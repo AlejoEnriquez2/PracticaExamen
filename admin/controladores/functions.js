@@ -1,12 +1,11 @@
 var map;
-var america_lat = -17.6680839;
-var america_lng = -71.34680909999;
-var directionsDisplay = new google.maps.DirectionsRenderer({polylineOptions:{strokeColor:'#2E9AFE'}});
 var directionsService = new google.maps.DirectionsService();
+var directionsDisplay = new google.maps.DirectionsRenderer({polylineOptions:{strokeColor:'#2E9AFE'}});
+
 
 function start_map(){
 	map = new google.maps.Map(document.getElementById('map'), {
-  	center: {lat: america_lat, lng: america_lng},
+  	center: {lat: -2.9005500, lng: -79.0045300},
   	zoom: 3
 	});
 }
@@ -40,9 +39,10 @@ function draw_rute(value){
 			dataType: 'JSON',
 			success: function(response){
 				draw_rute_map(response.lat, response.lng);	
-				alert("Encontrado!");
+				alert("Encontró!");
 			}
 		});
+		alert(value);
 	}
 }
 
