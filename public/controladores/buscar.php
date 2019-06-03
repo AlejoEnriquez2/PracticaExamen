@@ -5,7 +5,7 @@
             <?php   
                 include '../../config/conexionBD.php';
                 $nombre = $_GET['nombre'];
-                $sql = "SELECT * FROM juegos WHERE jue_nombre = '$nombre'";
+                $sql = "SELECT * FROM juegos WHERE jue_nombre = '$nombre' and jue_eliminado = 0";
                 $result = $conn->query($sql);
                 $u = $result->fetch_assoc();
 				$codigo = $u['jue_codigo'];

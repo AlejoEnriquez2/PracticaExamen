@@ -1,18 +1,106 @@
+<?php 
+    session_start();
+    //if(!isset($_SESSION['isLogged'])|| $_SESSION['isLogged'] === FALSE){
+      // header("Location: /PracticaExamen/public/vista/login.html");
+    //}
+    //if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+        //header("Location: /PracticaExamen/public/vista/login.html");
+    //}
+?>
 <!DOCTYPE html>
 <html>
+	
 	<head>
 		<meta charset="utf8_general_ci">
 		<title>Acerca de nosotros</title>
 		<!-- ESTILOS -->
-		<link href="/PracticaExamen/map_rutas/css/base.css" rel="stylesheet">	
+		
 		<link rel="shortcut icon" href="/PracticaExamen/public/images/icono.png">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="/PracticaExamen/public/estilos/style.css" type="text/css">
+        <script type="text/javascript" src="/PracticaExamen/public/javascript/javascript.js"></script>
 	</head>
 	
 	<body>
 
 		<header>
-			
-		</header>
+		<header class="cabecera">
+            <a href="/PracticaExamen/public/pages/index.php">
+                <div class="logo">
+                    <img src="/PracticaExamen/public/images/logo.png">
+                    <h2>MadGames</h2>
+                </div>
+            </a>
+            <div class="menu">
+                <ul class="navegacion">
+                    <li>
+                        <a href="/PracticaExamen/public/pages/index.php">Juegos</a>
+                        <ul>
+                            <li><a href="/PracticaExamen/public/pages/puntaje.php">Mejores&nbsp;Puntuaciones</a></li>
+                            <li><a href="/PracticaExamen/public/pages/novedades.php">Novedades</a></li>
+                            <li><a href="#">Categorías</a>
+                                <ul style="top: 113px">
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=1">Accion</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=2">Terror</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=3">Deporte</a></li>
+                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=4">Rol</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/PracticaExamen/public/pages/index.php">Ofertas</a>
+                        <ul>
+                            <li><a href="/PracticaExamen/public/pages/mejores.php">Mejores</a></li>
+                            <li><a href="/PracticaExamen/public/pages/gratis.php">Free2Play</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a>About</a>
+                        <ul>
+                            <li><a href="/PracticaExamen/public/pages/about.php">Quienes&nbsp;Somos</a></li>
+                            <li><a href="/PracticaExamen/public/pages/contacto.php">Contacto</a></li>
+                        </ul>
+                    </li>
+                    <?php
+                        if(isset($_SESSION['isLogged']) === TRUE){
+                            if($_SESSION['rol'] == 2){
+                                echo '<li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>';
+                            }
+                            if($_SESSION['rol'] == 1){
+                                echo '<li><a href="/PracticaExamen/public/pages/index.php">Carrito</a></li>';
+                            }
+                        }else{
+                            echo '<li><a href="/PracticaExamen/public/vista/login.html">Carrito</a></li>';
+                        }
+                            
+                    ?>
+                <li>
+                    <input class="busqueda" type="text" id="juego" value="">
+                    <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
+                    <!--<img class="iB" src="../images/search.png">-->
+                </li>
+            </ul>
+        </div>
+        <div class="cuenta">
+        <?php
+			if(isset($_SESSION['isLogged']) === FALSE){
+                echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
+            }else {
+                $codigo = $_SESSION['codigo'];
+                if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/user/vista/perfil.php>Cuenta</a>";
+                }else{
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
+                }
+                
+            }		
+		?>
+        </div>
+    </header>
+		<section class="t1">
+
+		
 		<table>
 			<tr>
 				<td>
@@ -60,6 +148,7 @@
 		
 		</table>
 	</body>
+	</section>
 	<footer class="pie">
             <h2>Universidad Politécnica Salesiana</h2>
             <h4>Desarrollado por: <em> &#8226; David Cornejo &#8226; Alejandro Enríquez &#8226; Paulo Gonzalez &#8226; Angel Ruiz &#8226; Evelyn Pintado</em></h4>
