@@ -50,7 +50,7 @@
 			
 			<tr>
 				<?php 
-					include_once('class/google.php');
+					include_once('/PracticaExamen/public/pages/map_rutas/class/google.php');
 					$google = new Google;
 				?>
 				<script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyA9PzcEI7CfqittLmMseZcvwpgeawwdbxE&sensor=false&language=es"></script>
