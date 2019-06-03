@@ -1,0 +1,154 @@
+----LISTAR fACTURA---
+
+<?php
+session_start();
+$cor = $_SESSION["correo"];
+$con = $_SESSION["contrasenia"];
+$cedula = $_SESSION["cedula"];
+$factura = $_REQUEST["factura"];
+if (!isset($_SESSION['logueado']) || $_SESSION['logueado'] != "true") {
+    header("Location: login.php");
+    exit;
+}
+include 'conexion.php';
+echo 'F: ' . $factura;
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Compras</title>
+    <link href="estilosEvelyn.css" rel="stylesheet" />
+    <script src="validacionesU.js"></script>
+
+</head>
+
+<body>
+    <h3>DETALLE FACTURAS</h3>
+    <div id="datEmpr">
+        <p>Nombre Empresa juan</p>
+        <p>Direccion Empresa(Juan montalvo - pio bravo,1122)</p>
+        <p>Telefono: 2255698</p>
+        <p>email:tienda@hotmail.cpmo</p>
+        <p>Surcursal:patito</p>
+    </div>
+
+    <div id="detalles">
+        <table>
+            <div id="cabecera">
+                <thead>
+                    <tr>
+                        <th id="detComp">Nombre</th>
+                        <td colspan="3">Evelyn Pintado</td>
+                        <th>CI/Ruc</th>
+                        <td colspan="3">0106171325</td>
+                    </tr>
+
+                    <tr>
+                        <th>Direccion</th>
+                        <td>Trigales</td>
+                        <th>Telefono</th>
+                        <td>0998453147</td>
+                        <th>email</th>
+                        <td>correo@hotmail.com</td>
+                        <th>Metodo</th>
+                        <td>Tarjeta de Credito</td>
+                    </tr>
+                </thead>
+            </div>
+
+
+
+            <tbody>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>CODIGO</th>
+                            <th>CANT</th>
+                            <th>DESCRIPCION</th>
+                            <th>PREC. UNIT</th>
+                            <th>TOTAL</th>
+
+                        </tr>
+                    </thead>
+
+                    <?php
+                    include("conexion.php");
+                    $sql = "SELECT * FROM detalle WHERE numeroF='$factura';";
+                    $resultado = $conn->query($sql);
+                    if ($resultado->num_rows > 0) {
+                        while ($row = $resultado->fetch_assoc()) {
+                            ?>
+
+                            <tbody>
+                                <tr>
+                                    <td><?php echo "1" ?></td>
+                                    <td><?php echo "3" ?></td>
+                                    <td><?php echo $row["nombre"]; ?></td>
+                                    <td><?php echo $row["precioU"]; ?></td>
+                                    <td><?php echo "2400" ?></td>
+                                </tr>
+                                <!-- <tr>
+                                        <td rowspan="5"></td>
+                                        <td rowspan="5"></td>
+                                        <td rowspan="5"></td>
+                                        <td rowspan="5"></td>
+                                        <td rowspan="5"></td>
+
+                                    </tr>    
+                                    -->
+                            <?php
+                        }
+                    } else {
+                        echo "No existen detalles.";
+                    }
+                    ?>
+                    </tbody>
+                </table>
+
+
+                <table>
+                    <tr>
+                        <th class="eliminar"></th>
+                        <th class="eliminar"></th>
+                        <th class="eliminar"></th>
+                        <th class="eliminar"></th>
+                        <th>Subtotal:</th>
+                        <td>3400</td>
+
+                    </tr>
+                    <tr>
+                        <th class="eliminar"></th>
+                        <th class="eliminar"></th>
+                        <th class="eliminar"></th>
+                        <th class="eliminar"></th>
+                        <th>Subtotal IVA:</th>
+                        <td>500</td>
+
+                    </tr>
+                    <tr>
+                        <th class="eliminar"></th>
+                        <th class="eliminar"></th>
+                        <th class="eliminar"></th>
+                        <th class="eliminar"></th>
+                        <th>TOTAL:</th>
+                        <td>3900</td>
+
+                    </tr>
+                </table>
+
+
+
+                <input type="button" value="Regresar" onclick="location.href = 'listarC.php';" style="width: 101px; margin-left: 25px" />
+
+                <?php
+                $conn->close();
+                ?>
+
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -228,11 +228,12 @@
                                       
                                     }
                                 }
+                                $codigoFac = $row['fac_codigo'];
                                 $dinero = $dinero + $dinerin;
                                 echo " <td>" . $dinerin . " $</td>";
                                 $dinerin =0;
  
-                               echo " <td> <a href=''>Ver Factura(Proximamente)</a> </td>";
+                               echo " <td> <a href=../controladores/factura.php?facid=".$row['fac_codigo'].">Ver Factura</a> </td>";
                              echo "</tr>";
                          }  
                 }else{
