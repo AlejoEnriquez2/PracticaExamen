@@ -49,7 +49,7 @@
 			</tr>
 			
 			<tr>
-				<td>
+				<td colspan="2">
 					<?php 
 						include_once('map_rutas/class/google.php');
 						$google = new Google;
