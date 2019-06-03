@@ -54,7 +54,7 @@
 
     <?php
     
-        include '../../../config/conexionBD.php';
+        include '../../config/conexionBD.php';
         date_default_timezone_set("America/Guayaquil");
 
         
@@ -70,12 +70,7 @@
         $result=$conn->query($sql);
         $row = $result->fetch_assoc();
     
-        $sqlu ="SELECT *
-               FROM juegos
-               WHERE jue_codigo=$codigoU";
-    
-        $resultu=$conn->query($sqlu);
-        $rowu = $resultu->fetch_assoc();
+
 
         $fecha = date("y-m-d h:i:s",time());
 

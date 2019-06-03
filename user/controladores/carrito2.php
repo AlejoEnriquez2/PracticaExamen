@@ -54,9 +54,9 @@
 
     <?php
     
-        include '../../../config/conexionBD.php';
+        include '../../config/conexionBD.php';
         
-        $codigo=$_GET["id"];
+        $codigo=$_SESSION['codigo'];
         $codigoU=$_GET["id_juego"];
         $cantidad = isset($_POST["cantidad"]) ? trim($_POST["cantidad"]): null;
     
@@ -83,12 +83,12 @@
             if($conn->query($sql)==TRUE){
                 echo "<div>";
                             echo "<p class='exito'>El juego se añadio correctamente a tu carrito</p>";
-                            echo "<a href=../vista/juego.php?id=".$codigo.">Regresar</a>";
+                            echo "<a href=/PracticaExamen/public/pages/index.php>Regresar</a>";
                 echo "</div>";
             }else{
                 echo "<div>";
                             echo "<p class='exito'>Lo siento ocurrio un error</p>";
-                            echo "<a href=../vista/juego.php?id=".$codigo.">Regresar</a>";
+                            echo "<a href=/PracticaExamen/public/pages/index.php>Regresar</a>";
                 echo "</div>";
             }
         ?>

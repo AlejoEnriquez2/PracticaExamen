@@ -68,10 +68,10 @@
 
     <?php
     
-        include '../../../config/conexionBD.php';
+        include '../../config/conexionBD.php';
         
-        $codigo=$_GET["id"];
-        $codigoU=$_GET["id_juego"];
+        $codigo=$_SESSION['codigo'];
+        $codigoU=$_GET["codigo"];
 
     
         $sql ="SELECT *
@@ -99,13 +99,13 @@
         if($resultu->num_rows > 0){ 
             echo "<div>";
                 echo "<p class='exito'>El juego ya se encuentra en tu carrito</p>";
-                echo "<a href=../vista/juego.php?id=".$codigo.">Regresar</a>";
+                echo "<a href=/PracticaExamen/public/pages/index.php>Regresar</a>";
             echo "</div>";
         }else{
             echo "<div>";
-                echo "<form method='post' action='carrito2.php?id=".$codigo."&id_juego=".$codigoU."' class='form login' enctype='multipart/form-data'>";
+                echo "<form method='post' action='carrito2.php?&id_juego=".$codigoU."' class='form login' enctype='multipart/form-data'>";
                 echo "<p class='exito'>Ingrese la cantidad de juegos: <input type='text' placeholder='cantidad' id='cantidad' name='cantidad' value='1'></p>";
-                echo "<a href=../vista/juego.php?id=".$codigo."> Cancelar </a>";
+                echo "<a href=/PracticaExamen/public/pages/index.php> Cancelar </a>";
                 echo "<input class='boton' type='submit' value=' Aceptar'>";
                 echo "</form>";
             echo "</div>";

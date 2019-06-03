@@ -14,15 +14,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/stylesGeneral.css">
     <link rel="stylesheet" href="css/stylesLogin.css">
+    <link rel="stylesheet" href="/PracticaExamen/public/estilos/style.css" type="text/css">
 
     <script type="text/javascript" src="../controladores/ajax.js"></script>
 </head>
 
 <body>
+    <header class="cabecera">
+        <a href="/PracticaExamen/public/pages/index.php">
+            <div class="logo">
+                <img src="/PracticaExamen/public/images/logo.PNG">
+                <h2>MadGames</h2>
+            </div>
+        </a>
+        <div class="menu">
+            <ul class="navegacion">
+                <li>
+                    <a href="/PracticaExamen/public/pages/index.php">Juegos</a>
+                    <ul>
+                        <li><a href="/PracticaExamen/public/pages/puntaje.php">Mejores&nbsp;Puntuaciones</a></li>
+                        <li><a href="/PracticaExamen/public/pages/novedades.php">Novedades</a></li>
+                        <li><a href="#">Categorías</a>
+                            <ul style="top: 113px">
+                                <li><a href="/PracticaExamen/public/pages/categoria.php?cat=1">Accion</a></li>
+                                <li><a href="/PracticaExamen/public/pages/categoria.php?cat=2">Terror</a></li>
+                                <li><a href="/PracticaExamen/public/pages/categoria.php?cat=3">Deporte</a></li>
+                                <li><a href="/PracticaExamen/public/pages/categoria.php?cat=4">Rol</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/PracticaExamen/public/pages/index.php">Ofertas</a>
+                    <ul>
+                        <li><a href="/PracticaExamen/public/pages/mejores.php">Mejores</a></li>
+                        <li><a href="/PracticaExamen/public/pages/gratis.php">Free2Play</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>About</a>
+                    <ul>
+                        <li><a href="about.html">Quienes&nbsp;Somos</a></li>
+                        <li><a href="contacto.php?codigo=<?php echo $codigo ?>">Contacto</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>
+                <li>
+                    <input class="busqueda" type="text" id="juego" value="">
+                    <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
+                    <!--<img class="iB" src="../images/search.png">-->
+                </li>
+            </ul>
+        </div>
+        <div class="cuenta">
+            <?php
+			if(isset($_SESSION['isLogged']) === FALSE){
+                echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
+            }else {
+                if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/user/vista/perfil.php>Cuenta</a>";
+                }else{
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
+                }
+                
+            }		
+		?>
+        </div>
+    </header>
     <?php
         include '../../config/conexionBD.php';
     
-        $codigoc = $_GET['codigo'];
+        $codigoc = $_SESSION['codigo'];
         $sqlc = "SELECT * 
                 FROM usuarios
                 where usu_codigo = $codigoc";
@@ -33,15 +96,16 @@
         }
   ?>
     <?php
-    $codigo = $_GET['codigo'];
+    $codigoU = $_SESSION['codigo'];
     $dinerin = 0;
+    $dinero = 0;
    ?>
     <?php
         include '../../config/conexionBD.php';
     
          $sql ="SELECT *
                 FROM usuarios
-                WHERE usu_codigo =$codigo";
+                WHERE usu_codigo =$codigoU";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
     
@@ -60,7 +124,7 @@
                     <h3 class="login_titulo">Mi Cuenta</h3>
                 </header>
                 <div class="login_centro">
-                    <input type="text" name="codigo" value="<?php echo $codigo?>" hidden="hidden">
+                    <input type="text" name="codigo" value="<?php echo $codigoU?>" hidden="hidden">
                     <div class="form__field">
                         <?php
                 echo "<img class='foto' id='foto' src='data:".$row['usu_img_extencion']."; base64,".base64_encode($row['usu_imagen'])."'>";
@@ -98,15 +162,11 @@
                 //echo "<a id=link href=eliminar.php?id=".$codigo.">Eliminar Usuario</a>";
             ?>
                     <?php
-                echo "<a id=link href=../controladores/cerrar_sesion.php?id=".$codigo.">Cerrar Sesion</a>";
-            ?>
-
-                    <?php
-                echo "<a id=link href=juego.php?id=".$codigo.">Comprar juego</a>";
+                echo "<a id=link href=../controladores/cerrar_sesion.php>Cerrar Sesion</a>";
             ?>
                     <?php
-                echo "<a id=link href=carro_compras.php?id=".$codigo.">Carrito Compras</a>";
-            ?>
+                echo "<a id=link href=carro_compras.php?>Carrito Compras</a>";
+                    ?>
                     <input class="btn" type="submit" name="Login" value="GUARDAR">
                 </footer>
         </div>
@@ -131,38 +191,52 @@
                 <thead>
                     <tr>
                         <th>Fecha de Compra </th>
-                        <th>Juego</th>
-                        <th>Precio</th>
+                        <th>Num Factura</th>
+                        <th>Total Gastado</th>
                         <th>Opcion</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                $codigo = $_GET['codigo'];
+                        $codigo = $_SESSION['codigo'];
 
                 $sql ="SELECT *
-                FROM compras,
-                     usuarios,
-                     juegos
-                where com_usu_codigo = usu_codigo AND
-                com_jue_codigo = jue_codigo
-                ORDER BY com_fecha";
+                FROM facturas
+                   
+                where fac_usu_codigo = $codigo 
+                ORDER BY fac_fecha";
 
 
+                
                 $result = $conn->query($sql);
                 if($result->num_rows > 0){
                          while($row = $result->fetch_assoc()){
                              echo "<tr>";
-                                echo " <td>" . $row['com_fecha'] . "</td>";
-                                echo " <td>" . $row['jue_nombre'] ."</td>";
-                                echo " <td>" . $row['jue_precio'] . " $</td>";
-                                $dinerin = $dinerin + $row['jue_precio'];
-                             //   echo " <td>" . "<a href=../controladores/leer_mensaje.php?id=".$row["cor_codigo"]."&id_usu=".$row["cor_id_usu_remitente"]."&id_des=".$codigo.">Ver Factura"."</a>". "</td>";
+                                echo " <td>" . $row['fac_fecha'] . "</td>";
+                                echo " <td>" . $row['fac_codigo'] ."</td>";
+                                $sqlr = "SELECT *
+                                FROM juegos,
+                                     facturas,
+                                     facturas_detalle
+                                WHERE jue_codigo = fd_jue_codigo AND fac_codigo = ".$row['fac_codigo']." AND
+                                        fd_fac_codigo = fac_codigo";
+                                $resultr = $conn->query($sqlr);
+                                if($resultr->num_rows > 0){
+                                    while($rowr = $resultr->fetch_assoc()){
+                                        $dinerin = $dinerin + ($rowr['fd_jue_cantidad'] * $rowr['jue_precio']);
+                                      
+                                    }
+                                }
+                                $dinero = $dinero + $dinerin;
+                                echo " <td>" . $dinerin . " $</td>";
+                                $dinerin =0;
+ 
+                               echo " <td> <a href=''>Ver Factura(Proximamente)</a> </td>";
                              echo "</tr>";
                          }  
                 }else{
                     echo "<tr>";
-                        echo "<td colspan='4'>No tiene ningun mensaje en su bandeja de entrada</td>";
+                        echo "<td colspan='4'>No tiene ninguna compra realizada</td>";
                     echo "</tr>";
                 }
             ?>
@@ -170,7 +244,7 @@
             </table>
             <header class="login_cabezera">
                 <?php
-                    echo "<h3 class='login_titulo'>Total Gastado: ".$dinerin." $</h3>";
+                    echo "<h3 class='login_titulo'>Total Gastado: ".$dinero." $</h3>";
                 ?>
             </header>
         </div>
