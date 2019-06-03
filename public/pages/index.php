@@ -32,7 +32,7 @@
         <header class="cabecera">
             <a href="/PracticaExamen/public/pages/index.php">
                 <div class="logo">
-                    <img src="/PracticaExamen/public/images/logo.PNG">
+                    <img src="/PracticaExamen/public/images/logo.png">
                     <h2>MadGames</h2>
                 </div>
             </a>
