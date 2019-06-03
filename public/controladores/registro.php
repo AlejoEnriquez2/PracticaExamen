@@ -27,7 +27,7 @@
     
         //ruta carpeta destino en servidor
     
-        $carpeta_destino = $_SERVER['DOCUMENT_ROOT'] .'/Proyecto/public/vista/images';
+        $carpeta_destino = $_SERVER['DOCUMENT_ROOT'] .'/PracticaExamen/public/vista/images';
     
         
         //mover la imagen del directorio temporal al directorio escogido

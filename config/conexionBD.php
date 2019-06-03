@@ -1,8 +1,8 @@
 <?php
-	$servername="www.db4free.net";
-	$username="adminhipermedial";
-	$password="Hipermedial7432";
-	$dbname="base_correo";
+	$servername="a2plcpnl0634.prod.iad2.secureserver.net";
+	$username="facquer";
+	$password="Angel4317";
+	$dbname="madgames";
 
 	//Conexión
 	$conn=new mysqli($servername, $username,  $password, $dbname);
