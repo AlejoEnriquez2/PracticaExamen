@@ -7,7 +7,7 @@
 			if($this->db->connect_errno){
 				exit();
 			}
-			$this->db->set_charset(utf8_general_ci);
+			$this->db->set_charset('utf8_general_ci');
 		}
 	}
 ?>
