@@ -31,14 +31,16 @@ function get_my_location(){
 }
 
 function draw_rute(value){
+	alert("Dibujando Ruta");
 	if(value > 0){
 		$.ajax({
 			type: 'POST',
-			url: 'class/google.php',
+			url: 'google.php',
 			data: 'value='+value,
 			dataType: 'JSON',
 			success: function(response){
 				draw_rute_map(response.lat, response.lng);	
+				alert("Encontrado!");
 			}
 		});
 	}

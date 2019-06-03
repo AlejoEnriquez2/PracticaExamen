@@ -6,6 +6,7 @@
     if($_SESSION['rol'] == 1){
         header("Location: /PracticaExamen/public/pages/index.php");
     }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +17,9 @@
     <link rel="stylesheet" href="/PracticaExamen/user/vista/css/stylesGeneral.css">
     <link rel="stylesheet" href="/PracticaExamen/user/vista/css/stylesLogin.css">
     <link rel="stylesheet" href="/PracticaExamen/public/estilos/style.css" type="text/css">
+    <script type="text/javascript" src="/PracticaExamen/admin/controladores/functions.js"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyA9PzcEI7CfqittLmMseZcvwpgeawwdbxE&sensor=false&language=es"></script>
+	<script type="text/javascript" src="/PracticaExamen/admin/controladores/jquery.js"></script>
     <title>Carrito</title>
     <style type="text/css">
         .boton_personalizado {
@@ -70,50 +74,50 @@
 
 <body>
 <header class="cabecera">
-            <a href="/PracticaExamen/public/pages/index.php">
-                <div class="logo">
-                    <img src="/PracticaExamen/public/images/logo.PNG">
-                    <h2>MadGames</h2>
-                </div>
-            </a>
-            <div class="menu">
-                <ul class="navegacion">
-                    <li>
-                        <a href="/PracticaExamen/public/pages/index.php">Juegos</a>
-                        <ul>
-                            <li><a href="/PracticaExamen/public/pages/puntaje.php">Mejores&nbsp;Puntuaciones</a></li>
-                            <li><a href="/PracticaExamen/public/pages/novedades.php">Novedades</a></li>
-                            <li><a href="#">Categorías</a>
-                                <ul style="top: 113px">
-                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=1">Accion</a></li>
-                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=2">Terror</a></li>
-                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=3">Deporte</a></li>
-                                    <li><a href="/PracticaExamen/public/pages/categoria.php?cat=4">Rol</a></li>
-                                </ul>
-                            </li>
+    <a href="/PracticaExamen/public/pages/index.php">
+        <div class="logo">
+            <img src="/PracticaExamen/public/images/logo.PNG">
+            <h2>MadGames</h2>
+        </div>
+    </a>
+    <div class="menu">
+        <ul class="navegacion">
+            <li>
+                <a href="/PracticaExamen/public/pages/index.php">Juegos</a>
+                <ul>
+                    <li><a href="/PracticaExamen/public/pages/puntaje.php">Mejores&nbsp;Puntuaciones</a></li>
+                    <li><a href="/PracticaExamen/public/pages/novedades.php">Novedades</a></li>
+                    <li><a href="#">Categorías</a>
+                        <ul style="top: 113px">
+                            <li><a href="/PracticaExamen/public/pages/categoria.php?cat=1">Accion</a></li>
+                            <li><a href="/PracticaExamen/public/pages/categoria.php?cat=2">Terror</a></li>
+                            <li><a href="/PracticaExamen/public/pages/categoria.php?cat=3">Deporte</a></li>
+                            <li><a href="/PracticaExamen/public/pages/categoria.php?cat=4">Rol</a></li>
                         </ul>
                     </li>
-                    <li>
-                        <a href="/PracticaExamen/public/pages/index.php">Ofertas</a>
-                        <ul>
-                            <li><a href="/PracticaExamen/public/pages/mejores.php">Mejores</a></li>
-                            <li><a href="/PracticaExamen/public/pages/gratis.php">Free2Play</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a>About</a>
-                        <ul>
-                            <li><a href="/PracticaExamen/public/pages/about.html">Quienes&nbsp;Somos</a></li>
-                            <li><a href="/PracticaExamen/public/pages/contacto.php?codigo=<?php echo $codigo ?>">Contacto</a></li>
-                        </ul>
-                    </li>
-                    
-                    <li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>
-                <li>
-                    <input class="busqueda" type="text" id="juego" value="">
-                    <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
-                    <!--<img class="iB" src="../images/search.png">-->
-                </li>
+                </ul>
+            </li>
+            <li>
+                <a href="/PracticaExamen/public/pages/index.php">Ofertas</a>
+                <ul>
+                    <li><a href="/PracticaExamen/public/pages/mejores.php">Mejores</a></li>
+                    <li><a href="/PracticaExamen/public/pages/gratis.php">Free2Play</a></li>
+                </ul>
+            </li>
+            <li>
+                <a>About</a>
+                <ul>
+                    <li><a href="/PracticaExamen/public/pages/about.html">Quienes&nbsp;Somos</a></li>
+                    <li><a href="/PracticaExamen/public/pages/contacto.php?codigo=<?php echo $codigo ?>">Contacto</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>
+            <li>
+                <input class="busqueda" type="text" id="juego" value="">
+                <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
+                <!--<img class="iB" src="../images/search.png">-->
+            </li>
             </ul>
         </div>
         <div class="cuenta">
@@ -192,13 +196,17 @@
                     <div>
                         <?php
                     echo "<h3 class='login_titulo'>Total a pagar: ".$total2."$   </h3><br>";
-                
-                    echo "<a class='boton_personalizado' href=../controladores/comprar.php?id=".$codigo."&total=".$total2."> Comprar"."</a><a class='boton_personalizado3' codigo=link href=perfil.php>Volver</a>";
+                    ?>
+                    
+                    <?php
+                        echo "<a class='boton_personalizado' href=/PracticaExamen/user/vista/sucursal.php?id=".$codigo."&total=".$total2."> Comprar"."</a>";
+                    //echo "<a class='boton_personalizado' href=/PracticaExame/user/controladores/comprar.php?id=".$codigo."&total=".$total2."> Comprar"."</a><a class='boton_personalizado3' codigo=link href=perfil.php>Volver</a>";
                     ?>
                     </div>
                 </div>
             </header>
         </div>
+        
     </main>
     <footer class="pie">
         <h2>Universidad Politécnica Salesiana</h2>

@@ -3,19 +3,16 @@
     if(!isset($_SESSION['isLogged'])|| $_SESSION['isLogged'] === FALSE){
        header("Location: /PracticaExamen/public/vista/login.html");
     }
-    if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+    if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 1){
         header("Location: /PracticaExamen/public/vista/login.html");
     }
-?>
-<?php 
-	include_once('../controladores/google.php');
+	include_once('../../admin/controladores/google.php');
 	$google = new Google;
 ?>
-<!DOCTYPE html>
+<!DOCTYPE html >
 <html>
-
 <head>
-    <title>MadGames</title>
+    <title>Sucursales</title>
     <meta charset=UTF-8″ />
     <link rel="shortcut icon" href="/PracticaExamen/public/images/icono.png">
     <link rel="stylesheet" href="/PracticaExamen/public/estilos/style.css" type="text/css">
@@ -25,9 +22,8 @@
     <script type="text/javascript" src="/PracticaExamen/admin/controladores/functions.js"></script>
     <link rel="stylesheet" type="text/css" href="/PracticaExamen/admin/estilos/style.css">
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyA9PzcEI7CfqittLmMseZcvwpgeawwdbxE&sensor=false&language=es"></script>
-	<script type="text/javascript" src="/PracticaExamen/admin/controladores/jquery.js"></script>
+    <script type="text/javascript" src="/PracticaExamen/admin/controladores/jquery.js"></script>
 </head>
-
 <body>
     <header class="cabecera">
         <a href="/PracticaExamen/public/pages/index.php">
@@ -64,64 +60,68 @@
                     <a>About</a>
                     <ul>
                         <li><a href="/PracticaExamen/public/pages/about.html">Quienes&nbsp;Somos</a></li>
-                        <li><a href="/PracticaExamen/public/pages/contacto.php">Contacto</a></li>
+                        <li><a href="/PracticaExamen/public/pages/contacto.php?codigo=<?php echo $codigo ?>">Contacto</a></li>
                     </ul>
                 </li>
                 
                 <li><a href="/PracticaExamen/user/vista/carro_compras.php">Carrito</a></li>
-            <li>
-                <input class="busqueda" type="text" id="juego" value="">
-                <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
-                <!--<img class="iB" src="../images/search.png">-->
-            </li>
-        </ul>
-    </div>
-    <div class="cuenta">
-    <?php
-        if(!isset($_SESSION['isLogged']) === TRUE){
-            echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
-        }else {
-            echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
-        }		
-    ?>
-    </div>
-</header>
-  <section class="dos">
-    <div>
-      <form method="POST" action="/PracticaExamen/admin/controladores/crear_sucursal.php" enctype="multipart/form-data">
-		<table>
-			<tr>
-				<td class="p"><label for="nombre">Nombre de la Sucursal</label></td>
-				<td><input type="text" name="nombre"></td>
-			</tr>
-			<tr>
-				<td class="p"><label for="latitud">Latitud</label></td>
-				<td><input type="text" placeholder="Latitud" name="latitud" id="my_lat" class="txt"></td>
-			</tr>
-			<tr>
-				<td class="p"><label for="longitud">Longitud</label></td>
-				<td><input type="text" placeholder="Longitud" name="longitud" id="my_lng" class="txt"></td>
-            </tr>	
-            <tr>
-                <td class=""><input type="button" value="Obtener mi ubicacion - A" onclick="get_my_location();"></td>
-                <td><input type="submit"  name="crear" value="Aceptar"></td>
-            </tr>		
-            
-        </table>
-        <br><br>
-        <center><div class="map" style="width:50%" id="map"></div><center>
-        <script type="text/javascript">
-		    start_map();
-	    </script>
-	  </form>
-    </div>
-  </section>
-  <footer class="pie">
-    <h2>Universidad Politécnica Salesiana</h2>
-    <h4>Desarrollado por: <em> &#8226; David Cornejo &#8226; Alejandro Enríquez &#8226; Paulo Gonzalez &#8226; Angel
-        Ruiz &#8226; Evelyn Pintado</em></h4>
-    <h6> <sub>&#169;</sub> <em> Todos los derechos reservados</em></h6>
-  </footer>
+                <li>
+                    <input class="busqueda" type="text" id="juego" value="">
+                    <input class="boton" type="button" id="buscar" name="buscar" value="Buscar" onclick="buscar()">
+                    <!--<img class="iB" src="../images/search.png">-->
+                </li>
+                </ul>
+            </div>
+            <div class="cuenta">
+            <?php
+                if(isset($_SESSION['isLogged']) === FALSE){
+                    echo "<button class='boton'><a style='color: white' href=/PracticaExamen/public/vista/login.html>Login</a>";
+                }else {
+                    if(!isset($_SESSION['rol'])|| $_SESSION['rol'] == 2){
+                        echo "<button class='boton'><a style='color: white' href=/PracticaExamen/user/vista/perfil.php>Cuenta</a>";
+                    }else{
+                        echo "<button class='boton'><a style='color: white' href=/PracticaExamen/admin/vista/index.php>Cuenta</a>";
+                    }
+                    
+                }		
+            ?>
+        </div>
+        </header>
+        <section>
+            <center><div style="width:60%">
+                <table class="table-elements">
+                    <tr>
+                        <td>
+                            <input type="button" value="Obtener mi ubicacion - A" onclick="get_my_location();" class="btn">
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Latitud" id="my_lat" class="txt" readonly>
+                        </td>
+                        <td>
+                            <input type="text" placeholder="Longitud" id="my_lng" class="txt" readonly>
+                        </td>
+                        <td>
+                            <select class="txt" onchange="draw_rute(this.value)">
+                                <option value="0">Dibujar ruta con &#8595;</option>
+                                <?=$google->get_stores();?>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="button" value="Aceptar" onclick="" class="btn">
+                        </td>
+                    </tr>
+                </table>
+                <div class="map" id="map"></div>
+            </div></center>
+            <script type="text/javascript">
+                start_map();
+            </script>
+        </section>
+    <footer class="pie">
+        <h2>Universidad Politécnica Salesiana</h2>
+        <h4>Desarrollado por: <em> &#8226; David Cornejo &#8226; Alejandro Enríquez &#8226; Paulo Gonzalez &#8226; Angel
+                Ruiz &#8226; Evelyn Pintado</em></h4>
+        <h6> <sub>&#169;</sub> <em> Todos los derechos reservados</em></h6>
+    </footer>
 </body>
-
 </html>

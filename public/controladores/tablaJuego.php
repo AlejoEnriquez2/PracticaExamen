@@ -35,6 +35,7 @@
             echo "</tr>";
         }
         ?>
+        <a class="boton" href="/PracticaExamen/public/pages/crear_juego.php">Crear Juego</a>
 	 </table>
     </body>
 </html>

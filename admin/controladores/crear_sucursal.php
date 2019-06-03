@@ -12,7 +12,7 @@
 				
 			date_default_timezone_set("America/Guayaquil");
             $fecha = date('Y-m-d H:i:s', time());
-			$sql = "INSERT INTO `tbl_tienda`(`tienda_id`, `tienda_registro`, `tienda_nombre`, `tienda_latitud`, `tienda_longitud`) VALUES (0, '$fecha', '$nombre', '-$latitud', '-$longitud')";
+			$sql = "INSERT INTO `tbl_tienda`(`tienda_id`, `tienda_registro`, `tienda_nombre`, `tienda_latitud`, `tienda_longitud`, `tienda_eliminado`) VALUES (0, '$fecha', '$nombre', '-$latitud', '-$longitud', 0)";
 			if($conn->query($sql)==TRUE){
     			echo "<p>Se ha insertado correctamente</p>";
     		}else{

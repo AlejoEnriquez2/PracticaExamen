@@ -95,7 +95,11 @@
 		<input class="boton" type="button" id="buscar" name="buscar" value="Mensajes" onclick="buscarMensaje()">
 		<br>
         <br>
-		<a class="boton" href="/PracticaExamen/admin/vista/crear_sucursal.php">Crear Sucursal</a>
+        <input type="text" id="sucursales" value="sucursales" hidden>
+		<input class="boton" type="button" id="buscar" name="buscar" value="Sucursales" onclick="buscarSucursal()">
+		<br>
+        <br>
+		
 		<br>
 		<br>
 		<div id="tablas"></div>

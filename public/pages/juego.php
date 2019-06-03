@@ -139,7 +139,7 @@
         <?php
           if(!isset($_SESSION['isLogged']) === FALSE){
             if($_SESSION['rol'] == 2){
-              echo '<div class="like"><a href="/PracticaExamen/user/controladores/carrito.php?codigo=<?php echo "$codigo" ?>🛒</a></div>';
+              echo "<div class='like'><a href='/PracticaExamen/user/controladores/carrito.php?codigo=$codigo'>🛒</a></div>";
             }
             if($_SESSION['rol'] == 1){
               echo "<a style='color: white' href='/PracticaExamen/public/pages/editar_juego.php?codigo=$codigo'>Editar</a>";
