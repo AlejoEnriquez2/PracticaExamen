@@ -4,7 +4,7 @@
 	outline: 0;
 }
 
-body {
+body, html{
     background: linear-gradient(rgb(0, 24, 102), rgba(0, 38, 63, 0.651));
     margin: 0px;
 }
