@@ -50,6 +50,7 @@
 			
 			<tr>
 				<td colspan="2">
+					<h1>Google Maps - Ubicaciones</h1>
 					<?php 
 						include_once('map_rutas/class/google.php');
 						$google = new Google;
