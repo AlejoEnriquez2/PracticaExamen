@@ -79,7 +79,7 @@
 							</td>
 						</tr>
 					</table>
-					<div class="map" id="map">
+					<div class="map" id="map" style="height=900px">
 						<script type="text/javascript">
 							start_map();
 						</script>	
